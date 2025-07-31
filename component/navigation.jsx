@@ -57,16 +57,28 @@ export default function Navigation() {
                             </button>
 
                             {open && (
-                                <Link href={"/"}>
-                                    <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
-                                        <button
-                                            onClick={logout}
-                                            className="block w-full text-left px-4 py-2 hover:bg-gray-200"
-                                        >
-                                            Logout
-                                        </button>
-                                    </div>
-                                </Link>
+                                <div>
+                                    <Link href={"/"}>
+                                        <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
+                                            <button
+                                                onClick={logout}
+                                                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                            >
+                                                Logout
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    <Link href={"/"}>
+                                        <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
+                                            <button
+                                                onClick={logout}
+                                                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                            >
+                                                Profile
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </div>
                             )}
                         </li>
                     ) : (

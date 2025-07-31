@@ -221,3 +221,22 @@
     cursor: pointer;
     text-align: center;
 }
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordWrapper input {
+    width: 100%;
+    padding-right: 40px;
+    /* space for icon */
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #888;
+}
