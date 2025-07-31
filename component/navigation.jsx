@@ -4,12 +4,20 @@ import { useContext, useRef, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navigation() {
-    const { isLoggedIn, logout } = useContext(AuthContext);
+    const { isLoggedIn, user, logout } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
     const dropdownRef = useRef(null);
+    const router = useRouter();
 
+    // Automatically close dropdown when login status changes
+    useEffect(() => {
+        setOpen(false);
+    }, [isLoggedIn]);
+
+    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -20,11 +28,17 @@ export default function Navigation() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    const handleLogout = () => {
+        logout(); // Clears auth context
+        router.push("/"); // Redirect to homepage
+    };
+
     return (
         <header className="flex justify-between h-14 items-center py-8 absolute top-0 z-50 w-full">
             <div className="mx-10">
                 <Image src="/logo.png" alt="logo" width={180} height={100} />
             </div>
+
             <nav>
                 <ul className="flex gap-6 mx-10 text-lg items-center">
                     <li>
@@ -57,32 +71,24 @@ export default function Navigation() {
                             </button>
 
                             {open && (
-                                <div>
-                                    <Link href={"/"}>
-                                        <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
-                                            <button
-                                                onClick={logout}
-                                                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
-                                            >
-                                                Logout
-                                            </button>
-                                        </div>
-                                    </Link>
-                                    <Link href={"/"}>
-                                        <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
-                                            <button
-                                                onClick={logout}
-                                                className="block w-full text-left px-4 py-2 hover:bg-gray-200"
-                                            >
-                                                Profile
-                                            </button>
-                                        </div>
+                                <div className="absolute right-0 mt-2 w-24 bg-white text-black rounded shadow-md z-50">
+                                    <button
+                                        onClick={handleLogout}
+                                        className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                    >
+                                        Logout
+                                    </button>
+                                    <Link
+                                        href="/profile"
+                                        className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                        onClick={() => setOpen(false)} // Close dropdown
+                                    >
+                                        Profile
                                     </Link>
                                 </div>
                             )}
                         </li>
                     ) : (
-                        // Show Login button if not logged in
                         <li>
                             <Link
                                 href="/login"

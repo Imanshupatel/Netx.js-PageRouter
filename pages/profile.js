@@ -1,47 +1,53 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
+import { AuthContext } from "../context/AuthContext";
+import Image from "next/image";
 
-export default function ProfilePage() {
+export default function Profile() {
+    const { isLoggedIn, user, logout } = useContext(AuthContext);
     const router = useRouter();
-    const [loading, setLoading] = useState(true);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
-        const loginStatus = sessionStorage.getItem('loggedIn');
-        if (loginStatus === 'true') {
-            setIsLoggedIn(true);
-        } else {
-            router.push('/login');
-        }
-        setLoading(false);
-    }, [router]);
-
-    if (loading) {
-        return <div className="min-h-screen flex items-center justify-center text-lg">Loading...</div>;
-    }
-
-    if (!isLoggedIn) return null;
+    if (!isLoggedIn || !user) return null;
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-black text-black p-10">
-            <h1 className="text-3xl text-white font-bold mb-6">Your Profile</h1>
+        <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-gray-800 flex items-center justify-center px-4 py-12 text-white">
+            <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-sm text-center text-black">
+                <div className="flex flex-col items-center">
+                    <Image
+                        src="/icon.png"
+                        alt="User Avatar"
+                        width={100}
+                        height={100}
+                        className="rounded-full"
+                    />
+                    <h1 className="text-3xl font-bold mb-7">
+                        {user.name || "Unnamed User"}
+                    </h1>
+                </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 w-full max-w-sm text-center">
-                <Image
-                    src="/icon.png"
-                    alt="User Avatar"
-                    width={100}
-                    height={100}
-                    className="rounded-full mx-auto"
-                />
-                <h2 className="mt-2 text-xl font-semibold">Imanshu Lakhankiya</h2>
+                <div className="text-left space-y-2">
+                    <p>
+                        <span className="font-semibold">Email:</span>{" "}
+                        {user.email || "Not Provided"}
+                    </p>
+                    <p>
+                        <span className="font-semibold">Password:</span>{" "}
+                        {user.password || "Hidden"}
+                    </p>
+                </div>
 
-                <div className="mt-8 text-left">
-                    <p><strong>Email:</strong> </p>
-                    <p><strong>Password:</strong> </p>
+                <div className="mt-8 flex flex-col gap-2">
+                    <button
+                        className="bg-red-600 text-white rounded-md py-2 px-4 hover:bg-red-700 transition"
+                        onClick={() => {
+                            logout();
+                            router.push("/login");
+                        }}
+                    >
+                        Logout
+                    </button>
                 </div>
             </div>
         </div>

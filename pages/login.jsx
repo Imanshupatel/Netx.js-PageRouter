@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/login.module.css";
 import { AuthContext } from "../context/AuthContext";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import users from "../data/user.json"; // Assuming you have a JSON file with user data
 
 const AnimatedAuth = () => {
@@ -11,8 +10,6 @@ const AnimatedAuth = () => {
     const [error, setError] = useState("");
     const router = useRouter();
     const { login } = useContext(AuthContext);
-
-    const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -118,23 +115,14 @@ const AnimatedAuth = () => {
                                     value={form.email}
                                     onChange={handleChange}
                                 />
-                                <div className={styles.passwordWrapper}>
-                                    <input
-                                        className={styles.input}
-                                        type={showPassword ? "text" : "password"}
-                                        name="password"
-                                        placeholder="Password"
-                                        value={form.password}
-                                        onChange={handleChange}
-                                    />
-                                    <span
-                                        className={styles.eyeIcon}
-                                        onClick={() => setShowPassword((prev) => !prev)}
-                                    >
-                                        {showPassword ? <FaEye /> : <FaEyeSlash />}
-                                    </span>
-                                </div>
-
+                                <input
+                                    className={styles.input}
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    value={form.password}
+                                    onChange={handleChange}
+                                />
                                 {error && <div className={styles.error}>{error}</div>}
                                 <button type="submit" className={styles.button}>
                                     Register

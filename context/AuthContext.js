@@ -1,30 +1,32 @@
 // context/AuthContext.js
-'use client';
 
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState(null);
+    const isLoggedIn = !!user;
 
     useEffect(() => {
-        const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        setIsLoggedIn(loggedIn);
+        const storedUser = localStorage.getItem("authUser");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
     }, []);
 
-    const login = () => {
-        localStorage.setItem('isLoggedIn', 'true');
-        setIsLoggedIn(true);
+    const login = (userData) => {
+        localStorage.setItem("authUser", JSON.stringify(userData));
+        setUser(userData);
     };
 
     const logout = () => {
-        localStorage.removeItem('isLoggedIn');
-        setIsLoggedIn(false);
+        localStorage.removeItem("authUser");
+        setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+        <AuthContext.Provider value={{ user, isLoggedIn, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
