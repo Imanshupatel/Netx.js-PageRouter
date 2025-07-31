@@ -1,0 +1,223 @@
+.loginCnt {
+    min-width: 93vw;
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.flipContainer {
+    perspective: 1000px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+}
+
+.glassCard {
+    position: relative;
+    background: linear-gradient(135deg, #6c63ff 0%, #48c6ef 100%);
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 48px 32px 40px 32px;
+    min-width: 340px;
+    z-index: 2;
+    overflow: visible;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #6c63ff44;
+}
+
+.inputGroup {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    font-size: 1rem;
+    pointer-events: none;
+    background: transparent;
+    padding: 0 4px;
+    z-index: 1;
+    color: #aaa;
+    transition: all 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+.input {
+    width: 100%;
+    padding: 18px 16px 10px 16px;
+    border-radius: 12px;
+    border: 2px solid #eee;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    transition: all 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px #6c63ff44;
+}
+
+.error {
+    color: #ff3860;
+    background: #fff0f3;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.button {
+    position: relative;
+    background: linear-gradient(90deg, #6c63ff 40%, #48c6ef 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #6c63ff33;
+    transition: transform 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
+    margin-top: 8px;
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+}
+
+.buttonWave {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #6c63ff 40%, #48c6ef 100%);
+    border-radius: 8px;
+    opacity: 0.7;
+    animation: waveAnim 2s infinite linear;
+    z-index: 1;
+}
+
+.circles {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.circle1 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(108, 99, 255, 0.25);
+    top: -40px;
+    left: -40px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.circle2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(72, 198, 239, 0.18);
+    bottom: -30px;
+    right: -30px;
+    animation: float 6s 1s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes waveAnim {
+    0% {
+        left: -100px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+
+
+.flipper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    ;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.linkText {
+    margin-top: 10px;
+    /* color: #2218ce; */
+    cursor: pointer;
+    text-align: center;
+}

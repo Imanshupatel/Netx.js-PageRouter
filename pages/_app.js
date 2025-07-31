@@ -1,5 +1,11 @@
+import Navigation from "@/component/navigation";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Navigation />
+      <Component {...pageProps} />
+    </>
+  );
 }
