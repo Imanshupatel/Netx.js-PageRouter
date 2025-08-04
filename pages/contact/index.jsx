@@ -19,7 +19,7 @@ const Contact = () => {
         // You can add more validation here (e.g., email format)
         setError("");
         // Submit logic here
-        alert("Form Submitted!");
+        alert("Message Send Successfully!");
         setForm({ name: "", email: "", message: "" });
     };
 

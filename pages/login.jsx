@@ -6,7 +6,7 @@ import users from "../data/user.json"; // Assuming you have a JSON file with use
 
 const AnimatedAuth = () => {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [form, setForm] = useState({ name: "", email: "", password: "" });
+    const [form, setForm] = useState({ name: "", email: "", password: "", role: "" });
     const [error, setError] = useState("");
     const router = useRouter();
     const { login } = useContext(AuthContext);
@@ -42,6 +42,7 @@ const AnimatedAuth = () => {
                     name: form.name,
                     email: form.email,
                     password: form.password,
+                    role: form.role,
                 }),
             })
                 .then(async (res) => {

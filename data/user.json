@@ -3,30 +3,42 @@
     "id": 1,
     "name": "Imanshu",
     "email": "imanshupatel@gmail.com",
-    "password": "123456"
+    "password": "123456",
+    "role": "admin"
   },
   {
     "id": 2,
     "name": "Jenish",
     "email": "jenish21@gmail.com",
-    "password": "78945623"
+    "password": "78945623",
+    "role": "user"
   },
   {
     "id": 3,
     "name": "Zeel",
     "email": "zeelpipaliya@gmail.com",
-    "password": "Zeel@3265"
+    "password": "Zeel@3265",
+    "role": "user"
   },
   {
     "id": 4,
     "name": "Anjali",
     "email": "anjalijoshi@gmail.com",
-    "password": "Anjali@25656"
+    "password": "Anjali@25656",
+    "role": "user"
   },
   {
     "id": 5,
     "name": "Tejas",
     "email": "tejasginoya@gamil.com",
-    "password": "Tej@s5623"
+    "password": "Tej@s5623",
+    "role": "admin"
+  },
+  {
+    "id": 6,
+    "name": "Karan",
+    "email": "karanrana@gmail.com",
+    "password": "258456",
+    "role": "user"
   }
 ]
