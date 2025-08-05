@@ -42,7 +42,7 @@ const AnimatedAuth = () => {
                     name: form.name,
                     email: form.email,
                     password: form.password,
-                    role: form.role,
+                    role: "user",
                 }),
             })
                 .then(async (res) => {

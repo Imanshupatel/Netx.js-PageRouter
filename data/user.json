@@ -11,7 +11,7 @@
     "name": "Jenish",
     "email": "jenish21@gmail.com",
     "password": "78945623",
-    "role": "user"
+    "role": "admin"
   },
   {
     "id": 3,
@@ -32,7 +32,7 @@
     "name": "Tejas",
     "email": "tejasginoya@gamil.com",
     "password": "Tej@s5623",
-    "role": "admin"
+    "role": "user"
   },
   {
     "id": 6,

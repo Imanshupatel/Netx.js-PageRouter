@@ -23,6 +23,7 @@ export default function handler(req, res) {
             name,
             email,
             password,
+            role: "user",
         };
 
         users.push(newUser);

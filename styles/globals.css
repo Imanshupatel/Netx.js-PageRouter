@@ -39,6 +39,21 @@ a:hover {
   color: pink;
 }
 
+/* Neon green border */
+.border-neon-green {
+  border: 2px solid #00ff99;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #00ff99;
+}
+
+/* Neon yellow border */
+.border-neon-yellow {
+  border: 2px solid #f9ff00;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #f9ff00;
+}
+
+
 /* ======================== */
 
 .loading-section {
