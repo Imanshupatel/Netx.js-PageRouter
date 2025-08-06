@@ -26,10 +26,10 @@ const EsportsJoinSection = () => {
                         {/* Right Image */}
                         <div className="flex-1 relative w-full min-w-[500px]">
                             <Image
-                                src="/mita.png" // put your team image here
+                                src="/cta1-1.png" // put your team image here
                                 alt="Pro Players"
-                                width={400}
-                                height={100}
+                                width={500}
+                                height={400}
                                 className="w-full h-auto object-contain"
                             />
                         </div>
