@@ -3,6 +3,8 @@ import Image from "next/image";
 import { FaGamepad, FaTrophy, FaHeadset, FaYoutube, FaTwitch } from "react-icons/fa";
 import Character from "@/component/character";
 import TournamentSection from "@/component/tournament";
+import CharacterCarousel from "@/component/update";
+import ProPlayersSection from "@/component/pro-player";
 
 export default function Home() {
 
@@ -122,6 +124,8 @@ export default function Home() {
             </section>
             <Character />
             <TournamentSection />
+            <CharacterCarousel />
+            <ProPlayersSection />
         </>
     );
 }
