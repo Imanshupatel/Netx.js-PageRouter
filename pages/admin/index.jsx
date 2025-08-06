@@ -36,7 +36,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-                        <Image src="/left.png" alt="Left Character" width={230} height={500} />
+                        <Image src="/x-suit/left.png" alt="Left Character" width={230} height={500} />
 
                         <div className="max-w-md text-center">
                             <h2 className="text-2xl font-bold mb-4">Join The Big Tournaments</h2>
@@ -49,7 +49,7 @@ export default function Home() {
                             </button>
                         </div>
 
-                        <Image src="/right.png" alt="Right Character" width={230} height={500} />
+                        <Image src="/x-suit/right.png" alt="Right Character" width={230} height={500} />
                     </div>
 
                     <div className="mt-12 flex gap-8 text-l text-[#7FFFDE]">
