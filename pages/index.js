@@ -34,7 +34,7 @@ export default function Home() {
                         loop
                         muted
                         playsInline
-                        src="/videoplayback.webm"
+                        src="/video/videoplayback.webm"
                     />
 
                     <div className="relative z-10 flex flex-col items-start p-10">

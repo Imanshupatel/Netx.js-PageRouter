@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { FaGamepad, FaTrophy, FaHeadset } from "react-icons/fa";
+import { FaGamepad, FaTrophy, FaHeadset, FaYoutube, FaTwitch } from "react-icons/fa";
+import Character from "@/component/character";
+import TournamentSection from "@/component/tournament";
 
 export default function Home() {
+
     return (
         <>
             <Head>
@@ -66,7 +69,7 @@ export default function Home() {
                     {/* Image with rounded corners */}
                     <div className="relative w-[400px] flex item-right rounded-[35px] overflow-hidden">
                         <video
-                            src="/girl-X-suit.mp4"
+                            src="/video/girl-X-suit.mp4"
                             autoPlay
                             muted
                             loop
@@ -117,6 +120,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <Character />
+            <TournamentSection />
         </>
     );
 }

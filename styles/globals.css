@@ -53,6 +53,22 @@ a:hover {
   box-shadow: 0 0 15px #f9ff00;
 }
 
+/* styles/globals.css or any global CSS */
+.swiper-pagination {
+  bottom: 0px !important;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background: #555 !important;
+  /* Default dot color */
+  opacity: 1;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background: #22c55e !important;
+  /* Active dot color (Tailwind green-500) */
+}
+
 
 /* ======================== */
 
