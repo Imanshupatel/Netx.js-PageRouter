@@ -3,11 +3,11 @@
 import Image from "next/image";
 
 const players = [
-    { name: "Sarangajyoti Deka", image: "/pro-player/Sarang-1.webp" },
-    { name: "Harsh Malik", image: "/pro-player/spraygod.webp" },
-    { name: "Nakul sharma", image: "/pro-player/nakul.webp" },
-    { name: "Jonathan Jude Amaral", image: "/pro-player/jonathan.webp" },
-    { name: " Harsh Rao", image: "/pro-player/harsh-1.webp" },
+    { name: "Sarangajyoti", image: "/pro-player/Sarang-1.webp" },
+    { name: "Harsh", image: "/pro-player/spraygod.webp" },
+    { name: "Nakul", image: "/pro-player/nakul.webp" },
+    { name: "Jonathan", image: "/pro-player/jonathan.webp" },
+    { name: " Harsh", image: "/pro-player/harsh-1.webp" },
 ];
 
 export default function ProPlayersSection() {
@@ -18,21 +18,28 @@ export default function ProPlayersSection() {
             </p>
             <h2 className="text-3xl font-bold mb-12">Let’s See Our Pro Players</h2>
 
-            <div className="flex flex-wrap justify-center gap-8 px-4">
+            <div className="flex flex-wrap justify-center gap-8 px-4 mb-100">
                 {players.map((player, idx) => (
                     <div
                         key={idx}
-                        className="relative w-[180px] md:w-[200px] border-4 border-gradient rounded-xl p-1 bg-gradient-to-br from-green-500 via-black to-yellow-400"
+                        className="relative w-[180px] md:w-[260px] rounded-xl p-1 "
                     >
-                        <div className="bg-[#0f0f0f] rounded-xl overflow-hidden">
+                        <div className="bg-[#0f0f0f] rounded-xl  relative">
                             <Image
                                 src={player.image}
                                 alt={player.name}
-                                width={200}
-                                height={250}
-                                className="object-cover w-full h-64"
+                                width={250}
+                                height={300}
+                                className="object-cover absolute top-[-12px] right-7 w-[200px] h-86 padding-5 rounded-xl"
                             />
-                            <div className="text-center py-2 bg-[#0f0f0f] rounded-b-xl">
+                            <Image
+                                src="/image.png"
+                                alt="Gradient Overlay"
+                                width={220}
+                                height={270}
+                                className="object-contain absolute top-[-30px] left-0 w-full h-100"
+                            />
+                            <div className="text-center py-2 rounded-b-xl absolute top-83 left-25">
                                 <p className="text-sm font-semibold">{player.name}</p>
                             </div>
                         </div>

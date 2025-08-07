@@ -13,11 +13,6 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <title>Esports Gaming Site</title>
-                <meta name="description" content="Shaping the Future of Esports" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
 
             <section className="bg-[#0A0A0A] text-white py-20 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-cover bg-center z-0"

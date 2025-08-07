@@ -8,52 +8,52 @@ const games = [
     {
         title: "Andy",
         image: "/character/andy.jpeg",
-        fee: "$10.00",
+        fee: "1200 UC",
     },
     {
         title: "Sophia",
         image: "/character/sophia.jpeg",
-        fee: "Free",
+        fee: "900 UC",
     },
     {
         title: "Victor",
         image: "/character/victor.jpg",
-        fee: "$10.00",
+        fee: "Free",
     },
     {
         title: "Emilia",
         image: "/character/emilia.jpg",
-        fee: "$10.00",
+        fee: "600 UC",
     },
     {
         title: "Sara",
         image: "/character/sara.jpeg",
-        fee: "$10.00",
+        fee: "600 UC",
     },
     {
         title: "Carlo",
         image: "/character/carlo.jpeg",
-        fee: "Free",
+        fee: "1200 UC",
     },
     {
         title: "Anna",
         image: "/character/anna.jpeg",
-        fee: "$10.00",
+        fee: "600 UC",
     },
     {
         title: "Laith",
         image: "/character/laith.jpeg",
-        fee: "$10.00",
+        fee: "900 UC",
     },
     {
         title: "Lorenzo",
         image: "/character/lorenzo.jpeg",
-        fee: "$10.00",
+        fee: "600 UC",
     },
     {
         title: "Raily",
         image: "/character/raily.jpeg",
-        fee: "$10.00",
+        fee: "600 UC",
     },
 ];
 
@@ -98,7 +98,7 @@ export default function Character() {
                             </div>
                             <h3 className="text-lg font-semibold mb-1">{game.title}</h3>
                             <p className="text-sm text-gray-400">
-                                Entry Fee:{" "}
+                                Price:{" "}
                                 <span className="text-green-500">{game.fee}</span>
                             </p>
                         </div>
