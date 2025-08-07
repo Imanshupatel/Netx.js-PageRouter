@@ -6,6 +6,8 @@ import TournamentSection from "@/component/tournament";
 import CharacterCarousel from "@/component/update";
 import ProPlayersSection from "@/component/pro-player";
 import EsportsJoinSection from "@/component/Esports";
+import Footer from "@/component/footer";
+import BlogSection from "@/component/blog";
 
 export default function Home() {
 
@@ -128,6 +130,8 @@ export default function Home() {
             <CharacterCarousel />
             <ProPlayersSection />
             <EsportsJoinSection />
+            <BlogSection />
+            <Footer />
         </>
     );
 }

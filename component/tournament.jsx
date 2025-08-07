@@ -19,12 +19,13 @@ const matches = [
         id: 2,
         status: "Finished",
         score: "20 / 22",
-        title: "TSM-Entity VS Gladiator",
+        winner: "team2", // 👈 Add this
+        title: "Revenant Esports VS Global Esports",
         date: "20 December, 2024 6:00 PM",
         youtube: true,
         twitch: true,
-        team1Logo: "/team-logo/tsm-logo.png",
-        team2Logo: "/team-logo/gladiator.png",
+        team1Logo: "/team-logo/revenant.png",
+        team2Logo: "/team-logo/global.png",
     },
     {
         id: 3,
@@ -36,6 +37,40 @@ const matches = [
         twitch: true,
         team1Logo: "/team-logo/Xspark.png",
         team2Logo: "/team-logo/Orange_Rock.png",
+    },
+    {
+        id: 4,
+        status: "Upcoming",
+        score: "0 / 0",
+        title: "Orangutan Gaming VS Entity Gaming",
+        date: "18 December, 2025 6:00 PM",
+        youtube: true,
+        twitch: true,
+        team1Logo: "/team-logo/Orangutan.png",
+        team2Logo: "/team-logo/entity.png",
+    },
+    {
+        id: 5,
+        status: "Finished",
+        score: "22 / 20",
+        winner: "team1", // 👈 Add this
+        title: "TSM-Entity VS Gladiator",
+        date: "20 December, 2024 6:00 PM",
+        youtube: true,
+        twitch: true,
+        team1Logo: "/team-logo/tsm-logo.png",
+        team2Logo: "/team-logo/gladiator.png",
+    },
+    {
+        id: 6,
+        status: "Upcoming",
+        score: "0 / 0",
+        title: "Blind Esports VS 8Bit",
+        date: "25 August, 2025 6:00 PM",
+        youtube: true,
+        twitch: true,
+        team1Logo: "/team-logo/blind.png",
+        team2Logo: "/team-logo/8-bit.png",
     },
 ];
 
@@ -78,33 +113,42 @@ export default function TournamentSection() {
                 </div>
 
                 {/* Match Cards */}
-                <div className="space-y-6">
+                <div className="space-y-6 max-w-screen grid-cols-2 grid gap-x-20">
                     {filteredMatches.map((match) => (
                         <div
                             key={match.id}
-                            className="flex items-center justify-between border border-green-500/20 rounded-[20px] p-6 bg-[#121212] flex-wrap gap-4"
+                            className=" w-[650px] h-[170px] flex mr-5 flex-shrink-0  items-center justify-between border border-green-500/20 rounded-[20px] p-6 bg-[#121212] flex-wrap gap-4"
                         >
                             {/* Left team logo */}
-                            <Image
-                                src={match.team1Logo}
-                                alt="Team 1 Logo"
-                                width={80}
-                                height={80}
-                                className="object-contain"
-                            />
+                            <div className="flex flex-col items-center">
+                                <Image
+                                    src={match.team1Logo}
+                                    alt="Team 1 Logo"
+                                    width={80}
+                                    height={80}
+                                    className={`object-contain ${match.status === "Finished" && match.winner === "team1" ? "ring-4 ring-green-500 rounded-full" : ""}`}
+                                />
+                                {match.status === "Finished" && match.winner === "team1" && (
+                                    <span className="text-green-500 text-xs font-semibold mt-1">Winner</span>
+                                )}
+                            </div>
 
                             {/* VS */}
                             <span className="text-3xl font-bold text-white mx-4">VS</span>
 
                             {/* Right team logo */}
-                            <Image
-                                src={match.team2Logo}
-                                alt="Team 2 Logo"
-                                width={80}
-                                height={80}
-                                className="object-contain"
-                            />
-
+                            <div className="flex flex-col items-center">
+                                <Image
+                                    src={match.team2Logo}
+                                    alt="Team 2 Logo"
+                                    width={80}
+                                    height={80}
+                                    className={`object-contain ${match.status === "Finished" && match.winner === "team2" ? "ring-4 ring-green-500 rounded-full" : ""}`}
+                                />
+                                {match.status === "Finished" && match.winner === "team2" && (
+                                    <span className="text-green-500 text-xs font-semibold mt-1">Winner</span>
+                                )}
+                            </div>
 
                             {/* Divider */}
                             <div className="w-full border-t border-white/10 my-4 sm:hidden"></div>
