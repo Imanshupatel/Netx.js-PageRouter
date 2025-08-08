@@ -2,49 +2,65 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaYoutube, FaTwitch } from "react-icons/fa";
+import Link from "next/link";
 
 const matches = [
     {
         id: 1,
-        status: "Upcoming",
-        score: "0 / 0",
+        status: "Finished",
+        score: "20 / 5",
+        winner: "team1",
         title: "GodLike Esports VS Team Soul",
         date: "18 December, 2025 6:00 PM",
-        youtube: true,
+        youtube: "https://youtu.be/rOGZLPAYOlM?si=7s3GdNwHgJCWHR5x",
         twitch: true,
         team1Logo: "/team-logo/GodLike.png",
         team2Logo: "/team-logo/soul.png",
     },
     {
+        id: 8,
+        status: "Upcoming",
+        score: "0 / 0",
+        winner: null,
+        title: "TSM-Entity VS Orange Rock",
+        date: "5 January, 2026 3:00 PM",
+        youtube: "https://youtu.be/3b_wmvEuu2A?si=0CU8nuxi7EnIrBvB",
+        twitch: true,
+        team1Logo: "/team-logo/tsm-logo.png",
+        team2Logo: "/team-logo/Orange_Rock.png",
+    },
+    {
         id: 2,
         status: "Finished",
         score: "20 / 22",
-        winner: "team2", // 👈 Add this
+        winner: "team2",
         title: "Revenant Esports VS Global Esports",
         date: "20 December, 2024 6:00 PM",
-        youtube: true,
+        youtube: "https://youtu.be/zldsV3sSVns?si=GzN_wKkMmMa_CdTr",
         twitch: true,
         team1Logo: "/team-logo/revenant.png",
         team2Logo: "/team-logo/global.png",
     },
     {
         id: 3,
-        status: "Upcoming",
-        score: "0 / 0",
+        status: "Finished",
+        score: "20 / 50",
+        winner: "team2",
         title: "Team XSpark VS Orange Rock",
         date: "25 August, 2025 9:00 PM",
-        youtube: true,
+        youtube: "https://youtu.be/3b_wmvEuu2A?si=0CU8nuxi7EnIrBvB",
         twitch: true,
         team1Logo: "/team-logo/Xspark.png",
         team2Logo: "/team-logo/Orange_Rock.png",
     },
     {
         id: 4,
-        status: "Upcoming",
-        score: "0 / 0",
+        status: "Finished",
+        score: "17 / 16",
+        winner: "team1",
         title: "Orangutan Gaming VS Entity Gaming",
         date: "18 December, 2025 7:30 PM",
-        youtube: true,
+        youtube: "https://youtu.be/0STPPpiveFU?si=w5xq5VZQqEM2xPmy",
         twitch: true,
         team1Logo: "/team-logo/Orangutan.png",
         team2Logo: "/team-logo/entity.png",
@@ -53,21 +69,34 @@ const matches = [
         id: 5,
         status: "Finished",
         score: "22 / 20",
-        winner: "team1", // 👈 Add this
+        winner: "team1",
         title: "TSM-Entity VS Gladiator",
         date: "20 December, 2024 6:00 PM",
-        youtube: true,
+        youtube: "https://youtu.be/ehJZx7nZbUI?si=1_1Hbp2xZGlTmgfW",
         twitch: true,
         team1Logo: "/team-logo/tsm-logo.png",
         team2Logo: "/team-logo/gladiator.png",
     },
     {
-        id: 6,
+        id: 7,
         status: "Upcoming",
         score: "0 / 0",
+        winner: null,
+        title: "GodLike Esports VS  Global Esports",
+        date: "30 December, 2025 5:00 PM",
+        youtube: "true",
+        twitch: true,
+        team1Logo: "/team-logo/GodLike.png",
+        team2Logo: "/team-logo/global.png",
+    },
+    {
+        id: 6,
+        status: "Finished",
+        score: "24 / 23",
+        winner: "team1",
         title: "Blind Esports VS 8Bit",
         date: "25 August, 2025 10:30 PM",
-        youtube: true,
+        youtube: "https://youtu.be/P_tcVoOg3n4?si=ndio4qbQvQFRhG2M",
         twitch: true,
         team1Logo: "/team-logo/blind.png",
         team2Logo: "/team-logo/8-bit.png",
@@ -169,7 +198,9 @@ export default function TournamentSection() {
                                 <h3 className="font-semibold text-lg mb-1">{match.title}</h3>
                                 <p className="text-sm text-green-400">{match.date}</p>
                                 <div className="flex gap-3 mt-2 text-red-500 text-lg">
-                                    {match.youtube && <FaYoutube />}
+                                    <Link href={match.youtube}>
+                                        {match.youtube && <FaYoutube />}
+                                    </Link>
                                     {match.twitch && <FaTwitch className="text-purple-500" />}
                                 </div>
                             </div>

@@ -34,8 +34,8 @@ export default function Navigation() {
     };
 
     return (
-        <header className="flex justify-between h-14 items-center py-8 absolute top-0 z-50 w-full">
-            <div className="mx-10">
+        <header className="flex justify-between h-14 items-center py-8 absolute top-0 z-50 w-full top-0 backdrop-blur-lg fixed">
+            <div className="mx-10 z-100 relative">
                 <Image src="/logo.png" alt="logo" width={180} height={100} />
             </div>
 
