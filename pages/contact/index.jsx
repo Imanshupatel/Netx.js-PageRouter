@@ -1,3 +1,4 @@
+import Footer from "@/component/footer";
 import { useState } from "react";
 
 const Contact = () => {
@@ -9,18 +10,32 @@ const Contact = () => {
         setError("");
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Simple validation
         if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
             setError("Please fill in all fields.");
             return;
         }
-        // You can add more validation here (e.g., email format)
         setError("");
-        // Submit logic here
-        alert("Message Send Successfully!");
-        setForm({ name: "", email: "", message: "" });
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                alert(data.message);
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                alert("Error: " + data.message);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Something went wrong. Please try again.");
+        }
     };
 
     return (
@@ -84,10 +99,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            {/* Footer */}
-            <footer className="w-full text-center py-6 mt-0 text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} BattleGround Mobile. All rights reserved.
-            </footer>
+            <Footer />
         </>
     );
 };

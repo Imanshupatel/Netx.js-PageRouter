@@ -4,15 +4,15 @@ import { PiPaperPlaneRightFill } from 'react-icons/pi';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#0f0f0f] text-white py-16 px-4">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <footer className="bg-[#0f0f0f] text-white py-16 px-20">
+            <div className="max-w-screen justify-between mx-auto flex flex-row">
 
                 {/* Column 1: Brand */}
                 <div>
                     <div className="text-3xl font-bold text-green-500 mb-2">
                         <Image src="/logo.png" alt="logo" width={180} height={100} />
                     </div>
-                    <p className="text-gray-400 text-sm mb-4">
+                    <p className="text-gray-400 text-sm mb-4 w-[250px]">
                         Beyond esports tournaments, include a broader calendar of gaming events, conferences, and conventions.
                     </p>
                     <p className="text-sm mb-2 text-white">Follow <span className="text-green-400">With Us:</span></p>

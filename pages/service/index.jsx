@@ -1,4 +1,5 @@
 'use client';
+import Footer from "@/component/footer";
 import Image from "next/image";
 
 // Remove export const metadata (not supported in client components)
@@ -142,9 +143,7 @@ const Service = () => {
         </div>
       </section>
       {/* Footer */}
-      <footer className="w-full text-center py-6 mt-0 text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} BattleGround Mobile. All rights reserved.
-      </footer>
+      <Footer />
     </>
   );
 };

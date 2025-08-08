@@ -81,7 +81,17 @@ export default function AdminPage() {
                     <h2 className="text-2xl mb-3">APK Download Stats</h2>
                     <p>Total Downloads: <strong>500M</strong> (mock data)</p>
                 </section>
+
+                <button
+                    onClick={() => {
+                        router.back();
+                    }}
+                    className="mt-6 bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition-colors"
+                >
+                    Back to Home
+                </button>
             </div>
+
         </>
     );
 }

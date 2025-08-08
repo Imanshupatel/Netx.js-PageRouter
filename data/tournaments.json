@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Imanshu",
+    "email": "imanshupatel@gmail.com",
+    "phone": "7524139832",
+    "game": "bgmi",
+    "team": "MADX",
+    "registeredAt": "8/8/2025, 1:37:51 pm"
+  },
+  {
+    "id": 2,
+    "name": "Jenish",
+    "email": "jenish21@gmail.com",
+    "phone": "6512458236",
+    "game": "pubg pc",
+    "team": "Kong",
+    "registeredAt": "8/8/2025, 1:38:26 pm"
+  },
+  {
+    "id": 3,
+    "name": "Tejas",
+    "email": "tejasginoya@gamil.com",
+    "phone": "9635234865",
+    "game": "PUBG Mobile",
+    "team": "Global",
+    "registeredAt": "8/8/2025, 1:38:51 pm"
+  },
+  {
+    "id": 4,
+    "name": "Imanshu",
+    "email": "imanshupatel@gmail.com",
+    "phone": "7524139832",
+    "game": "pubg mobile",
+    "team": "MADX",
+    "registeredAt": "8/8/2025, 3:14:44 pm"
+  },
+  {
+    "id": 5,
+    "name": "Jenish",
+    "email": "jenish21@gmail.com",
+    "phone": "6512458236",
+    "game": "bgmi",
+    "team": "Kong",
+    "registeredAt": "8/8/2025, 3:18:59 pm"
+  },
+  {
+    "id": 6,
+    "name": "Karan",
+    "email": "karanrana@gmail.com",
+    "phone": "5598463156",
+    "game": "pubg pc",
+    "team": "anime",
+    "registeredAt": "8/8/2025, 3:21:30 pm"
+  },
+  {
+    "id": 7,
+    "name": "Karan",
+    "email": "karanrana@gmail.com",
+    "phone": "5598463156",
+    "game": "bgmi",
+    "team": "anime",
+    "registeredAt": "8/8/2025, 3:22:17 pm"
+  },
+  {
+    "id": 8,
+    "name": "Jonathan",
+    "email": "jonathan25@gmail.com",
+    "phone": "4657931852",
+    "game": "bgmi",
+    "team": "GodLike",
+    "registeredAt": "8/8/2025, 3:25:02 pm"
+  },
+  {
+    "id": 9,
+    "name": "Tanmay",
+    "email": "tanmay001@gmail.com",
+    "phone": "2200013626",
+    "game": "bgmi",
+    "team": "Scout",
+    "registeredAt": "8/8/2025, 3:26:06 pm"
+  },
+  {
+    "id": 10,
+    "name": "Mayur",
+    "email": "mayur56@gmail.com",
+    "phone": "8986523742",
+    "game": "bgmi",
+    "team": "MayurGaming",
+    "registeredAt": "8/8/2025, 3:28:42 pm"
+  }
+]

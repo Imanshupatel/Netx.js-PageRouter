@@ -32,7 +32,7 @@ const matches = [
         status: "Upcoming",
         score: "0 / 0",
         title: "Team XSpark VS Orange Rock",
-        date: "25 August, 2025 6:00 PM",
+        date: "25 August, 2025 9:00 PM",
         youtube: true,
         twitch: true,
         team1Logo: "/team-logo/Xspark.png",
@@ -43,7 +43,7 @@ const matches = [
         status: "Upcoming",
         score: "0 / 0",
         title: "Orangutan Gaming VS Entity Gaming",
-        date: "18 December, 2025 6:00 PM",
+        date: "18 December, 2025 7:30 PM",
         youtube: true,
         twitch: true,
         team1Logo: "/team-logo/Orangutan.png",
@@ -66,7 +66,7 @@ const matches = [
         status: "Upcoming",
         score: "0 / 0",
         title: "Blind Esports VS 8Bit",
-        date: "25 August, 2025 6:00 PM",
+        date: "25 August, 2025 10:30 PM",
         youtube: true,
         twitch: true,
         team1Logo: "/team-logo/blind.png",
@@ -180,3 +180,5 @@ export default function TournamentSection() {
         </section>
     );
 }
+
+

@@ -5,56 +5,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const games = [
-    {
-        title: "Andy",
-        image: "/character/andy.jpeg",
-        fee: "1200 UC",
-    },
-    {
-        title: "Sophia",
-        image: "/character/sophia.jpeg",
-        fee: "900 UC",
-    },
-    {
-        title: "Victor",
-        image: "/character/victor.jpg",
-        fee: "Free",
-    },
-    {
-        title: "Emilia",
-        image: "/character/emilia.jpg",
-        fee: "600 UC",
-    },
-    {
-        title: "Sara",
-        image: "/character/sara.jpeg",
-        fee: "600 UC",
-    },
-    {
-        title: "Carlo",
-        image: "/character/carlo.jpeg",
-        fee: "1200 UC",
-    },
-    {
-        title: "Anna",
-        image: "/character/anna.jpeg",
-        fee: "600 UC",
-    },
-    {
-        title: "Laith",
-        image: "/character/laith.jpeg",
-        fee: "900 UC",
-    },
-    {
-        title: "Lorenzo",
-        image: "/character/lorenzo.jpeg",
-        fee: "600 UC",
-    },
-    {
-        title: "Raily",
-        image: "/character/raily.jpeg",
-        fee: "600 UC",
-    },
+    { title: "Andy", image: "/character/andy.jpeg", fee: "1200 UC" },
+    { title: "Sophia", image: "/character/sophia.jpeg", fee: "900 UC" },
+    { title: "Victor", image: "/character/victor.jpg", fee: "Free" },
+    { title: "Emilia", image: "/character/emilia.jpg", fee: "600 UC" },
+    { title: "Sara", image: "/character/sara.jpeg", fee: "600 UC" },
+    { title: "Carlo", image: "/character/carlo.jpeg", fee: "1200 UC" },
+    { title: "Anna", image: "/character/anna.jpeg", fee: "600 UC" },
+    { title: "Laith", image: "/character/laith.jpeg", fee: "900 UC" },
+    { title: "Lorenzo", image: "/character/lorenzo.jpeg", fee: "600 UC" },
+    { title: "Raily", image: "/character/raily.jpeg", fee: "600 UC" },
 ];
 
 export default function Character() {
@@ -70,24 +30,19 @@ export default function Character() {
             <Swiper
                 slidesPerView={1}
                 spaceBetween={20}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 5000, // 5 seconds
-                    disableOnInteraction: false,
-                }}
-                modules={[Pagination, Autoplay]} // 👈 Add Autoplay here
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                modules={[Pagination, Autoplay]}
                 breakpoints={{
                     640: { slidesPerView: 2 },
                     1024: { slidesPerView: 4 },
                 }}
-                className="w-full max-w-6xl mx-auto custom-swiper-pagination" // 👈 Add custom class
+                className="w-full max-w-6xl mx-auto custom-swiper-pagination"
             >
-
                 {games.map((game, index) => (
                     <SwiperSlide className="min-h-[350px]" key={index}>
                         <div className="bg-[#151515] rounded-xl p-3 border border-[#333] hover:shadow-lg transition-all duration-300 w-full max-w-[240px] mx-auto">
+                            {/* Image */}
                             <div className="relative w-full h-50 mb-4 rounded-lg overflow-hidden">
                                 <Image
                                     src={game.image}
@@ -96,10 +51,28 @@ export default function Character() {
                                     objectFit="cover"
                                 />
                             </div>
+
+                            {/* Title */}
                             <h3 className="text-lg font-semibold mb-1">{game.title}</h3>
-                            <p className="text-sm text-gray-400">
+
+                            {/* Price */}
+                            <p className="text-sm text-gray-400 flex items-center justify-center gap-1">
                                 Price:{" "}
-                                <span className="text-green-500">{game.fee}</span>
+                                {game.fee.toLowerCase() === "free" ? (
+                                    <span className="text-green-500">{game.fee}</span>
+                                ) : (
+                                    <>
+                                        <span className="text-green-500">
+                                            {game.fee.replace(" UC", "")}
+                                        </span>
+                                        <Image
+                                            src="/uc.png"
+                                            alt="UC"
+                                            width={18}
+                                            height={18}
+                                        />
+                                    </>
+                                )}
                             </p>
                         </div>
                     </SwiperSlide>
