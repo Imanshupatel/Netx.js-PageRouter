@@ -9,6 +9,7 @@ import EsportsJoinSection from "@/component/Esports";
 import Footer from "@/component/footer";
 import BlogSection from "@/component/blog";
 import Link from "next/link";
+import TeamLogos from "@/component/teamlogo";
 
 export default function Home() {
 
@@ -134,6 +135,7 @@ export default function Home() {
             <ProPlayersSection />
             <EsportsJoinSection />
             <BlogSection />
+            <TeamLogos />
             <Footer />
         </>
     );
