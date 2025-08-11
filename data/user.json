@@ -10,14 +10,14 @@
     "id": 2,
     "name": "Jenish",
     "email": "jenish21@gmail.com",
-    "password": "78945623",
+    "password": "123456",
     "role": "admin"
   },
   {
     "id": 3,
     "name": "Zeel",
     "email": "zeelpipaliya@gmail.com",
-    "password": "Zeel@3265",
+    "password": "123456",
     "role": "user"
   },
   {
