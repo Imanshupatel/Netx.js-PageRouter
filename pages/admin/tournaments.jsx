@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import registrationsData from "../../data/tournaments.json";
 import { useRouter } from "next/router";
+import { AuthContext } from "@/context/AuthContext";
 
 export default function AdminTournamentsPage() {
+    const { user } = useContext(AuthContext);
     const [gameType, setGameType] = useState("bgmi"); // default game type
     const [registrations, setRegistrations] = useState(
         registrationsData.map((item) => ({
@@ -47,6 +49,10 @@ export default function AdminTournamentsPage() {
     );
 
     const router = useRouter();
+
+    if (!user || user.role !== "admin") {
+        return <p className="p-10 min-w-[93vw] text-center pt-100 text-3xl text-red-500">Access Denied. Admins only.</p>;
+    }
 
     return (
         <>

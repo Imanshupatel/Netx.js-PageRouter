@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { AuthContext } from "@/context/AuthContext";
 
 export default function AdminContacts() {
+    const { user } = useContext(AuthContext);
     const [contacts, setContacts] = useState([]);
 
     const router = useRouter();
@@ -11,6 +13,10 @@ export default function AdminContacts() {
             .then((res) => res.json())
             .then((data) => setContacts(data));
     }, []);
+
+    if (!user || user.role !== "admin") {
+        return <p className="p-10 min-w-[93vw] text-center pt-100 text-3xl text-red-500">Access Denied. Admins only.</p>;
+    }
 
     return (
         <div style={{ padding: "20px", paddingTop: "100px" }}>
