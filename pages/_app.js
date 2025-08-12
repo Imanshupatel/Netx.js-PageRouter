@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Fake delay (2 sec) — replace with real data load
+    },); // Fake delay (2 sec) — replace with real data load
     return () => clearTimeout(timer);
   }, []);
   if (loading) {

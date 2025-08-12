@@ -48,6 +48,12 @@ export default function Profile() {
                     >
                         Logout
                     </button>
+                    <button
+                        className="bg-blue-600 text-white rounded-md py-2 px-4 hover:bg-blue-700 transition"
+                        onClick={() => router.back()}
+                    >
+                        Go to Back
+                    </button>
                 </div>
             </div>
         </div>

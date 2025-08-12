@@ -180,7 +180,7 @@ export default function TournamentSection() {
                             </div>
 
                             {/* Divider */}
-                            <div className="w-full border-t border-white/10 my-4 sm:hidden"></div>
+                            <div className="w-[2px] bg-green-400 h-full ml-[10px]"></div>
 
                             {/* Match Info */}
                             <div className="flex-1 min-w-[250px] sm:ml-10">

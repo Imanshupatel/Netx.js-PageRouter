@@ -10,6 +10,7 @@ import Footer from "@/component/footer";
 import BlogSection from "@/component/blog";
 import Link from "next/link";
 import TeamLogos from "@/component/teamlogo";
+import Facilities from "@/component/facilities";
 
 export default function Home() {
 
@@ -201,6 +202,7 @@ export default function Home() {
                 </div>
             </section>
             <Character />
+            <Facilities />
             <TournamentSection />
             <CharacterCarousel />
             <ProPlayersSection />
