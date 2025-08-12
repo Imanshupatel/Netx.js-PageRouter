@@ -47,5 +47,47 @@
     "email": "dhruv45@gmail.com",
     "password": "123456",
     "role": "user"
+  },
+  {
+    "id": 8,
+    "name": "Ajay",
+    "email": "ajay03@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 9,
+    "name": "Sagar",
+    "email": "sagar22@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 10,
+    "name": "Govind",
+    "email": "govind03@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 11,
+    "name": "Jonathan",
+    "email": "jonathan@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 12,
+    "name": "Tanmay",
+    "email": "tanmay56@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 13,
+    "name": "Mayur",
+    "email": "mayur67@gmail.com",
+    "password": "123456",
+    "role": "user"
   }
 ]

@@ -29,7 +29,11 @@ const AnimatedAuth = () => {
 
             if (matchedUser) {
                 login(matchedUser); // Pass user data to context
-                router.push("/");
+                if (matchedUser.role === "admin") {
+                    router.push("/admin");
+                } else {
+                    router.push("/");
+                }
             } else {
                 setError("Invalid email or password.");
             }

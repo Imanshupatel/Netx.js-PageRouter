@@ -30,7 +30,7 @@ export default function AdminContacts() {
                             <th className="border-2">Name</th>
                             <th className="border-2">Email</th>
                             <th className="border-2">Message</th>
-                            <th className="border-2">Date</th>
+                            <th className="border-2">Date & Time</th>
                         </tr>
                     </thead>
                     <tbody>

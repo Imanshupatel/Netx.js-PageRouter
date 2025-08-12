@@ -97,5 +97,32 @@
     "game": "bgmi",
     "team": "Empire",
     "registeredAt": "12/8/2025, 11:32:42 am"
+  },
+  {
+    "id": 12,
+    "name": "Ajay",
+    "email": "ajay03@gmail.com",
+    "phone": "4657931852",
+    "game": "pubg pc",
+    "team": "Aj",
+    "registeredAt": "12/8/2025, 11:56:14 am"
+  },
+  {
+    "id": 13,
+    "name": "Sagar",
+    "email": "sagar22@gmail.com",
+    "phone": "5896314752",
+    "game": "pubg pc",
+    "team": "Noob",
+    "registeredAt": "12/8/2025, 12:54:46 pm"
+  },
+  {
+    "id": 14,
+    "name": "Govind",
+    "email": "govind03@gmail.com",
+    "phone": "1478965235",
+    "game": "pubg pc",
+    "team": "pro",
+    "registeredAt": "12/8/2025, 12:56:03 pm"
   }
 ]
