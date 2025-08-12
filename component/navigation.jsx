@@ -64,7 +64,7 @@ export default function Navigation() {
                             {/* Extra links only for normal users */}
                             {user?.role === "user" && (
                                 <>
-                                    <li><Link href="/my-tournaments">My Tournaments</Link></li>
+                                    <li><Link href="/my-tournaments">Tournaments</Link></li>
                                 </>
                             )}
 

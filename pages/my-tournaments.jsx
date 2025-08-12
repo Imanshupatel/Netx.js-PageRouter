@@ -1,5 +1,6 @@
 import { useContext, useMemo } from "react";
 import { AuthContext } from "@/context/AuthContext";
+import Link from "next/link";
 
 const tournaments = [
     {
@@ -56,7 +57,16 @@ export default function MyTournaments() {
         <div className="min-h-screen bg-gray-900 p-8">
             <h1 className="text-3xl font-bold text-white mt-15 text-center mb-6">🎮 My Tournaments</h1>
             {myTournaments.length === 0 ? (
-                <p className="text-gray-400">You have not registered for any tournaments yet.</p>
+                <>
+                    <p className="text-gray-400">You have not registered for any tournaments yet.</p>
+                    <p className="text-gray-400 mb-5">If you are interested you can Register now.</p>
+                    <Link
+                        href={"/tournament/register"}
+                        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:!text-white hover:bg-blue-700 transition"
+                    >
+                        Register Now
+                    </Link>
+                </>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {myTournaments.map((tournament) => (

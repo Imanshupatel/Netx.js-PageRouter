@@ -31,13 +31,20 @@
     "id": 5,
     "name": "Tejas",
     "email": "tejasginoya@gamil.com",
-    "password": "Tej@s5623",
+    "password": "123456",
     "role": "user"
   },
   {
     "id": 6,
     "name": "Karan",
     "email": "karanrana@gmail.com",
+    "password": "123456",
+    "role": "user"
+  },
+  {
+    "id": 7,
+    "name": "Dhruv",
+    "email": "dhruv45@gmail.com",
     "password": "123456",
     "role": "user"
   }
