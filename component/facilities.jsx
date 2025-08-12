@@ -29,11 +29,11 @@ export default function Facilities() {
                 </div>
                 {/* Top middle edge */}
                 <div className="corner-part top-0 left-[19px]"></div>
-                <div className="corner-part top-46 left-[419px]"></div>
-                <div className="corner-part top-50 left-[34px] rotate-90"></div>
+                <div className="corner-part top-45.5 left-[419px]"></div>
+                <div className="corner-part top-51 left-[34px] rotate-90"></div>
                 <div className="corner-part top-96 left-[-364px] rotate-90"></div>
                 <div className="corner-part top-21 left-[-35px] rotate-270"></div>
-                <div className="corner-part bottom-111 left-[-419px] rotate-180"></div>
+                <div className="corner-part bottom-109 left-[-419px] rotate-180"></div>
 
                 {/* Top Right Card */}
                 <div className="absolute top-0 right-0 bg-[#0d0d0d] pb-7 pl-7 text-white w-100 rounded-bl-[50px] shadow-lg ">
