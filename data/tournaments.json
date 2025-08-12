@@ -6,7 +6,8 @@
     "phone": "7524139832",
     "game": "bgmi",
     "team": "MADX",
-    "registeredAt": "8/8/2025, 1:37:51 pm"
+    "registeredAt": "8/8/2025, 1:37:51 pm",
+    "status": "Approved"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "phone": "6512458236",
     "game": "pubg pc",
     "team": "Kong",
-    "registeredAt": "8/8/2025, 1:38:26 pm"
+    "registeredAt": "8/8/2025, 1:38:26 pm",
+    "status": "Approved"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "phone": "7524139832",
     "game": "pubg mobile",
     "team": "MADX",
-    "registeredAt": "8/8/2025, 3:14:44 pm"
+    "registeredAt": "8/8/2025, 3:14:44 pm",
+    "status": "Approved"
   },
   {
     "id": 5,
@@ -42,7 +45,8 @@
     "phone": "6512458236",
     "game": "bgmi",
     "team": "Kong",
-    "registeredAt": "8/8/2025, 3:18:59 pm"
+    "registeredAt": "8/8/2025, 3:18:59 pm",
+    "status": "Approved"
   },
   {
     "id": 6,
@@ -69,7 +73,8 @@
     "phone": "4657931852",
     "game": "bgmi",
     "team": "GodLike",
-    "registeredAt": "8/8/2025, 3:25:02 pm"
+    "registeredAt": "8/8/2025, 3:25:02 pm",
+    "status": "Approved"
   },
   {
     "id": 9,
@@ -78,7 +83,8 @@
     "phone": "2200013626",
     "game": "bgmi",
     "team": "Scout",
-    "registeredAt": "8/8/2025, 3:26:06 pm"
+    "registeredAt": "8/8/2025, 3:26:06 pm",
+    "status": "Approved"
   },
   {
     "id": 10,
@@ -96,7 +102,8 @@
     "phone": "6512458236",
     "game": "bgmi",
     "team": "Empire",
-    "registeredAt": "12/8/2025, 11:32:42 am"
+    "registeredAt": "12/8/2025, 11:32:42 am",
+    "status": "Approved"
   },
   {
     "id": 12,
@@ -105,7 +112,8 @@
     "phone": "4657931852",
     "game": "pubg pc",
     "team": "Aj",
-    "registeredAt": "12/8/2025, 11:56:14 am"
+    "registeredAt": "12/8/2025, 11:56:14 am",
+    "status": "Approved"
   },
   {
     "id": 13,
@@ -114,7 +122,8 @@
     "phone": "5896314752",
     "game": "pubg pc",
     "team": "Noob",
-    "registeredAt": "12/8/2025, 12:54:46 pm"
+    "registeredAt": "12/8/2025, 12:54:46 pm",
+    "status": "Rejected"
   },
   {
     "id": 14,
@@ -123,6 +132,27 @@
     "phone": "1478965235",
     "game": "pubg pc",
     "team": "pro",
-    "registeredAt": "12/8/2025, 12:56:03 pm"
+    "registeredAt": "12/8/2025, 12:56:03 pm",
+    "status": "Pending"
+  },
+  {
+    "id": 15,
+    "name": "Dhruv",
+    "email": "dhruv45@gmail.com",
+    "phone": "6512458236",
+    "game": "pubg mobile",
+    "team": "Empire",
+    "registeredAt": "12/8/2025, 1:33:28 pm",
+    "status": "Approved"
+  },
+  {
+    "id": 16,
+    "name": "Zeel",
+    "email": "zeelpipaliya@gmail.com",
+    "phone": "2468597315",
+    "game": "pubg mobile",
+    "team": "Danger",
+    "registeredAt": "12/8/2025, 1:58:20 pm",
+    "status": "Rejected"
   }
 ]

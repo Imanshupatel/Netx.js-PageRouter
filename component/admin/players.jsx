@@ -1,43 +1,23 @@
-import { useContext, useState, useMemo } from "react";
+import { useContext, useState } from "react";
 import Head from "next/head";
 import players from "../../data/tournaments.json";
 import { AuthContext } from "../../context/AuthContext";
 import { useRouter } from "next/router";
-import { FaGamepad, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaGamepad, FaUsers, FaEnvelope, FaPhone } from "react-icons/fa";
 
-export default function AdminPlayers() {
+export default function Players() {
     const { user } = useContext(AuthContext);
     const router = useRouter();
+
+    // Dropdown state
     const [selectedGame, setSelectedGame] = useState("All");
 
-    // Group players by email (more reliable than name)
-    const groupedPlayers = useMemo(() => {
-        const map = new Map();
-
-        players.forEach((p) => {
-            const key = p.email.toLowerCase();
-            if (!map.has(key)) {
-                map.set(key, { ...p, games: [p.game] });
-            } else {
-                const existing = map.get(key);
-                if (!existing.games.includes(p.game)) {
-                    existing.games.push(p.game);
-                }
-                map.set(key, existing);
-            }
-        });
-
-        return Array.from(map.values());
-    }, []);
-
-    // Filter after grouping
+    // Filter players based on selected game
     const filteredPlayers =
         selectedGame === "All"
-            ? groupedPlayers
-            : groupedPlayers.filter((p) =>
-                p.games.some(
-                    (g) => g.toLowerCase() === selectedGame.toLowerCase()
-                )
+            ? players
+            : players.filter(
+                (p) => p.game.toLowerCase() === selectedGame.toLowerCase()
             );
 
     if (!user || user.role !== "admin") {
@@ -51,20 +31,20 @@ export default function AdminPlayers() {
     return (
         <>
             <Head>
-                <title>Players Dashboard</title>
+                <title></title>
             </Head>
 
             <div className="min-h-screen bg-[#0e0e0e] text-white p-6">
-                {/* Header */}
+                {/* Page Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 border-b border-gray-800 pb-4 gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold text-indigo-400">🎮 Players Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-indigo-400">🎮 Teams Dashboard</h1>
                         <span className="text-sm text-gray-400">
-                            Total Players: {filteredPlayers.length}
+                            Total Teams: {filteredPlayers.length}
                         </span>
                     </div>
 
-                    {/* Dropdown */}
+                    {/* Game Filter Dropdown */}
                     <select
                         value={selectedGame}
                         onChange={(e) => setSelectedGame(e.target.value)}
@@ -77,12 +57,12 @@ export default function AdminPlayers() {
                     </select>
                 </div>
 
-                {/* Players Grid */}
+                {/* Player Cards Grid */}
                 {filteredPlayers.length > 0 ? (
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredPlayers.map((p) => (
                             <div
-                                key={p.email}
+                                key={p.id}
                                 className="bg-[#1a1a1a] rounded-xl shadow-lg p-5 hover:scale-[1.02] transition-all border border-gray-800 hover:border-indigo-500"
                             >
                                 <div className="flex items-center justify-between mb-4">
@@ -97,19 +77,12 @@ export default function AdminPlayers() {
                                     <p className="flex items-center gap-2">
                                         <FaPhone className="text-green-400" /> {p.phone}
                                     </p>
-                                    <p className="flex items-start gap-2">
-                                        <FaGamepad className="text-yellow-400 mt-1" />
-                                        <span>
-                                            Games:{" "}
-                                            {p.games.map((g, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="inline-block bg-gray-800 px-2 py-1 rounded-md text-xs ml-1"
-                                                >
-                                                    {g}
-                                                </span>
-                                            ))}
-                                        </span>
+                                    <p className="flex items-center gap-2">
+                                        <FaGamepad className="text-yellow-400" /> Game:{" "}
+                                        <span className="capitalize">{p.game}</span>
+                                    </p>
+                                    <p className="flex items-center gap-2">
+                                        <FaUsers className="text-pink-400" /> Team: {p.team}
                                     </p>
                                 </div>
 
@@ -123,11 +96,10 @@ export default function AdminPlayers() {
                     </div>
                 ) : (
                     <p className="text-gray-500 text-center mt-20 text-lg">
-                        No players found for this game.
+                        No teams found for this game.
                     </p>
                 )}
             </div>
         </>
     );
 }
-

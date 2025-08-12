@@ -60,7 +60,7 @@ export default function AdminDashBoard() {
                 {stats.map((stat, index) => (
                     <div
                         key={index}
-                        className="flex items-center p-5 bg-[#1c1c1f] rounded-2xl shadow-lg border border-gray-800 hover:border-purple-500 transition"
+                        className="flex items-center p-5 bg-[#1c1c1f] rounded-2xl shadow-lg border border-gray-800 hover:border-white transition"
                     >
                         <div className={`p-3 rounded-xl ${stat.color} bg-opacity-20`}>
                             <stat.icon className="w-6 h-6 text-white" />
@@ -106,7 +106,7 @@ export default function AdminDashBoard() {
                     {trendingGames.map((game) => (
                         <div
                             key={game.id}
-                            className="bg-[#1c1c1f] rounded-xl border border-gray-700 overflow-hidden hover:border-purple-500 transition"
+                            className="bg-[#1c1c1f] rounded-xl border border-gray-700 overflow-hidden hover:border-white transition"
                         >
                             <img
                                 src={game.image}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
     ChartBar,
     Users,
@@ -13,6 +13,7 @@ import {
 import AdminDashBoard from "@/component/admin/dashBoard";
 import AdminPlayers from "@/component/admin/players";
 import AdminTournamentsPage from "@/component/admin/tournaments";
+import { AuthContext } from "@/context/AuthContext";
 
 const tabComponents = {
     Dashboard: <AdminDashBoard />,
@@ -23,6 +24,8 @@ const tabComponents = {
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
 
+    const { user } = useContext(AuthContext);
+
     const menuItems = [
         { name: "Dashboard", icon: ChartBar },
         { name: "Games", icon: Gamepad2 },
@@ -30,6 +33,10 @@ export default function AdminDashboard() {
         { name: "Tournaments", icon: Trophy },
         { name: "Settings", icon: Settings },
     ];
+
+    if (!user || user.role !== "admin") {
+        return <p className="p-10 min-w-[93vw] text-center pt-100 text-3xl text-red-500">Access Denied. Admins only.</p>;
+    }
 
     return (
         <div className="flex min-h-screen bg-[#0e0e10] text-white">
