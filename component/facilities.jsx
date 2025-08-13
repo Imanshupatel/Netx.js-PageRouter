@@ -28,7 +28,7 @@ export default function Facilities() {
                     />
                 </div>
                 {/* Top middle edge */}
-                <div className="corner-part top-0 left-[19px]"></div>
+                <div className="corner-part top-[-1px] left-[19px]"></div>
                 <div className="corner-part top-45.5 left-[419px]"></div>
                 <div className="corner-part top-51 left-[35px] rotate-90"></div>
                 <div className="corner-part top-96 left-[-364px] rotate-90"></div>

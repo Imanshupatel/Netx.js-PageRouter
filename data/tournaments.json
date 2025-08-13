@@ -64,7 +64,8 @@
     "phone": "5598463156",
     "game": "bgmi",
     "team": "anime",
-    "registeredAt": "8/8/2025, 3:22:17 pm"
+    "registeredAt": "8/8/2025, 3:22:17 pm",
+    "status": "Approved"
   },
   {
     "id": 8,
@@ -84,7 +85,7 @@
     "game": "bgmi",
     "team": "Scout",
     "registeredAt": "8/8/2025, 3:26:06 pm",
-    "status": "Approved"
+    "status": "Pending"
   },
   {
     "id": 10,
@@ -93,7 +94,8 @@
     "phone": "8986523742",
     "game": "bgmi",
     "team": "MayurGaming",
-    "registeredAt": "8/8/2025, 3:28:42 pm"
+    "registeredAt": "8/8/2025, 3:28:42 pm",
+    "status": "Approved"
   },
   {
     "id": 11,

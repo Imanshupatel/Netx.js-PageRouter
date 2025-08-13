@@ -72,7 +72,21 @@ export default function MyTournaments() {
                             key={tournament.id}
                             className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700"
                         >
-                            <h2 className="text-xl font-semibold text-orange-400">{tournament.game.toUpperCase()}</h2>
+                            <div className="flex justify-between items-center mb-2">
+                                <h2 className="text-xl font-semibold text-orange-400">
+                                    {tournament.game.toUpperCase()}
+                                </h2>
+                                <span
+                                    className={`px-3 py-1 rounded-full text-xs font-bold ${tournament.status === "Approved"
+                                        ? "bg-green-600"
+                                        : tournament.status === "Rejected"
+                                            ? "bg-red-600"
+                                            : "bg-yellow-500 text-black"
+                                        }`}
+                                >
+                                    {tournament.status || "Pending"}
+                                </span>
+                            </div>
                             <p className="text-gray-300 mt-1">
                                 Team: <span className="font-medium">{tournament.team}</span>
                             </p>

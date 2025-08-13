@@ -12,13 +12,13 @@ import {
 } from "lucide-react";
 import AdminDashBoard from "@/component/admin/dashBoard";
 import AdminPlayers from "@/component/admin/players";
-import AdminTournamentsPage from "@/component/admin/tournaments";
 import { AuthContext } from "@/context/AuthContext";
+import AdminTeams from "@/component/admin/team";
 
 const tabComponents = {
     Dashboard: <AdminDashBoard />,
     Players: <AdminPlayers />,
-    Tournaments: <AdminTournamentsPage />,
+    Team: <AdminTeams />,
 };
 
 export default function AdminDashboard() {
@@ -31,6 +31,7 @@ export default function AdminDashboard() {
         { name: "Games", icon: Gamepad2 },
         { name: "Players", icon: Users },
         { name: "Tournaments", icon: Trophy },
+        { name: "Team", icon: Users },
         { name: "Settings", icon: Settings },
     ];
 
