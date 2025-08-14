@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
     ChartBar,
     Users,
@@ -9,22 +9,48 @@ import {
     Trophy,
     Search,
     Bell,
+    Contact,
 } from "lucide-react";
 import AdminDashBoard from "@/component/admin/dashBoard";
 import AdminPlayers from "@/component/admin/players";
 import { AuthContext } from "@/context/AuthContext";
 import AdminTeams from "@/component/admin/team";
+import AdminContacts from "@/component/admin/contactdata";
+import AdminTournament from "@/component/admin/tournaments";
 
 const tabComponents = {
     Dashboard: <AdminDashBoard />,
     Players: <AdminPlayers />,
     Team: <AdminTeams />,
+    Tournaments: <AdminTournament />,
+    Contact: <AdminContacts />,
 };
 
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
+    const [contactCount, setContactCount] = useState(0);
 
     const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        async function fetchContactCount() {
+            try {
+                const res = await fetch("/api/contact-count");
+                const data = await res.json();
+                if (data.newCount !== undefined) {
+                    setContactCount(data.newCount);
+                }
+            } catch (err) {
+                console.error("Error fetching contact count:", err);
+            }
+        }
+
+        fetchContactCount();
+
+        // Poll every 30 seconds
+        const interval = setInterval(fetchContactCount, 30000);
+        return () => clearInterval(interval);
+    }, []);
 
     const menuItems = [
         { name: "Dashboard", icon: ChartBar },
@@ -32,17 +58,22 @@ export default function AdminDashboard() {
         { name: "Players", icon: Users },
         { name: "Tournaments", icon: Trophy },
         { name: "Team", icon: Users },
+        { name: "Contact", icon: Contact },
         { name: "Settings", icon: Settings },
     ];
 
     if (!user || user.role !== "admin") {
-        return <p className="p-10 min-w-[93vw] text-center pt-100 text-3xl text-red-500">Access Denied. Admins only.</p>;
+        return (
+            <p className="p-10 min-w-[93vw] text-center pt-100 text-3xl text-red-500">
+                Access Denied. Admins only.
+            </p>
+        );
     }
 
     return (
         <div className="flex min-h-screen bg-[#0e0e10] text-white">
             {/* Sidebar */}
-            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6 space-y-6">
+            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6  pt-20">
                 <h1 className="text-2xl font-bold">GameAdmin</h1>
                 <nav className="space-y-3">
                     {menuItems.map((item) => (
@@ -76,9 +107,30 @@ export default function AdminDashboard() {
                                 <Search className="w-4 h-4 absolute right-3 top-2.5 text-gray-500" />
                             </div>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <Bell className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer" />
+                        <div className="flex items-center gap-4 relative">
+                            <Bell
+                                className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"
+                                onClick={async () => {
+                                    setActiveTab("Contact");
+
+                                    // Optional: call backend to mark notifications as read
+                                    try {
+                                        await fetch("/api/mark-contacts-read", { method: "POST" });
+                                    } catch (err) {
+                                        console.error("Error marking contacts as read:", err);
+                                    }
+
+                                    // Remove notification badge
+                                    setContactCount(0);
+                                }}
+                            />
+                            {contactCount > 0 && (
+                                <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-red-500 text-white text-xs font-bold px-1 py-0 rounded-full">
+                                    {contactCount}
+                                </span>
+                            )}
                         </div>
+
                     </div>
                 </header>
 

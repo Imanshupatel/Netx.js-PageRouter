@@ -7,20 +7,26 @@ export default function handler(req, res) {
     if (req.method === "POST") {
         let contacts = [];
         if (fs.existsSync(filePath)) {
-            const fileData = fs.readFileSync(filePath);
+            const fileData = fs.readFileSync(filePath, "utf8");
             contacts = JSON.parse(fileData);
         }
 
-        const newContact = { ...req.body, date: new Date().toISOString() };
+        // Add status: "new" by default
+        const newContact = {
+            ...req.body,
+            date: new Date().toISOString(),
+            status: "new"
+        };
+
         contacts.push(newContact);
 
         fs.writeFileSync(filePath, JSON.stringify(contacts, null, 2));
 
         res.status(200).json({ message: "Contact saved successfully!" });
+
     } else if (req.method === "GET") {
-        // Allow admin page to fetch data
         if (fs.existsSync(filePath)) {
-            const fileData = fs.readFileSync(filePath);
+            const fileData = fs.readFileSync(filePath, "utf8");
             res.status(200).json(JSON.parse(fileData));
         } else {
             res.status(200).json([]);

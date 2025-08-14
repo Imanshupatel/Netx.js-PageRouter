@@ -7,7 +7,8 @@
     "game": "bgmi",
     "team": "MADX",
     "registeredAt": "8/8/2025, 1:37:51 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/MADX.png"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "game": "pubg pc",
     "team": "Kong",
     "registeredAt": "8/8/2025, 1:38:26 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/kong.png"
   },
   {
     "id": 3,
@@ -26,7 +28,8 @@
     "phone": "9635234865",
     "game": "PUBG Mobile",
     "team": "Global",
-    "registeredAt": "8/8/2025, 1:38:51 pm"
+    "registeredAt": "8/8/2025, 1:38:51 pm",
+    "logo": "/team-logo/tejas.png"
   },
   {
     "id": 4,
@@ -36,7 +39,8 @@
     "game": "pubg mobile",
     "team": "MADX",
     "registeredAt": "8/8/2025, 3:14:44 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/MADX.png"
   },
   {
     "id": 5,
@@ -46,7 +50,8 @@
     "game": "bgmi",
     "team": "Kong",
     "registeredAt": "8/8/2025, 3:18:59 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/kong.png"
   },
   {
     "id": 6,
@@ -55,7 +60,8 @@
     "phone": "5598463156",
     "game": "pubg pc",
     "team": "anime",
-    "registeredAt": "8/8/2025, 3:21:30 pm"
+    "registeredAt": "8/8/2025, 3:21:30 pm",
+    "logo": "/team-logo/anime.png"
   },
   {
     "id": 7,
@@ -65,7 +71,8 @@
     "game": "bgmi",
     "team": "anime",
     "registeredAt": "8/8/2025, 3:22:17 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/anime.png"
   },
   {
     "id": 8,
@@ -75,7 +82,8 @@
     "game": "bgmi",
     "team": "GodLike",
     "registeredAt": "8/8/2025, 3:25:02 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/GodLike.png"
   },
   {
     "id": 9,
@@ -85,7 +93,8 @@
     "game": "bgmi",
     "team": "Scout",
     "registeredAt": "8/8/2025, 3:26:06 pm",
-    "status": "Pending"
+    "status": "Approved",
+    "logo": "/team-logo/soul.png"
   },
   {
     "id": 10,
@@ -95,7 +104,8 @@
     "game": "bgmi",
     "team": "MayurGaming",
     "registeredAt": "8/8/2025, 3:28:42 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/mayurgaming.png"
   },
   {
     "id": 11,
@@ -105,7 +115,8 @@
     "game": "bgmi",
     "team": "Empire",
     "registeredAt": "12/8/2025, 11:32:42 am",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/empire.png"
   },
   {
     "id": 12,
@@ -115,7 +126,8 @@
     "game": "pubg pc",
     "team": "Aj",
     "registeredAt": "12/8/2025, 11:56:14 am",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/aj.png"
   },
   {
     "id": 13,
@@ -125,7 +137,8 @@
     "game": "pubg pc",
     "team": "Noob",
     "registeredAt": "12/8/2025, 12:54:46 pm",
-    "status": "Rejected"
+    "status": "Rejected",
+    "logo": "/team-logo/noob.png"
   },
   {
     "id": 14,
@@ -135,7 +148,8 @@
     "game": "pubg pc",
     "team": "pro",
     "registeredAt": "12/8/2025, 12:56:03 pm",
-    "status": "Pending"
+    "status": "Pending",
+    "logo": "/team-logo/pro.png"
   },
   {
     "id": 15,
@@ -145,7 +159,8 @@
     "game": "pubg mobile",
     "team": "Empire",
     "registeredAt": "12/8/2025, 1:33:28 pm",
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/empire.png"
   },
   {
     "id": 16,
@@ -155,6 +170,28 @@
     "game": "pubg mobile",
     "team": "Danger",
     "registeredAt": "12/8/2025, 1:58:20 pm",
-    "status": "Rejected"
+    "status": "Rejected",
+    "logo": "/team-logo/danger.png"
+  },
+  {
+    "id": 17,
+    "name": "Tanmay",
+    "email": "tanmay56@gmail.com",
+    "phone": "1597532646",
+    "game": "bgmi",
+    "team": "Team Soul",
+    "registeredAt": "13/8/2025, 3:59:02 pm",
+    "logo": "/team-logo/soul.png"
+  },
+  {
+    "id": 18,
+    "name": "Jonathan",
+    "email": "jonathan@gmail.com",
+    "phone": "3578964513",
+    "game": "bgmi",
+    "team": "GodLike",
+    "registeredAt": "13/8/2025, 4:00:16 pm",
+    "status": "Approved",
+    "logo": "/team-logo/GodLike.png"
   }
 ]

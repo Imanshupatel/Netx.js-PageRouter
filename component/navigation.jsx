@@ -47,9 +47,9 @@ export default function Navigation() {
                             {/* Extra links only for admin */}
                             {user?.role === "admin" && (
                                 <>
-                                    <li><Link href="/admin/dashboard">Dashboard</Link></li>
-                                    <li><Link href="/admin/tournaments">Tournaments</Link></li>
-                                    <li><Link href="/admin/contactdata">Contact Data</Link></li>
+                                    <li><Link href="../../admin/dashBord">Dashboard</Link></li>
+                                    <li><Link href="#">Tournaments</Link></li>
+                                    <li><Link href="#">Contact Data</Link></li>
                                 </>
                             )}
 
