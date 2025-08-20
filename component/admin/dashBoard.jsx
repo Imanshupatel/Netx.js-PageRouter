@@ -49,7 +49,7 @@ export default function AdminDashBoard() {
     ];
 
     const trendingGames = [
-        { id: 1, name: "BattleZone", rating: 4.8, image: "/images/battlezone.jpg" },
+        { id: 1, name: "BattleZone", rating: 4.8, image: "/bgmi-logo.png" },
         // ...
     ];
 
@@ -111,7 +111,7 @@ export default function AdminDashBoard() {
                             <img
                                 src={game.image}
                                 alt={game.name}
-                                className="w-full h-32 object-cover"
+                                className="w-full h-32 object-contain scale-[0.9]"
                             />
                             <div className="p-4 flex justify-between items-center">
                                 <span className="font-semibold">{game.name}</span>

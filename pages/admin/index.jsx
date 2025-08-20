@@ -12,14 +12,17 @@ import {
     Contact,
 } from "lucide-react";
 import AdminDashBoard from "@/component/admin/dashBoard";
+
 import AdminPlayers from "@/component/admin/players";
 import { AuthContext } from "@/context/AuthContext";
 import AdminTeams from "@/component/admin/team";
 import AdminContacts from "@/component/admin/contactdata";
 import AdminTournament from "@/component/admin/tournaments";
+import GameSection from "@/component/admin/game";
 
 const tabComponents = {
     Dashboard: <AdminDashBoard />,
+    Games: <GameSection />,
     Players: <AdminPlayers />,
     Team: <AdminTeams />,
     Tournaments: <AdminTournament />,

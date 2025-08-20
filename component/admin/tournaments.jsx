@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function AdminTournament() {
     const [date, setDate] = useState("");
     const [savedData, setSavedData] = useState([]);
-    const [selectedDate, setSelectedDate] = useState(""); // for dropdown filter
+    const [selectedDate, setSelectedDate] = useState("");
 
     useEffect(() => {
         fetch("/api/tournament-date")
@@ -42,23 +42,22 @@ export default function AdminTournament() {
         }
     };
 
-    // Filtered tournament based on dropdown selection
     const filteredTournament = selectedDate
         ? savedData.filter(t => t.tournamentDate === selectedDate)
         : savedData;
 
     return (
-        <div className="min-h-[70vh] pt-25">
-            <div className="bg-white shadow-lg text-black rounded-xl p-6 max-w-4xl mx-auto">
+        <div className="min-h-[70vh] pt-25 bg-[#121212] text-white">
+            <div className="bg-[#1e1e1e] shadow-lg rounded-xl p-6 max-w-4xl mx-auto border border-gray-700">
                 <h1 className="text-2xl font-bold mb-4">Admin - Tournament</h1>
 
-                {/* Date input for generating new tournament */}
+                {/* Date input */}
                 <div className="flex gap-3 items-center mb-6">
                     <input
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        className="border rounded-lg p-2 w-full"
+                        className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 w-full text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <button
                         onClick={saveDate}
@@ -68,14 +67,14 @@ export default function AdminTournament() {
                     </button>
                 </div>
 
-                {/* Dropdown menu for existing tournament dates */}
+                {/* Dropdown menu */}
                 {savedData.length > 0 && (
                     <div className="mb-6">
                         <label className="mr-2 font-semibold">View Tournament by Date:</label>
                         <select
                             value={selectedDate}
                             onChange={(e) => setSelectedDate(e.target.value)}
-                            className="border rounded-lg p-2"
+                            className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
                             <option value="">All Dates</option>
                             {savedData.map((t, index) => (
@@ -90,8 +89,11 @@ export default function AdminTournament() {
                 {/* Display tournaments */}
                 {filteredTournament.length > 0 ? (
                     filteredTournament.map((tournament, index) => (
-                        <div key={index} className="mb-8 border p-4 rounded-lg">
-                            <p className="mb-4 font-semibold">
+                        <div
+                            key={index}
+                            className="mb-8 border border-gray-600 bg-[#181818] p-4 rounded-lg"
+                        >
+                            <p className="mb-4 font-semibold text-gray-200">
                                 Tournament Date: {tournament.tournamentDate}
                             </p>
 
@@ -100,13 +102,13 @@ export default function AdminTournament() {
                                 {tournament.matches.map((match, idx) => (
                                     <div
                                         key={idx}
-                                        className="flex items-center gap-4 border p-3 rounded-lg"
+                                        className="flex items-center gap-4 border border-gray-600 p-3 rounded-lg bg-[#222222]"
                                     >
                                         <div className="flex items-center gap-2">
                                             <img
                                                 src={match.team1.logo}
                                                 alt={match.team1.team}
-                                                className="w-10 h-10 rounded-full"
+                                                className="w-10 h-10 rounded-full border border-gray-500"
                                             />
                                             <span>{match.team1.team}</span>
                                         </div>
@@ -116,12 +118,12 @@ export default function AdminTournament() {
                                                 <img
                                                     src={match.team2.logo}
                                                     alt={match.team2.team}
-                                                    className="w-10 h-10 rounded-full"
+                                                    className="w-10 h-10 rounded-full border border-gray-500"
                                                 />
                                                 <span>{match.team2.team}</span>
                                             </div>
                                         ) : (
-                                            <span className="italic text-gray-500">Bye</span>
+                                            <span className="italic text-gray-400">Bye</span>
                                         )}
                                     </div>
                                 ))}
@@ -129,7 +131,7 @@ export default function AdminTournament() {
                         </div>
                     ))
                 ) : (
-                    <p>No tournaments found</p>
+                    <p className="text-gray-400">No tournaments found</p>
                 )}
             </div>
         </div>
