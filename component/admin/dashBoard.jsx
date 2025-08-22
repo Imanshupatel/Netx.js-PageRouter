@@ -111,7 +111,7 @@ export default function AdminDashBoard() {
                             <img
                                 src={game.image}
                                 alt={game.name}
-                                className="w-full h-32 object-contain scale-[0.9]"
+                                className="w-full h-32 mt-4 object-contain scale-[0.9]"
                             />
                             <div className="p-4 flex justify-between items-center">
                                 <span className="font-semibold">{game.name}</span>

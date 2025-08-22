@@ -1,32 +1,21 @@
 [
   {
-    "tournamentDate": "2025-08-14",
+    "tournamentDate": "2025-08-25",
+    "game": "bgmi",
     "matches": [
       {
         "team1": {
-          "id": 4,
-          "name": "Imanshu",
-          "email": "imanshupatel@gmail.com",
-          "phone": "7524139832",
-          "game": "pubg mobile",
-          "team": "MADX",
-          "registeredAt": "8/8/2025, 3:14:44 pm",
+          "id": 8,
+          "name": "Jonathan",
+          "email": "jonathan25@gmail.com",
+          "phone": "4657931852",
+          "game": "bgmi",
+          "team": "GodLike",
+          "registeredAt": "8/8/2025, 3:25:02 pm",
           "status": "Approved",
-          "logo": "/team-logo/MADX.png"
+          "logo": "/team-logo/GodLike.png"
         },
         "team2": {
-          "id": 3,
-          "name": "Tejas",
-          "email": "tejasginoya@gamil.com",
-          "phone": "9635234865",
-          "game": "PUBG Mobile",
-          "team": "Global",
-          "registeredAt": "8/8/2025, 1:38:51 pm",
-          "logo": "/team-logo/tejas.png"
-        }
-      },
-      {
-        "team1": {
           "id": 11,
           "name": "Dhruv",
           "email": "dhruv45@gmail.com",
@@ -36,6 +25,19 @@
           "registeredAt": "12/8/2025, 11:32:42 am",
           "status": "Approved",
           "logo": "/team-logo/empire.png"
+        }
+      },
+      {
+        "team1": {
+          "id": 7,
+          "name": "Karan",
+          "email": "karanrana@gmail.com",
+          "phone": "5598463156",
+          "game": "bgmi",
+          "team": "anime",
+          "registeredAt": "8/8/2025, 3:22:17 pm",
+          "status": "Approved",
+          "logo": "/team-logo/anime.png"
         },
         "team2": {
           "id": 5,
@@ -51,58 +53,17 @@
       },
       {
         "team1": {
-          "id": 14,
-          "name": "Govind",
-          "email": "govind03@gmail.com",
-          "phone": "1478965235",
-          "game": "pubg pc",
-          "team": "pro",
-          "registeredAt": "12/8/2025, 12:56:03 pm",
-          "status": "Pending",
-          "logo": "/team-logo/pro.png"
-        },
-        "team2": {
-          "id": 7,
-          "name": "Karan",
-          "email": "karanrana@gmail.com",
-          "phone": "5598463156",
+          "id": 9,
+          "name": "Tanmay",
+          "email": "tanmay001@gmail.com",
+          "phone": "2200013626",
           "game": "bgmi",
-          "team": "anime",
-          "registeredAt": "8/8/2025, 3:22:17 pm",
+          "team": "Scout",
+          "registeredAt": "8/8/2025, 3:26:06 pm",
           "status": "Approved",
-          "logo": "/team-logo/anime.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 6,
-          "name": "Karan",
-          "email": "karanrana@gmail.com",
-          "phone": "5598463156",
-          "game": "pubg pc",
-          "team": "anime",
-          "registeredAt": "8/8/2025, 3:21:30 pm",
-          "logo": "/team-logo/anime.png"
+          "logo": "/team-logo/soul.png"
         },
         "team2": {
-          "id": 2,
-          "name": "Jenish",
-          "email": "jenish21@gmail.com",
-          "phone": "6512458236",
-          "game": "pubg pc",
-          "team": "Kong",
-          "registeredAt": "8/8/2025, 1:38:26 pm",
-          "status": "Approved",
-          "logo": "/team-logo/kong.png"
-        }
-      }
-    ]
-  },
-  {
-    "tournamentDate": "2025-08-15",
-    "matches": [
-      {
-        "team1": {
           "id": 1,
           "name": "Imanshu",
           "email": "imanshupatel@gmail.com",
@@ -112,17 +73,6 @@
           "registeredAt": "8/8/2025, 1:37:51 pm",
           "status": "Approved",
           "logo": "/team-logo/MADX.png"
-        },
-        "team2": {
-          "id": 2,
-          "name": "Jenish",
-          "email": "jenish21@gmail.com",
-          "phone": "6512458236",
-          "game": "pubg pc",
-          "team": "Kong",
-          "registeredAt": "8/8/2025, 1:38:26 pm",
-          "status": "Approved",
-          "logo": "/team-logo/kong.png"
         }
       },
       {
@@ -138,6 +88,35 @@
           "logo": "/team-logo/mayurgaming.png"
         },
         "team2": {
+          "id": 17,
+          "name": "Tanmay",
+          "email": "tanmay56@gmail.com",
+          "phone": "1597532646",
+          "game": "bgmi",
+          "team": "Team Soul",
+          "registeredAt": "13/8/2025, 3:59:02 pm",
+          "logo": "/team-logo/soul.png"
+        }
+      }
+    ]
+  },
+  {
+    "tournamentDate": "2025-08-28",
+    "game": "pubg_mobile",
+    "matches": [
+      {
+        "team1": {
+          "id": 16,
+          "name": "Zeel",
+          "email": "zeelpipaliya@gmail.com",
+          "phone": "2468597315",
+          "game": "pubg mobile",
+          "team": "Danger",
+          "registeredAt": "12/8/2025, 1:58:20 pm",
+          "status": "Rejected",
+          "logo": "/team-logo/danger.png"
+        },
+        "team2": {
           "id": 4,
           "name": "Imanshu",
           "email": "imanshupatel@gmail.com",
@@ -151,41 +130,6 @@
       },
       {
         "team1": {
-          "id": 7,
-          "name": "Karan",
-          "email": "karanrana@gmail.com",
-          "phone": "5598463156",
-          "game": "bgmi",
-          "team": "anime",
-          "registeredAt": "8/8/2025, 3:22:17 pm",
-          "status": "Approved",
-          "logo": "/team-logo/anime.png"
-        },
-        "team2": {
-          "id": 5,
-          "name": "Jenish",
-          "email": "jenish21@gmail.com",
-          "phone": "6512458236",
-          "game": "bgmi",
-          "team": "Kong",
-          "registeredAt": "8/8/2025, 3:18:59 pm",
-          "status": "Approved",
-          "logo": "/team-logo/kong.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 14,
-          "name": "Govind",
-          "email": "govind03@gmail.com",
-          "phone": "1478965235",
-          "game": "pubg pc",
-          "team": "pro",
-          "registeredAt": "12/8/2025, 12:56:03 pm",
-          "status": "Pending",
-          "logo": "/team-logo/pro.png"
-        },
-        "team2": {
           "id": 3,
           "name": "Tejas",
           "email": "tejasginoya@gamil.com",
@@ -194,12 +138,24 @@
           "team": "Global",
           "registeredAt": "8/8/2025, 1:38:51 pm",
           "logo": "/team-logo/tejas.png"
+        },
+        "team2": {
+          "id": 15,
+          "name": "Dhruv",
+          "email": "dhruv45@gmail.com",
+          "phone": "6512458236",
+          "game": "pubg mobile",
+          "team": "Empire",
+          "registeredAt": "12/8/2025, 1:33:28 pm",
+          "status": "Approved",
+          "logo": "/team-logo/empire.png"
         }
       }
     ]
   },
   {
-    "tournamentDate": "2025-08-17",
+    "tournamentDate": "2025-08-31",
+    "game": "pubg_pc",
     "matches": [
       {
         "team1": {
@@ -214,19 +170,6 @@
           "logo": "/team-logo/noob.png"
         },
         "team2": {
-          "id": 1,
-          "name": "Imanshu",
-          "email": "imanshupatel@gmail.com",
-          "phone": "7524139832",
-          "game": "bgmi",
-          "team": "MADX",
-          "registeredAt": "8/8/2025, 1:37:51 pm",
-          "status": "Approved",
-          "logo": "/team-logo/MADX.png"
-        }
-      },
-      {
-        "team1": {
           "id": 2,
           "name": "Jenish",
           "email": "jenish21@gmail.com",
@@ -236,32 +179,10 @@
           "registeredAt": "8/8/2025, 1:38:26 pm",
           "status": "Approved",
           "logo": "/team-logo/kong.png"
-        },
-        "team2": {
-          "id": 4,
-          "name": "Imanshu",
-          "email": "imanshupatel@gmail.com",
-          "phone": "7524139832",
-          "game": "pubg mobile",
-          "team": "MADX",
-          "registeredAt": "8/8/2025, 3:14:44 pm",
-          "status": "Approved",
-          "logo": "/team-logo/MADX.png"
         }
       },
       {
         "team1": {
-          "id": 10,
-          "name": "Mayur",
-          "email": "mayur56@gmail.com",
-          "phone": "8986523742",
-          "game": "bgmi",
-          "team": "MayurGaming",
-          "registeredAt": "8/8/2025, 3:28:42 pm",
-          "status": "Approved",
-          "logo": "/team-logo/mayurgaming.png"
-        },
-        "team2": {
           "id": 14,
           "name": "Govind",
           "email": "govind03@gmail.com",
@@ -271,107 +192,17 @@
           "registeredAt": "12/8/2025, 12:56:03 pm",
           "status": "Pending",
           "logo": "/team-logo/pro.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 8,
-          "name": "Jonathan",
-          "email": "jonathan25@gmail.com",
-          "phone": "4657931852",
-          "game": "bgmi",
-          "team": "GodLike",
-          "registeredAt": "8/8/2025, 3:25:02 pm",
-          "status": "Approved",
-          "logo": "/team-logo/GodLike.png"
         },
         "team2": {
-          "id": 15,
-          "name": "Dhruv",
-          "email": "dhruv45@gmail.com",
-          "phone": "6512458236",
-          "game": "pubg mobile",
-          "team": "Empire",
-          "registeredAt": "12/8/2025, 1:33:28 pm",
-          "status": "Approved",
-          "logo": "/team-logo/empire.png"
-        }
-      }
-    ]
-  },
-  {
-    "tournamentDate": "2025-08-18",
-    "matches": [
-      {
-        "team1": {
-          "id": 15,
-          "name": "Dhruv",
-          "email": "dhruv45@gmail.com",
-          "phone": "6512458236",
-          "game": "pubg mobile",
-          "team": "Empire",
-          "registeredAt": "12/8/2025, 1:33:28 pm",
-          "status": "Approved",
-          "logo": "/team-logo/empire.png"
-        },
-        "team2": {
-          "id": 18,
-          "name": "Jonathan",
-          "email": "jonathan@gmail.com",
-          "phone": "3578964513",
-          "game": "bgmi",
-          "team": "GodLike",
-          "registeredAt": "13/8/2025, 4:00:16 pm",
-          "status": "Approved",
-          "logo": "/team-logo/GodLike.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 4,
-          "name": "Imanshu",
-          "email": "imanshupatel@gmail.com",
-          "phone": "7524139832",
-          "game": "pubg mobile",
-          "team": "MADX",
-          "registeredAt": "8/8/2025, 3:14:44 pm",
-          "status": "Approved",
-          "logo": "/team-logo/MADX.png"
-        },
-        "team2": {
-          "id": 14,
-          "name": "Govind",
-          "email": "govind03@gmail.com",
-          "phone": "1478965235",
+          "id": 19,
+          "name": "Zeel",
+          "email": "zeelpipaliya@gmail.com",
+          "phone": "2468597315",
           "game": "pubg pc",
-          "team": "pro",
-          "registeredAt": "12/8/2025, 12:56:03 pm",
+          "team": "Danger",
           "status": "Pending",
-          "logo": "/team-logo/pro.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 5,
-          "name": "Jenish",
-          "email": "jenish21@gmail.com",
-          "phone": "6512458236",
-          "game": "bgmi",
-          "team": "Kong",
-          "registeredAt": "8/8/2025, 3:18:59 pm",
-          "status": "Approved",
-          "logo": "/team-logo/kong.png"
-        },
-        "team2": {
-          "id": 7,
-          "name": "Karan",
-          "email": "karanrana@gmail.com",
-          "phone": "5598463156",
-          "game": "bgmi",
-          "team": "anime",
-          "registeredAt": "8/8/2025, 3:22:17 pm",
-          "status": "Approved",
-          "logo": "/team-logo/anime.png"
+          "registeredAt": "21/8/2025, 11:06:05 am",
+          "logo": "/team-logo/danger.png"
         }
       },
       {
@@ -384,59 +215,6 @@
           "team": "anime",
           "registeredAt": "8/8/2025, 3:21:30 pm",
           "logo": "/team-logo/anime.png"
-        },
-        "team2": {
-          "id": 13,
-          "name": "Sagar",
-          "email": "sagar22@gmail.com",
-          "phone": "5896314752",
-          "game": "pubg pc",
-          "team": "Noob",
-          "registeredAt": "12/8/2025, 12:54:46 pm",
-          "status": "Rejected",
-          "logo": "/team-logo/noob.png"
-        }
-      }
-    ]
-  },
-  {
-    "tournamentDate": "2025-08-30",
-    "matches": [
-      {
-        "team1": {
-          "id": 5,
-          "name": "Jenish",
-          "email": "jenish21@gmail.com",
-          "phone": "6512458236",
-          "game": "bgmi",
-          "team": "Kong",
-          "registeredAt": "8/8/2025, 3:18:59 pm",
-          "status": "Approved",
-          "logo": "/team-logo/kong.png"
-        },
-        "team2": {
-          "id": 18,
-          "name": "Jonathan",
-          "email": "jonathan@gmail.com",
-          "phone": "3578964513",
-          "game": "bgmi",
-          "team": "GodLike",
-          "registeredAt": "13/8/2025, 4:00:16 pm",
-          "status": "Approved",
-          "logo": "/team-logo/GodLike.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 8,
-          "name": "Jonathan",
-          "email": "jonathan25@gmail.com",
-          "phone": "4657931852",
-          "game": "bgmi",
-          "team": "GodLike",
-          "registeredAt": "8/8/2025, 3:25:02 pm",
-          "status": "Approved",
-          "logo": "/team-logo/GodLike.png"
         },
         "team2": {
           "id": 12,
@@ -448,54 +226,6 @@
           "registeredAt": "12/8/2025, 11:56:14 am",
           "status": "Approved",
           "logo": "/team-logo/aj.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 11,
-          "name": "Dhruv",
-          "email": "dhruv45@gmail.com",
-          "phone": "6512458236",
-          "game": "bgmi",
-          "team": "Empire",
-          "registeredAt": "12/8/2025, 11:32:42 am",
-          "status": "Approved",
-          "logo": "/team-logo/empire.png"
-        },
-        "team2": {
-          "id": 1,
-          "name": "Imanshu",
-          "email": "imanshupatel@gmail.com",
-          "phone": "7524139832",
-          "game": "bgmi",
-          "team": "MADX",
-          "registeredAt": "8/8/2025, 1:37:51 pm",
-          "status": "Approved",
-          "logo": "/team-logo/MADX.png"
-        }
-      },
-      {
-        "team1": {
-          "id": 7,
-          "name": "Karan",
-          "email": "karanrana@gmail.com",
-          "phone": "5598463156",
-          "game": "bgmi",
-          "team": "anime",
-          "registeredAt": "8/8/2025, 3:22:17 pm",
-          "status": "Approved",
-          "logo": "/team-logo/anime.png"
-        },
-        "team2": {
-          "id": 15,
-          "name": "Dhruv",
-          "email": "dhruv45@gmail.com",
-          "phone": "6512458236",
-          "game": "pubg mobile",
-          "team": "Empire",
-          "registeredAt": "12/8/2025, 1:33:28 pm",
-          "status": "Approved",
-          "logo": "/team-logo/empire.png"
         }
       }
     ]

@@ -38,7 +38,7 @@ export default function Players() {
                 {/* Page Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 border-b border-gray-800 pb-4 gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold text-indigo-400">🎮 Teams Dashboard</h1>
+                        <h1 className="text-3xl font-bold text-indigo-400">🎮 Teams Players</h1>
                         <span className="text-sm text-gray-400">
                             Total Teams: {filteredPlayers.length}
                         </span>

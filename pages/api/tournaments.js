@@ -2,70 +2,95 @@ import fs from "fs";
 import path from "path";
 
 export default function handler(req, res) {
-    const filePath = path.join(process.cwd(), "data", "tournaments.json");
+    const dataFile = path.join(process.cwd(), "data/tournaments.json");
 
+    // Utility: read file
+    const readData = () =>
+        fs.existsSync(dataFile) ? JSON.parse(fs.readFileSync(dataFile, "utf-8")) : [];
+
+    // Utility: write file
+    const writeData = (data) =>
+        fs.writeFileSync(dataFile, JSON.stringify(data, null, 2));
+
+    // POST: register new tournament
     if (req.method === "POST") {
-        const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+        try {
+            const fields = req.body;
+            let data = readData();
 
-        const newEntry = {
-            id: data.length > 0 ? Math.max(...data.map(item => item.id)) + 1 : 1,
-            ...req.body,
-            registeredAt: new Date().toLocaleString(),
-        };
+            const newEntry = {
+                id: data.length > 0 ? Math.max(...data.map((d) => d.id)) + 1 : 1,
+                ...fields,
+                status: "Pending", // default
+                registeredAt: new Date().toLocaleString(),
+            };
 
-        data.push(newEntry);
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+            data.push(newEntry);
+            writeData(data);
 
-        return res.status(200).json({ message: "Registration saved successfully" });
+            return res
+                .status(200)
+                .json({ message: "Registration successful!", newEntry });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).json({ error: "Error saving registration" });
+        }
     }
 
+    // GET: all tournaments
     if (req.method === "GET") {
-        const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+        const data = readData();
         return res.status(200).json(data);
     }
 
-    if (req.method === "DELETE") {
-        const { id } = req.query;
-
-        if (!id) {
-            return res.status(400).json({ error: "Missing tournament ID" });
-        }
-
-        let data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-        const initialLength = data.length;
-        data = data.filter(item => String(item.id) !== String(id));
-
-        if (data.length === initialLength) {
-            return res.status(404).json({ error: "Tournament not found" });
-        }
-
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-        return res.status(200).json({ message: "Tournament deleted successfully" });
-    }
-
+    // PUT: update a tournament
     if (req.method === "PUT") {
-        const updatedEntry = req.body;
+        try {
+            const updated = req.body;
+            let data = readData();
 
-        if (!updatedEntry?.id) {
-            return res.status(400).json({ error: "Missing tournament ID in request body" });
+            let found = false;
+            data = data.map((r) => {
+                if (r.id === updated.id) {
+                    found = true;
+                    return { ...r, ...updated };
+                }
+                return r;
+            });
+
+            if (!found) {
+                return res.status(404).json({ error: "Tournament not found" });
+            }
+
+            writeData(data);
+            return res.status(200).json(updated);
+        } catch (err) {
+            console.error(err);
+            return res.status(500).json({ error: "Error updating tournament" });
         }
-
-        let data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-
-        const index = data.findIndex(item => item.id === updatedEntry.id);
-
-        if (index === -1) {
-            return res.status(404).json({ error: "Tournament not found" });
-        }
-
-        // Preserve original registration date or update as needed
-        updatedEntry.registeredAt = data[index].registeredAt || new Date().toLocaleString();
-
-        data[index] = updatedEntry;
-
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-        return res.status(200).json({ message: "Tournament updated successfully" });
     }
 
-    res.status(405).json({ error: "Method not allowed" });
+    // DELETE: remove a tournament
+    if (req.method === "DELETE") {
+        try {
+            const id = parseInt(req.query.id);
+            let data = readData();
+
+            const exists = data.some((r) => r.id === id);
+            if (!exists) {
+                return res.status(404).json({ error: "Tournament not found" });
+            }
+
+            data = data.filter((r) => r.id !== id);
+            writeData(data);
+
+            return res.status(200).json({ message: "Tournament deleted successfully" });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).json({ error: "Error deleting tournament" });
+        }
+    }
+
+    // Method not allowed
+    return res.status(405).json({ error: "Method not allowed" });
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function AdminTournament() {
     const [date, setDate] = useState("");
+    const [game, setGame] = useState("");
     const [savedData, setSavedData] = useState([]);
     const [selectedDate, setSelectedDate] = useState("");
 
@@ -11,16 +12,14 @@ export default function AdminTournament() {
             .then((data) => {
                 if (Array.isArray(data)) {
                     setSavedData(data);
-                } else {
-                    console.error("API returned non-array:", data);
                 }
             })
             .catch(err => console.error("Fetch error:", err));
     }, []);
 
     const saveDate = async () => {
-        if (!date) {
-            alert("Please select a date first!");
+        if (!date || !game) {
+            alert("Please select both Date and Game!");
             return;
         }
 
@@ -28,14 +27,14 @@ export default function AdminTournament() {
             const res = await fetch("/api/tournament-date", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ date }),
+                body: JSON.stringify({ date, game }),
             });
 
             const data = await res.json();
 
             if (data.success) {
                 setSavedData(prev => (Array.isArray(prev) ? [...prev, data.data] : [data.data]));
-                alert(`Matches generated for date: ${data.data.tournamentDate}`);
+                alert(`Matches generated for ${data.data.game} on ${data.data.tournamentDate}`);
             }
         } catch (err) {
             console.error("Save error:", err);
@@ -51,14 +50,24 @@ export default function AdminTournament() {
             <div className="bg-[#1e1e1e] shadow-lg rounded-xl p-6 max-w-4xl mx-auto border border-gray-700">
                 <h1 className="text-2xl font-bold mb-4">Admin - Tournament</h1>
 
-                {/* Date input */}
+                {/* Date & Game input */}
                 <div className="flex gap-3 items-center mb-6">
                     <input
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 w-full text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 text-white"
                     />
+                    <select
+                        value={game}
+                        onChange={(e) => setGame(e.target.value)}
+                        className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 text-white"
+                    >
+                        <option value="">Select Game</option>
+                        <option value="bgmi">BGMI</option>
+                        <option value="pubg_mobile">PUBG Mobile</option>
+                        <option value="pubg_pc">PUBG PC</option>
+                    </select>
                     <button
                         onClick={saveDate}
                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
@@ -74,12 +83,12 @@ export default function AdminTournament() {
                         <select
                             value={selectedDate}
                             onChange={(e) => setSelectedDate(e.target.value)}
-                            className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-2 text-white"
                         >
                             <option value="">All Dates</option>
                             {savedData.map((t, index) => (
                                 <option key={index} value={t.tournamentDate}>
-                                    {t.tournamentDate}
+                                    {t.tournamentDate} - {t.game}
                                 </option>
                             ))}
                         </select>
@@ -94,7 +103,7 @@ export default function AdminTournament() {
                             className="mb-8 border border-gray-600 bg-[#181818] p-4 rounded-lg"
                         >
                             <p className="mb-4 font-semibold text-gray-200">
-                                Tournament Date: {tournament.tournamentDate}
+                                Tournament Date: {tournament.tournamentDate} | Game: {tournament.game}
                             </p>
 
                             <h2 className="text-lg font-bold mb-2">Matches</h2>
@@ -123,7 +132,7 @@ export default function AdminTournament() {
                                                 <span>{match.team2.team}</span>
                                             </div>
                                         ) : (
-                                            <span className="italic text-gray-400">Bye</span>
+                                            <span className="italic text-gray-400">Pending (Bye)</span>
                                         )}
                                     </div>
                                 ))}

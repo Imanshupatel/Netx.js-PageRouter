@@ -29,7 +29,8 @@
     "game": "PUBG Mobile",
     "team": "Global",
     "registeredAt": "8/8/2025, 1:38:51 pm",
-    "logo": "/team-logo/tejas.png"
+    "logo": "/team-logo/tejas.png",
+    "status": "Approved"
   },
   {
     "id": 4,
@@ -137,7 +138,7 @@
     "game": "pubg pc",
     "team": "Noob",
     "registeredAt": "12/8/2025, 12:54:46 pm",
-    "status": "Rejected",
+    "status": "Approved",
     "logo": "/team-logo/noob.png"
   },
   {
@@ -148,7 +149,7 @@
     "game": "pubg pc",
     "team": "pro",
     "registeredAt": "12/8/2025, 12:56:03 pm",
-    "status": "Pending",
+    "status": "Approved",
     "logo": "/team-logo/pro.png"
   },
   {
@@ -159,7 +160,7 @@
     "game": "pubg mobile",
     "team": "Empire",
     "registeredAt": "12/8/2025, 1:33:28 pm",
-    "status": "Approved",
+    "status": "Pending",
     "logo": "/team-logo/empire.png"
   },
   {
@@ -181,17 +182,17 @@
     "game": "bgmi",
     "team": "Team Soul",
     "registeredAt": "13/8/2025, 3:59:02 pm",
-    "logo": "/team-logo/soul.png"
+    "logo": "/team-logo/soul.png",
+    "status": "Approved"
   },
   {
-    "id": 18,
-    "name": "Jonathan",
-    "email": "jonathan@gmail.com",
-    "phone": "3578964513",
-    "game": "bgmi",
-    "team": "GodLike",
-    "registeredAt": "13/8/2025, 4:00:16 pm",
+    "id": 19,
+    "name": "Zeel",
+    "email": "zeelpipaliya@gmail.com",
+    "phone": "2468597315",
+    "game": "pubg pc",
+    "team": "Danger",
     "status": "Approved",
-    "logo": "/team-logo/GodLike.png"
+    "registeredAt": "21/8/2025, 11:06:05 am"
   }
 ]

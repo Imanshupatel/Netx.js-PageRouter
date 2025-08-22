@@ -24,7 +24,7 @@ const matches = [
         winner: null,
         title: "TSM-Entity VS Orange Rock",
         date: "5 January, 2026 3:00 PM",
-        youtube: "https://youtu.be/3b_wmvEuu2A?si=0CU8nuxi7EnIrBvB",
+        youtube: "true",
         twitch: true,
         team1Logo: "/team-logo/tsm-logo.png",
         team2Logo: "/team-logo/Orange_Rock.png",
@@ -101,6 +101,30 @@ const matches = [
         team1Logo: "/team-logo/blind.png",
         team2Logo: "/team-logo/8-bit.png",
     },
+    {
+        id: 10,
+        status: "Upcoming",
+        score: "0 / 0",
+        winner: null,
+        title: "MADX VS Empire",
+        date: "31 December, 2025 5:00 PM",
+        youtube: "true",
+        twitch: true,
+        team1Logo: "/team-logo/MADX.png",
+        team2Logo: "/team-logo/empire.png",
+    },
+    {
+        id: 9,
+        status: "Upcoming",
+        score: "0 / 0",
+        winner: null,
+        title: "Kong VS  Anime",
+        date: "22 August, 2025 5:00 PM",
+        youtube: "true",
+        twitch: true,
+        team1Logo: "/team-logo/kong.png",
+        team2Logo: "/team-logo/anime.png",
+    }
 ];
 
 

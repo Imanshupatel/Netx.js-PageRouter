@@ -8,51 +8,36 @@ export default function TournamentRegister() {
         game: "",
         team: "",
     });
-    const [teamPhoto, setTeamPhoto] = useState(null);
     const [message, setMessage] = useState("");
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleFileChange = (e) => {
-        setTeamPhoto(e.target.files[0]);
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validation
-        if (!formData.name || !formData.email || !formData.phone || !formData.game || !formData.team || !teamPhoto) {
-            setMessage("Please fill in all required fields and upload a team Logo.");
+        // Validation: team name also required now
+        if (!formData.name || !formData.email || !formData.phone || !formData.game || !formData.team) {
+            setMessage("Please fill in all required fields.");
             return;
         }
 
         try {
-            // Use FormData for file upload
-            const data = new FormData();
-            data.append("name", formData.name);
-            data.append("email", formData.email);
-            data.append("phone", formData.phone);
-            data.append("game", formData.game);
-            data.append("team", formData.team);
-            data.append("teamPhoto", teamPhoto);
-
             const res = await fetch("/api/tournaments", {
                 method: "POST",
-                body: data, // FormData handles file + text
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
             });
 
             const result = await res.json();
             if (res.ok) {
                 setMessage("Registration successful!");
                 setFormData({ name: "", email: "", phone: "", game: "", team: "" });
-                setTeamPhoto(null);
             } else {
                 setMessage(result.error || "Something went wrong.");
             }
         } catch (error) {
-            console.error(error);
             setMessage("Server error. Please try again later.");
         }
     };
@@ -114,15 +99,6 @@ export default function TournamentRegister() {
                         required
                     />
 
-                    <input
-                        type="file"
-                        name="teamPhoto"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
-                        required
-                    />
-
                     <button
                         type="submit"
                         className="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold"
@@ -133,4 +109,4 @@ export default function TournamentRegister() {
             </div>
         </div>
     );
-}
+} 

@@ -45,21 +45,21 @@ export default function Navigation() {
                     {isLoggedIn ? (
                         <>
                             {/* Extra links only for admin */}
-                            {user?.role === "admin" && (
+                            {/* {user?.role === "admin" && (
                                 <>
                                     <li><Link href="../../admin/dashBord">Dashboard</Link></li>
-                                    <li><Link href="#">Tournaments</Link></li>
-                                    <li><Link href="#">Contact Data</Link></li>
+                                    <li><Link href="../../admin/tournaments">Tournaments</Link></li>
+                                    <li><Link href="../../admin/contactdata">Contact Data</Link></li>
                                 </>
                             )}
 
-                            {user?.role !== "admin" && (
-                                <>
-                                    <li><Link href="/about">About</Link></li>
-                                    <li><Link href="/service">Service</Link></li>
-                                    <li><Link href="/contact">Contact</Link></li>
-                                </>
-                            )}
+                            {user?.role !== "admin" && ( */}
+                            <>
+                                <li><Link href="/about">About</Link></li>
+                                <li><Link href="/service">Service</Link></li>
+                                <li><Link href="/contact">Contact</Link></li>
+                            </>
+                            {/* )} */}
 
                             {/* Extra links only for normal users */}
                             {user?.role === "user" && (
