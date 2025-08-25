@@ -4,22 +4,32 @@
     "name": "Imanshu",
     "email": "imanshupatel@gmail.com",
     "phone": "7524139832",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "MADX",
     "registeredAt": "8/8/2025, 1:37:51 pm",
-    "status": "Approved",
-    "logo": "/team-logo/MADX.png"
+    "stats": {
+      "matches": 120,
+      "wins": 45,
+      "kills": 560,
+      "kd": 4.6,
+      "rank": "Ace"
+    }
   },
   {
     "id": 2,
     "name": "Jenish",
-    "email": "jenish21@gmail.com",
+    "email": "jenish21@gamil.com",
     "phone": "6512458236",
-    "game": "pubg pc",
+    "game": "PUBG PC",
     "team": "Kong",
-    "registeredAt": "8/8/2025, 1:38:26 pm",
-    "status": "Approved",
-    "logo": "/team-logo/kong.png"
+    "registeredAt": "8/8/2025, 2:10:30 pm",
+    "stats": {
+      "matches": 80,
+      "wins": 20,
+      "kills": 300,
+      "kd": 3.75,
+      "rank": "Crown"
+    }
   },
   {
     "id": 3,
@@ -28,171 +38,253 @@
     "phone": "9635234865",
     "game": "PUBG Mobile",
     "team": "Global",
-    "registeredAt": "8/8/2025, 1:38:51 pm",
-    "logo": "/team-logo/tejas.png",
-    "status": "Approved"
+    "registeredAt": "8/9/2025, 10:15:42 am",
+    "stats": {
+      "matches": 150,
+      "wins": 60,
+      "kills": 890,
+      "kd": 5.2,
+      "rank": "Conqueror"
+    }
   },
   {
     "id": 4,
     "name": "Imanshu",
     "email": "imanshupatel@gmail.com",
     "phone": "7524139832",
-    "game": "pubg mobile",
+    "game": "PUBG Mobile",
     "team": "MADX",
-    "registeredAt": "8/8/2025, 3:14:44 pm",
-    "status": "Approved",
-    "logo": "/team-logo/MADX.png"
+    "registeredAt": "8/9/2025, 11:30:10 am",
+    "stats": {
+      "matches": 90,
+      "wins": 25,
+      "kills": 400,
+      "kd": 4.4,
+      "rank": "Ace"
+    }
   },
   {
     "id": 5,
     "name": "Jenish",
-    "email": "jenish21@gmail.com",
+    "email": "jenish21@gamil.com",
     "phone": "6512458236",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "Kong",
-    "registeredAt": "8/8/2025, 3:18:59 pm",
-    "status": "Approved",
-    "logo": "/team-logo/kong.png"
+    "registeredAt": "8/9/2025, 12:20:55 pm",
+    "stats": {
+      "matches": 110,
+      "wins": 30,
+      "kills": 510,
+      "kd": 4.2,
+      "rank": "Crown"
+    }
   },
   {
     "id": 6,
     "name": "Karan",
     "email": "karanrana@gmail.com",
     "phone": "5598463156",
-    "game": "pubg pc",
-    "team": "anime",
-    "registeredAt": "8/8/2025, 3:21:30 pm",
-    "logo": "/team-logo/anime.png"
+    "game": "PUBG PC",
+    "team": "Anime",
+    "registeredAt": "8/9/2025, 1:05:20 pm",
+    "stats": {
+      "matches": 140,
+      "wins": 48,
+      "kills": 750,
+      "kd": 5,
+      "rank": "Diamond"
+    }
   },
   {
     "id": 7,
     "name": "Karan",
     "email": "karanrana@gmail.com",
     "phone": "5598463156",
-    "game": "bgmi",
-    "team": "anime",
-    "registeredAt": "8/8/2025, 3:22:17 pm",
-    "status": "Approved",
-    "logo": "/team-logo/anime.png"
+    "game": "BGMI",
+    "team": "Anime",
+    "registeredAt": "8/9/2025, 2:15:45 pm",
+    "stats": {
+      "matches": 75,
+      "wins": 18,
+      "kills": 260,
+      "kd": 3.5,
+      "rank": "Platinum"
+    }
   },
   {
     "id": 8,
     "name": "Jonathan",
     "email": "jonathan25@gmail.com",
     "phone": "4657931852",
-    "game": "bgmi",
-    "team": "GodLike",
-    "registeredAt": "8/8/2025, 3:25:02 pm",
-    "status": "Approved",
-    "logo": "/team-logo/GodLike.png"
+    "game": "BGMI",
+    "team": "GoldLike",
+    "registeredAt": "8/9/2025, 3:40:00 pm",
+    "stats": {
+      "matches": 95,
+      "wins": 82,
+      "kills": 786,
+      "kd": 8.3,
+      "rank": "Conqueror"
+    }
   },
   {
     "id": 9,
     "name": "Tanmay",
     "email": "tanmay001@gmail.com",
     "phone": "2200013626",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "Scout",
-    "registeredAt": "8/8/2025, 3:26:06 pm",
-    "status": "Approved",
-    "logo": "/team-logo/soul.png"
+    "registeredAt": "8/9/2025, 4:22:12 pm",
+    "stats": {
+      "matches": 160,
+      "wins": 125,
+      "kills": 1020,
+      "kd": 6.3,
+      "rank": "Conqueror"
+    }
   },
   {
     "id": 10,
     "name": "Mayur",
     "email": "mayur56@gmail.com",
     "phone": "8986523742",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "MayurGaming",
-    "registeredAt": "8/8/2025, 3:28:42 pm",
-    "status": "Approved",
-    "logo": "/team-logo/mayurgaming.png"
+    "registeredAt": "8/9/2025, 5:05:32 pm",
+    "stats": {
+      "matches": 125,
+      "wins": 85,
+      "kills": 680,
+      "kd": 5.2,
+      "rank": "Conqueror"
+    }
   },
   {
     "id": 11,
     "name": "Dhruv",
     "email": "dhruv45@gmail.com",
     "phone": "6512458236",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "Empire",
-    "registeredAt": "12/8/2025, 11:32:42 am",
-    "status": "Approved",
-    "logo": "/team-logo/empire.png"
+    "registeredAt": "8/9/2025, 6:18:22 pm",
+    "stats": {
+      "matches": 130,
+      "wins": 40,
+      "kills": 600,
+      "kd": 4.6,
+      "rank": "Ace"
+    }
   },
   {
     "id": 12,
     "name": "Ajay",
     "email": "ajay03@gmail.com",
     "phone": "4657931852",
-    "game": "pubg pc",
+    "game": "PUBG PC",
     "team": "Aj",
-    "registeredAt": "12/8/2025, 11:56:14 am",
-    "status": "Approved",
-    "logo": "/team-logo/aj.png"
+    "registeredAt": "8/9/2025, 7:00:40 pm",
+    "stats": {
+      "matches": 170,
+      "wins": 75,
+      "kills": 1100,
+      "kd": 6.5,
+      "rank": "Conqueror"
+    }
   },
   {
     "id": 13,
     "name": "Sagar",
     "email": "sagar22@gmail.com",
     "phone": "5896314752",
-    "game": "pubg pc",
+    "game": "PUBG PC",
     "team": "Noob",
-    "registeredAt": "12/8/2025, 12:54:46 pm",
-    "status": "Approved",
-    "logo": "/team-logo/noob.png"
+    "registeredAt": "8/9/2025, 8:11:11 pm",
+    "stats": {
+      "matches": 100,
+      "wins": 28,
+      "kills": 420,
+      "kd": 4,
+      "rank": "Diamond"
+    }
   },
   {
     "id": 14,
     "name": "Govind",
     "email": "govind03@gmail.com",
     "phone": "1478965235",
-    "game": "pubg pc",
+    "game": "PUBG PC",
     "team": "pro",
-    "registeredAt": "12/8/2025, 12:56:03 pm",
-    "status": "Approved",
-    "logo": "/team-logo/pro.png"
+    "registeredAt": "8/9/2025, 9:30:22 pm",
+    "stats": {
+      "matches": 105,
+      "wins": 35,
+      "kills": 500,
+      "kd": 4.3,
+      "rank": "Crown"
+    }
   },
   {
     "id": 15,
     "name": "Dhruv",
     "email": "dhruv45@gmail.com",
     "phone": "6512458236",
-    "game": "pubg mobile",
+    "game": "PUBG Mobile",
     "team": "Empire",
-    "registeredAt": "12/8/2025, 1:33:28 pm",
-    "status": "Pending",
-    "logo": "/team-logo/empire.png"
+    "registeredAt": "8/9/2025, 10:12:59 pm",
+    "stats": {
+      "matches": 145,
+      "wins": 55,
+      "kills": 840,
+      "kd": 5.1,
+      "rank": "Ace"
+    }
   },
   {
     "id": 16,
     "name": "Zeel",
     "email": "zeelpipaliya@gmail.com",
     "phone": "2468597315",
-    "game": "pubg mobile",
+    "game": "PUBG Mobile",
     "team": "Danger",
-    "registeredAt": "12/8/2025, 1:58:20 pm",
-    "status": "Rejected",
-    "logo": "/team-logo/danger.png"
+    "registeredAt": "8/10/2025, 11:25:35 am",
+    "stats": {
+      "matches": 70,
+      "wins": 15,
+      "kills": 220,
+      "kd": 3.1,
+      "rank": "Gold"
+    }
   },
   {
     "id": 17,
     "name": "Tanmay",
     "email": "tanmay56@gmail.com",
     "phone": "1597532646",
-    "game": "bgmi",
+    "game": "BGMI",
     "team": "Team Soul",
-    "registeredAt": "13/8/2025, 3:59:02 pm",
-    "logo": "/team-logo/soul.png",
-    "status": "Approved"
+    "registeredAt": "8/10/2025, 12:40:50 pm",
+    "stats": {
+      "matches": 125,
+      "wins": 96,
+      "kills": 710,
+      "kd": 5.8,
+      "rank": "Conqueror"
+    }
   },
   {
-    "id": 19,
+    "id": 18,
     "name": "Zeel",
     "email": "zeelpipaliya@gmail.com",
     "phone": "2468597315",
-    "game": "pubg pc",
+    "game": "PUBG PC",
     "team": "Danger",
-    "status": "Approved",
-    "registeredAt": "21/8/2025, 11:06:05 am"
+    "registeredAt": "8/10/2025, 2:15:18 pm",
+    "stats": {
+      "matches": 155,
+      "wins": 62,
+      "kills": 970,
+      "kd": 5.9,
+      "rank": "Diamond"
+    }
   }
 ]

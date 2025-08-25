@@ -1,5 +1,8 @@
-import Footer from "@/component/footer";
+"use client";
+
 import { useState } from "react";
+import Footer from "@/component/footer";
+import { Mail, MessageSquare, User } from "lucide-react";
 
 const Contact = () => {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -13,7 +16,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-            setError("Please fill in all fields.");
+            setError("⚠️ Please fill in all fields.");
             return;
         }
         setError("");
@@ -40,61 +43,71 @@ const Contact = () => {
 
     return (
         <>
-            <div className="min-h-[92vh] flex flex-col items-center justify-center bg-gradient-to-black via-pink-100 to-yellow-100 p-4">
-                <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full mt-8">
-                    <h1 className="text-4xl font-bold mb-2 text-center text-blue-700">Contact Us</h1>
-                    <p className="text-gray-600 mb-6 text-center">Have questions, feedback, or want to connect? Fill out the form below or reach us directly!</p>
-                    <form className="grid grid-cols-1 text-black gap-4" onSubmit={handleSubmit}>
-                        <div>
-                            <label className="block text-gray-700 font-semibold mb-1">Name</label>
+            <div className="min-h-[92vh] mt-20 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-blue-950 px-6 py-12">
+                <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 max-w-3xl w-full border border-white/20">
+                    {/* Title */}
+                    <h1 className="text-5xl font-extrabold text-center text-amber-400 drop-shadow mb-4">
+                        Contact Us
+                    </h1>
+                    <p className="text-gray-300 text-center mb-8 max-w-xl mx-auto">
+                        Have questions, feedback, or just want to connect? Drop us a message and we’ll get back to you as soon as possible.
+                    </p>
+
+                    {/* Form */}
+                    <form className="grid grid-cols-1 gap-6 text-black" onSubmit={handleSubmit}>
+                        <div className="relative">
+                            <User className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
                             <input
                                 type="text"
                                 name="name"
                                 value={form.name}
                                 onChange={handleChange}
                                 placeholder="Your Name"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-amber-400 shadow"
                             />
                         </div>
-                        <div>
-                            <label className="block text-gray-700 font-semibold mb-1">Email</label>
+                        <div className="relative">
+                            <Mail className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
                             <input
                                 type="email"
                                 name="email"
                                 value={form.email}
                                 onChange={handleChange}
                                 placeholder="you@email.com"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300"
+                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow"
                             />
                         </div>
-                        <div>
-                            <label className="block text-gray-700 font-semibold mb-1">Message</label>
+                        <div className="relative">
+                            <MessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
                             <textarea
                                 name="message"
                                 value={form.message}
                                 onChange={handleChange}
                                 placeholder="Type your message..."
-                                rows={4}
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                                rows={5}
+                                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-pink-400 shadow resize-none"
                             ></textarea>
                         </div>
-                        {error && <div className="text-red-500 text-sm">{error}</div>}
-                        <button type="submit" className="mt-2 bg-amber-400 hover:bg-amber-500 text-black font-semibold px-6 py-2 rounded-full shadow transition-all duration-200">
+
+                        {error && <p className="text-red-500 text-sm">{error}</p>}
+
+                        <button
+                            type="submit"
+                            className="mt-2 w-full bg-amber-400 hover:bg-amber-500 text-black font-bold py-3 rounded-xl shadow-lg transition-all duration-200"
+                        >
                             Send Message
                         </button>
                     </form>
-                    <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
-                        <div className="flex items-center gap-2 text-blue-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25M2.25 6.75l9.72 7.29c.45.34 1.11.34 1.56 0l9.72-7.29" />
-                            </svg>
-                            <span>contact@bgmi.com</span>
+
+                    {/* Contact Info */}
+                    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                        <div className="flex flex-col items-center gap-2 bg-white/10 p-4 rounded-xl border border-white/20">
+                            <Mail className="w-6 h-6 text-blue-400" />
+                            <span className="text-gray-200">contact@bgmi.com</span>
                         </div>
-                        <div className="flex items-center gap-2 text-pink-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25M2.25 6.75l9.72 7.29c.45.34 1.11.34 1.56 0l9.72-7.29" />
-                            </svg>
-                            <span>support@bgmi.com</span>
+                        <div className="flex flex-col items-center gap-2 bg-white/10 p-4 rounded-xl border border-white/20">
+                            <Mail className="w-6 h-6 text-pink-400" />
+                            <span className="text-gray-200">support@bgmi.com</span>
                         </div>
                     </div>
                 </div>

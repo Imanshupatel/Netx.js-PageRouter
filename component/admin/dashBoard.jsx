@@ -25,7 +25,7 @@ export default function AdminDashBoard() {
         },
         {
             label: "Revenue",
-            value: "$15,980",
+            value: "$19,980",
             icon: ChartBar,
             color: "bg-yellow-500",
         },

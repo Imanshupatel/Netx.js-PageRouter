@@ -29,7 +29,7 @@ export default function GameSection() {
     return (
         <section className="bg-[#0e0e10] py-10 px-6 ">
             <div >
-                <h1 className="text-3xl font-bold text-indigo-400">🎮 Games</h1>
+                <h1 className="text-3xl font-bold text-center text-indigo-400">🎮 Games</h1>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto py-15">

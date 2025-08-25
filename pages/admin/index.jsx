@@ -5,14 +5,12 @@ import {
     ChartBar,
     Users,
     Gamepad2,
-    Settings,
     Trophy,
     Search,
     Bell,
     Contact,
 } from "lucide-react";
 import AdminDashBoard from "@/component/admin/dashBoard";
-
 import AdminPlayers from "@/component/admin/players";
 import { AuthContext } from "@/context/AuthContext";
 import AdminTeams from "@/component/admin/team";
@@ -50,7 +48,6 @@ export default function AdminDashboard() {
 
         fetchContactCount();
 
-        // Poll every 30 seconds
         const interval = setInterval(fetchContactCount, 30000);
         return () => clearInterval(interval);
     }, []);
@@ -62,7 +59,6 @@ export default function AdminDashboard() {
         { name: "Tournaments", icon: Trophy },
         { name: "Team", icon: Users },
         { name: "Contact", icon: Contact },
-        { name: "Settings", icon: Settings },
     ];
 
     if (!user || user.role !== "admin") {
@@ -76,7 +72,7 @@ export default function AdminDashboard() {
     return (
         <div className="flex min-h-screen bg-[#0e0e10] text-white">
             {/* Sidebar */}
-            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6  pt-20">
+            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6 pt-20">
                 <h1 className="text-2xl font-bold">GameAdmin</h1>
                 <nav className="space-y-3">
                     {menuItems.map((item) => (
@@ -96,10 +92,10 @@ export default function AdminDashboard() {
             </aside>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col relative">
                 {/* Header */}
-                <header className="pt-18 bg-[#161618]">
-                    <div className="flex items-center justify-between px-6 py-4 border-b border-t border-gray-800 bg-[#161618]">
+                <header className="fixed top-0 left-64 right-0 z-50 bg-[#161618] border-b border-t border-gray-800">
+                    <div className="flex items-center justify-between px-6 py-4">
                         <div className="flex items-center gap-4">
                             <div className="relative">
                                 <input
@@ -115,15 +111,11 @@ export default function AdminDashboard() {
                                 className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"
                                 onClick={async () => {
                                     setActiveTab("Contact");
-
-                                    // Optional: call backend to mark notifications as read
                                     try {
                                         await fetch("/api/mark-contacts-read", { method: "POST" });
                                     } catch (err) {
                                         console.error("Error marking contacts as read:", err);
                                     }
-
-                                    // Remove notification badge
                                     setContactCount(0);
                                 }}
                             />
@@ -133,12 +125,13 @@ export default function AdminDashboard() {
                                 </span>
                             )}
                         </div>
-
                     </div>
                 </header>
 
                 {/* Dashboard Body */}
-                <main className="p-6 space-y-8">{tabComponents[activeTab]}</main>
+                <main className="p-6 space-y-8 mt-[72px] overflow-y-auto h-[calc(100vh-72px)]">
+                    {tabComponents[activeTab]}
+                </main>
             </div>
         </div>
     );

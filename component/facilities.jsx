@@ -1,5 +1,31 @@
 import Image from "next/image";
 
+const facilities = [
+    {
+        title: "Esports Lounge",
+        description:
+            "Lounge areas with comfortable seating for relaxation between gaming sessions.",
+        icon: "/esports.png",
+        position: "absolute top-0 right-0 rounded-bl-[50px] pb-7 pl-7 w-100",
+    },
+    {
+        title: "Broadcasting Studio",
+        description:
+            "Lounge areas with comfortable seating for relaxation between gaming sessions.",
+        icon: "/broadcast.png",
+        position:
+            "absolute bottom-[33%] left-0 rounded-r-[50px] pt-7 pr-7 pb-7 w-90 hidden sm:block",
+    },
+    {
+        title: "Training Facilities",
+        description:
+            "Lounge areas with comfortable seating for relaxation between gaming sessions.",
+        icon: "/training.png",
+        position:
+            "absolute bottom-0 right-0 rounded-tl-[50px] pl-7 pt-7 w-100",
+    },
+];
+
 export default function Facilities() {
     return (
         <section className="relative w-full min-h-screen bg-[#0d0d0d] py-24 px-4 overflow-hidden">
@@ -13,84 +39,38 @@ export default function Facilities() {
                 </h2>
             </div>
 
-            {/* Main background image */}
+            {/* Main background */}
             <div className="relative max-w-3xl mx-auto h-[700px]">
                 <div className="relative w-full h-full rounded-[50px] overflow-hidden">
                     <Image
-                        src="/background_pubg.jpg" // Replace with your background image path
+                        src="/background_pubg.jpg"
                         alt="Facilities Background"
                         fill
                         className="object-cover rounded-[30px] z-0 object-[25%_0%]"
                         style={{
-                            transform: "scale(1.10)", // adjust zoom
-                            transformOrigin: "0% 0%"  // match your desired crop area
+                            transform: "scale(1.10)",
+                            transformOrigin: "0% 0%",
                         }}
                     />
                 </div>
-                {/* Top middle edge */}
-                <div className="corner-part top-[-1px] left-[19px]"></div>
-                <div className="corner-part top-45.5 left-[419px]"></div>
-                <div className="corner-part top-51 left-[35px] rotate-90"></div>
-                <div className="corner-part top-96 left-[-364px] rotate-90"></div>
-                <div className="corner-part top-21 left-[-35px] rotate-270"></div>
-                <div className="corner-part bottom-109 left-[-419px] rotate-180"></div>
 
-                {/* Top Right Card */}
-                <div className="absolute top-0 right-0 bg-[#0d0d0d] pb-7 pl-7 text-white w-100 rounded-bl-[50px] shadow-lg ">
-                    <div className="rounded-[30px] bg-gray-900 flex flex-col items-center p-5 justify-center">
-                        <div className="mb-3">
-                            <Image
-                                src="/esports.png"
-                                alt="icon"
-                                width={30}
-                                height={30}
-                            />
+                {/* Facility Cards */}
+                {facilities.map((facility, index) => (
+                    <div
+                        key={index}
+                        className={`${facility.position} bg-[#0d0d0d] text-white shadow-lg`}
+                    >
+                        <div className="rounded-[30px] bg-gray-900 flex flex-col items-center justify-center p-5">
+                            <div className="mb-3">
+                                <Image src={facility.icon} alt={facility.title} width={30} height={30} />
+                            </div>
+                            <h3 className="text-lg font-bold">{facility.title}</h3>
+                            <p className="text-sm text-gray-400 mt-2 text-center">
+                                {facility.description}
+                            </p>
                         </div>
-                        <h3 className="text-lg font-bold">Esports Lounge</h3>
-                        <p className="text-sm text-gray-400 mt-2 text-center">
-                            Lounge areas with comfortable seating for relaxation between
-                            gaming sessions.
-                        </p>
                     </div>
-                </div>
-
-                {/* Bottom Center Card */}
-                <div className="absolute bottom-[33%] left-0 bg-[#0d0d0d] pt-7 pr-7 pb-7 text-white w-90 rounded-r-[50px] shadow-lg hidden sm:block">
-                    <div className="rounded-[30px] bg-gray-900 flex flex-col items-center p-5 justify-center">
-                        <div className="mb-3">
-                            <Image
-                                src="/broadcast.png"
-                                alt="icon"
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        <h3 className="text-lg font-bold">Broadcasting Studio</h3>
-                        <p className="text-sm text-gray-400 mt-2 text-center">
-                            Lounge areas with comfortable seating for relaxation between
-                            gaming sessions.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Bottom Right Card */}
-                <div className="absolute bottom-0 right-0 bg-[#0d0d0d] pl-7 pt-7 text-white w-100 rounded-tl-[50px] shadow-lg">
-                    <div className="rounded-[30px] bg-gray-900 flex flex-col items-center justify-center p-5">
-                        <div className="mb-3">
-                            <Image
-                                src="/training.png"
-                                alt="icon"
-                                width={30}
-                                height={30}
-                            />
-                        </div>
-                        <h3 className="text-lg font-bold">Training Facilities</h3>
-                        <p className="text-sm text-gray-400 mt-2 text-center">
-                            Lounge areas with comfortable seating for relaxation between
-                            gaming sessions.
-                        </p>
-                    </div>
-                </div>
+                ))}
             </div>
         </section>
     );

@@ -17,7 +17,7 @@ const images = [
 
 const Album = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 py-12 pt-35 px-4">
             <div className="max-w-[1600px] mx-auto">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center mb-8 drop-shadow-lg">
                     BGMI Album

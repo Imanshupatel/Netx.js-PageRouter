@@ -3,13 +3,19 @@ import { useContext, useMemo, useState, useEffect } from "react";
 import { AuthContext } from "@/context/AuthContext";
 import Link from "next/link";
 import matchesDataFile from "@/data/matches.json";
+import { Orbitron } from "next/font/google";
+
+const orbitron = Orbitron({
+    subsets: ["latin"],
+    weight: ["400", "600", "700"],
+});
 
 export default function MyTournaments() {
     const { user } = useContext(AuthContext);
     const [matchesData, setMatchesData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Fetch matches.json
+    // Load matches.json
     useEffect(() => {
         setMatchesData(matchesDataFile);
         setLoading(false);
@@ -55,23 +61,29 @@ export default function MyTournaments() {
 
     return (
         <div className="min-h-screen bg-gray-900 p-8">
-            <h1 className="text-3xl font-bold text-white text-center m-10">
+            <h1
+                className={`text-4xl font-bold text-white text-center m-10 ${orbitron.className}`}
+            >
                 🎮 My Tournaments
             </h1>
 
             {myMatches.length === 0 ? (
                 <>
-                    <p className="text-gray-400">You have not registered for any matches yet.</p>
-                    <p className="text-gray-400 mb-5">If you are interested you can Register now.</p>
+                    <p className="text-gray-400">
+                        You have not registered for any matches yet.
+                    </p>
+                    <p className="text-gray-400 mb-5">
+                        If you are interested you can Register now.
+                    </p>
                     <Link
                         href={"/tournament/register"}
-                        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:!text-white hover:bg-blue-700 transition"
+                        className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-6 py-3 rounded-xl hover:opacity-90 transition shadow-lg"
                     >
                         Register Now
                     </Link>
                 </>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {myMatches.map((item, index) => {
                         const { tournamentDate, game, match } = item;
                         const myTeam =
@@ -86,29 +98,39 @@ export default function MyTournaments() {
                         return (
                             <div
                                 key={index}
-                                className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700"
+                                className={`relative bg-gradient-to-br from-gray-900 via-gray-800 to-black 
+                  rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 
+                  border border-gray-700 ${orbitron.className}`}
                             >
-                                <div className="flex justify-between items-center mb-3">
-                                    <h2 className="text-xl font-semibold text-orange-400 uppercase">
+                                {/* Glowing Border */}
+                                <div className="absolute inset-0 rounded-2xl border-2 border-orange-500/20 pointer-events-none"></div>
+
+                                {/* Header */}
+                                <div className="flex justify-between items-center mb-6">
+                                    <h2 className="text-xl font-extrabold text-orange-400 tracking-wider uppercase">
                                         {game}
                                     </h2>
-                                    <span className="text-sm text-gray-400">📅 {tournamentDate}</span>
+                                    <span className="text-sm text-gray-400">
+                                        📅 {tournamentDate}
+                                    </span>
                                 </div>
-                                <div className="mt-4 border-t border-gray-700 pt-4"></div>
-                                {/* Teams side by side with VS */}
+
+                                {/* Teams */}
                                 <div className="flex items-center justify-between">
                                     {/* My Team */}
                                     <div className="flex-1 text-center">
-                                        <p className="text-white font-medium">{myTeam.team}</p>
-                                        <p className="text-gray-400 text-sm">{myTeam.name}</p>
-                                        <p className="text-gray-400 text-sm">📞 {myTeam.phone}</p>
                                         <img
                                             src={myTeam.logo}
                                             alt={myTeam.team}
-                                            className="w-14 h-14 mx-auto mt-3 rounded-full border border-gray-600"
+                                            className="w-22 h-22 mx-auto mt-4 rounded-full border-2 border-orange-500 shadow-lg"
                                         />
+                                        <p className="text-white mt-1 font-bold text-lg drop-shadow">
+                                            {myTeam.team}
+                                        </p>
+                                        <p className="text-gray-400 text-sm">{myTeam.name}</p>
+                                        {/* <p className="text-gray-500 text-sm">📞 {myTeam.phone}</p> */}
                                         {/* <span
-                                            className={`mt-2 inline-block px-3 py-1 rounded-full text-xs font-bold ${myTeam.status === "Approved"
+                                            className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-bold ${myTeam.status === "Approved"
                                                 ? "bg-green-600"
                                                 : myTeam.status === "Rejected"
                                                     ? "bg-red-600"
@@ -120,23 +142,26 @@ export default function MyTournaments() {
                                     </div>
 
                                     {/* VS */}
-                                    <div className="mx-4">
-                                        <p className="text-xl font-bold text-gray-300">VS</p>
+                                    <div className="mx-6">
+                                        <p className="text-3xl font-extrabold text-orange-500 animate-pulse">
+                                            VS
+                                        </p>
                                     </div>
 
                                     {/* Opponent */}
                                     <div className="flex-1 text-center">
-                                        <p className="text-gray-200 font-medium">{opponent.team}</p>
-                                        <p className="text-gray-400 text-sm">{opponent.name}</p>
                                         <img
                                             src={opponent.logo}
                                             alt={opponent.team}
-                                            className="w-14 h-14 mx-auto mt-3 rounded-full border border-gray-600"
+                                            className="w-22 h-22 mx-auto mt-4 rounded-full border-2 border-purple-500 shadow-lg"
                                         />
+                                        <p className="text-gray-200 mt-2 font-bold text-lg drop-shadow">
+                                            {opponent.team}
+                                        </p>
+                                        <p className="text-gray-400 text-sm">{opponent.name}</p>
                                     </div>
                                 </div>
                             </div>
-
                         );
                     })}
                 </div>
