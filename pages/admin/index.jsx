@@ -9,6 +9,7 @@ import {
     Search,
     Bell,
     Contact,
+    LogOut,
 } from "lucide-react";
 import AdminDashBoard from "@/component/admin/dashBoard";
 import AdminPlayers from "@/component/admin/players";
@@ -17,6 +18,7 @@ import AdminTeams from "@/component/admin/team";
 import AdminContacts from "@/component/admin/contactdata";
 import AdminTournament from "@/component/admin/tournaments";
 import GameSection from "@/component/admin/game";
+import { useRouter } from "next/navigation";  // ✅ import router
 
 const tabComponents = {
     Dashboard: <AdminDashBoard />,
@@ -31,7 +33,8 @@ export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("Dashboard");
     const [contactCount, setContactCount] = useState(0);
 
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
+    const router = useRouter(); // ✅ initialize router
 
     useEffect(() => {
         async function fetchContactCount() {
@@ -47,7 +50,6 @@ export default function AdminDashboard() {
         }
 
         fetchContactCount();
-
         const interval = setInterval(fetchContactCount, 30000);
         return () => clearInterval(interval);
     }, []);
@@ -59,6 +61,7 @@ export default function AdminDashboard() {
         { name: "Tournaments", icon: Trophy },
         { name: "Team", icon: Users },
         { name: "Contact", icon: Contact },
+        { name: "Logout", icon: LogOut },
     ];
 
     if (!user || user.role !== "admin") {
@@ -72,23 +75,38 @@ export default function AdminDashboard() {
     return (
         <div className="flex min-h-screen bg-[#0e0e10] text-white">
             {/* Sidebar */}
-            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6 pt-20">
-                <h1 className="text-2xl font-bold">GameAdmin</h1>
-                <nav className="space-y-3">
-                    {menuItems.map((item) => (
-                        <button
-                            key={item.name}
-                            onClick={() => setActiveTab(item.name)}
-                            className={`flex items-center w-full px-3 py-2 rounded-lg transition ${activeTab === item.name
-                                ? "bg-purple-600 text-white"
-                                : "hover:bg-purple-600 hover:text-white"
-                                }`}
-                        >
-                            <item.icon className="w-5 h-5 mr-3" />
-                            {item.name}
-                        </button>
-                    ))}
-                </nav>
+            <aside className="w-64 bg-[#161618] border-r border-gray-800 p-6 pt-20 flex flex-col justify-between">
+                <div>
+                    <h1 className="text-2xl font-bold mb-6">GameAdmin</h1>
+                    <nav className="space-y-3">
+                        {menuItems.slice(0, -1).map((item) => (
+                            <button
+                                key={item.name}
+                                onClick={() => setActiveTab(item.name)}
+                                className={`flex items-center w-full px-3 py-2 rounded-lg transition 
+                                    ${activeTab === item.name
+                                        ? "bg-purple-600 text-white"
+                                        : "hover:bg-purple-600 hover:text-white"
+                                    }`}
+                            >
+                                <item.icon className="w-5 h-5 mr-3" />
+                                {item.name}
+                            </button>
+                        ))}
+                    </nav>
+                </div>
+
+                {/* ✅ Unique Logout button pinned at bottom */}
+                <button
+                    onClick={() => {
+                        logout();         // call logout
+                        router.push("/Home"); // ✅ redirect to homepage
+                    }}
+                    className="flex items-center w-full px-3 py-2 mb-100 rounded-lg transition text-red-400 hover:bg-red-600 hover:text-white"
+                >
+                    <LogOut className="w-5 h-5 mr-3" />
+                    Logout
+                </button>
             </aside>
 
             {/* Main Content */}
@@ -96,6 +114,7 @@ export default function AdminDashboard() {
                 {/* Header */}
                 <header className="fixed top-0 left-64 right-0 z-50 bg-[#161618] border-b border-t border-gray-800">
                     <div className="flex items-center justify-between px-6 py-4">
+                        {/* Search */}
                         <div className="flex items-center gap-4">
                             <div className="relative">
                                 <input
@@ -106,24 +125,28 @@ export default function AdminDashboard() {
                                 <Search className="w-4 h-4 absolute right-3 top-2.5 text-gray-500" />
                             </div>
                         </div>
-                        <div className="flex items-center gap-4 relative">
-                            <Bell
-                                className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"
-                                onClick={async () => {
-                                    setActiveTab("Contact");
-                                    try {
-                                        await fetch("/api/mark-contacts-read", { method: "POST" });
-                                    } catch (err) {
-                                        console.error("Error marking contacts as read:", err);
-                                    }
-                                    setContactCount(0);
-                                }}
-                            />
-                            {contactCount > 0 && (
-                                <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-red-500 text-white text-xs font-bold px-1 py-0 rounded-full">
-                                    {contactCount}
-                                </span>
-                            )}
+
+                        {/* Notifications */}
+                        <div className="flex items-center gap-6 relative">
+                            <div className="relative">
+                                <Bell
+                                    className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer"
+                                    onClick={async () => {
+                                        setActiveTab("Contact");
+                                        try {
+                                            await fetch("/api/mark-contacts-read", { method: "POST" });
+                                        } catch (err) {
+                                            console.error("Error marking contacts as read:", err);
+                                        }
+                                        setContactCount(0);
+                                    }}
+                                />
+                                {contactCount > 0 && (
+                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1 py-0 rounded-full">
+                                        {contactCount}
+                                    </span>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </header>

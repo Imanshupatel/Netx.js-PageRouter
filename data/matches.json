@@ -229,5 +229,201 @@
         }
       }
     ]
+  },
+  {
+    "tournamentDate": "2025-09-05",
+    "game": "bgmi",
+    "matches": [
+      {
+        "team1": {
+          "id": 9,
+          "name": "Tanmay",
+          "email": "tanmay56@gmail.com",
+          "phone": "1597532646",
+          "game": "BGMI",
+          "team": "Team Soul",
+          "registeredAt": "8/10/2025, 12:40:50 pm",
+          "logo": "/team-logo/.png",
+          "stats": {
+            "matches": 125,
+            "wins": 96,
+            "kills": 710,
+            "kd": 5.8,
+            "rank": "Conqueror"
+          },
+          "status": "Approved"
+        },
+        "team2": {
+          "id": 1,
+          "name": "Imanshu",
+          "email": "imanshupatel@gmail.com",
+          "phone": "7524139832",
+          "game": "BGMI",
+          "team": "MADX",
+          "registeredAt": "8/8/2025, 1:37:51 pm",
+          "logo": "/team-logo/MADX.png",
+          "stats": {
+            "matches": 120,
+            "wins": 45,
+            "kills": 560,
+            "kd": 4.6,
+            "rank": "Ace"
+          },
+          "status": "Approved"
+        }
+      },
+      {
+        "team1": {
+          "id": 22,
+          "name": "Niral",
+          "email": "niral32@gmail.com",
+          "phone": "6541259873",
+          "game": "bgmi",
+          "team": "1HP",
+          "status": "Pending",
+          "registeredAt": "26/8/2025, 1:34:46 pm",
+          "logo": "/team-logo/1Hp.png",
+          "stats": {
+            "matches": 75,
+            "wins": 18,
+            "kills": 260,
+            "kd": 3.5,
+            "rank": "Diamond"
+          }
+        },
+        "team2": {
+          "id": 5,
+          "name": "Jenish",
+          "email": "jenish21@gamil.com",
+          "phone": "6512458236",
+          "game": "BGMI",
+          "team": "Kong",
+          "registeredAt": "8/9/2025, 12:20:55 pm",
+          "logo": "/team-logo/kong.png",
+          "stats": {
+            "matches": 110,
+            "wins": 30,
+            "kills": 510,
+            "kd": 4.2,
+            "rank": "Crown"
+          },
+          "status": "Approved"
+        }
+      },
+      {
+        "team1": {
+          "id": 19,
+          "name": "Tejas",
+          "email": "tejasginoya@gamil.com",
+          "phone": "9635234865",
+          "game": "bgmi",
+          "team": "Global",
+          "status": "Approved",
+          "registeredAt": "26/8/2025, 10:52:31 am",
+          "logo": "/team-logo/tejas.png",
+          "stats": {
+            "matches": 150,
+            "wins": 60,
+            "kills": 890,
+            "kd": 5.2,
+            "rank": "Diamond"
+          }
+        },
+        "team2": {
+          "id": 20,
+          "name": "Ravi",
+          "email": "ravi01@gmail.com",
+          "phone": "3598746212",
+          "game": "bgmi",
+          "team": "MADxGHAAV",
+          "status": "Pending",
+          "registeredAt": "26/8/2025, 1:25:27 pm",
+          "logo": "/team-logo/MADxGHAAV.png",
+          "stats": {
+            "matches": 105,
+            "wins": 82,
+            "kills": 786,
+            "kd": 8.3,
+            "rank": "Ace Dominator"
+          }
+        }
+      },
+      {
+        "team1": {
+          "id": 10,
+          "name": "Mayur",
+          "email": "mayur56@gmail.com",
+          "phone": "8986523742",
+          "game": "BGMI",
+          "team": "MayurGaming",
+          "registeredAt": "8/9/2025, 5:05:32 pm",
+          "logo": "/team-logo/mayurgaming.png",
+          "stats": {
+            "matches": 125,
+            "wins": 85,
+            "kills": 680,
+            "kd": 5.2,
+            "rank": "Conqueror"
+          },
+          "status": "Approved"
+        },
+        "team2": {
+          "id": 8,
+          "name": "Jonathan",
+          "email": "jonathan25@gmail.com",
+          "phone": "4657931852",
+          "game": "BGMI",
+          "team": "GoldLike",
+          "registeredAt": "8/9/2025, 3:40:00 pm",
+          "logo": "/team-logo/GodLike.png",
+          "stats": {
+            "matches": 95,
+            "wins": 82,
+            "kills": 786,
+            "kd": 8.3,
+            "rank": "Conqueror"
+          },
+          "status": "Approved"
+        }
+      },
+      {
+        "team1": {
+          "id": 7,
+          "name": "Karan",
+          "email": "karanrana@gmail.com",
+          "phone": "5598463156",
+          "game": "BGMI",
+          "team": "Anime",
+          "registeredAt": "8/9/2025, 2:15:45 pm",
+          "logo": "/team-logo/anime.png",
+          "stats": {
+            "matches": 75,
+            "wins": 18,
+            "kills": 260,
+            "kd": 3.5,
+            "rank": "Platinum"
+          },
+          "status": "Approved"
+        },
+        "team2": {
+          "id": 11,
+          "name": "Dhruv",
+          "email": "dhruv45@gmail.com",
+          "phone": "6512458236",
+          "game": "bgmi",
+          "team": "Empire",
+          "registeredAt": "12/8/2025, 11:32:42 am",
+          "logo": "/team-logo/empire.png",
+          "stats": {
+            "matches": 130,
+            "wins": 40,
+            "kills": 600,
+            "kd": 4.6,
+            "rank": "Ace"
+          },
+          "status": "Approved"
+        }
+      }
+    ]
   }
 ]

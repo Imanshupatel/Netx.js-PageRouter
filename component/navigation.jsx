@@ -40,7 +40,7 @@ export default function Navigation() {
             <nav>
                 <ul className="flex gap-6 mx-10 text-lg items-center">
                     {/* Common links for everyone */}
-                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/Home">Home</Link></li>
 
                     {isLoggedIn ? (
                         <>
@@ -63,11 +63,11 @@ export default function Navigation() {
                             {/* )} */}
 
                             {/* Extra links only for normal users */}
-                            {user?.role === "user" && (
+                            {/* {user?.role === "user" && (
                                 <>
                                     <li><Link href="/my-tournaments">Tournaments</Link></li>
                                 </>
-                            )}
+                            )} */}
 
                             {/* Profile dropdown */}
                             <li className="relative" ref={dropdownRef}>
