@@ -162,6 +162,12 @@ export default function MyTournaments() {
                     })}
                 </div>
             )}
+            <Link
+                href={"/tournament/register"}
+                className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-6 py-3 ml-5 mt-10 rounded-xl hover:!text-white hover:opacity-90 transition shadow-lg"
+            >
+                Register Now
+            </Link>
         </div>
     );
 }
