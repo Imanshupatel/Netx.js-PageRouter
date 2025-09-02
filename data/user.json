@@ -103,5 +103,12 @@
     "email": "niral32@gmail.com",
     "password": "123456",
     "role": "user"
+  },
+  {
+    "id": 16,
+    "name": "Kabir",
+    "email": "kabir001@gmail.com",
+    "password": "123456",
+    "role": "user"
   }
 ]

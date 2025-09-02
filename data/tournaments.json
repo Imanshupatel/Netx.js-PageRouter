@@ -145,11 +145,11 @@
   },
   {
     "id": 9,
-    "name": "Tanmay",
-    "email": "tanmay001@gmail.com",
+    "name": "kabir",
+    "email": "kabir001@gmail.com",
     "phone": "2200013626",
     "game": "BGMI",
-    "team": "Scout",
+    "team": "Medal Esports",
     "registeredAt": "8/9/2025, 4:22:12 pm",
     "stats": {
       "matches": 160,
@@ -159,12 +159,12 @@
       "rank": "Conqueror"
     },
     "status": "Approved",
-    "logo": "/team-logo/soul.png"
+    "logo": "/team-logo/medal.png"
   },
   {
     "id": 10,
     "name": "Mayur",
-    "email": "mayur56@gmail.com",
+    "email": "mayur67@gmail.com",
     "phone": "8986523742",
     "game": "BGMI",
     "team": "MayurGaming",

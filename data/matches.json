@@ -1,6 +1,6 @@
 [
   {
-    "tournamentDate": "2025-08-25",
+    "tournamentDate": "2025-10-25",
     "game": "bgmi",
     "matches": [
       {
@@ -54,14 +54,14 @@
       {
         "team1": {
           "id": 9,
-          "name": "Tanmay",
-          "email": "tanmay001@gmail.com",
+          "name": "Kabir",
+          "email": "Kabir001@gmail.com",
           "phone": "2200013626",
           "game": "bgmi",
-          "team": "Scout",
+          "team": "Medal Esports",
           "registeredAt": "8/8/2025, 3:26:06 pm",
           "status": "Approved",
-          "logo": "/team-logo/soul.png"
+          "logo": "/team-logo/medal.png"
         },
         "team2": {
           "id": 1,
@@ -79,7 +79,7 @@
         "team1": {
           "id": 10,
           "name": "Mayur",
-          "email": "mayur56@gmail.com",
+          "email": "mayur67@gmail.com",
           "phone": "8986523742",
           "game": "bgmi",
           "team": "MayurGaming",
@@ -101,7 +101,7 @@
     ]
   },
   {
-    "tournamentDate": "2025-08-28",
+    "tournamentDate": "2025-10-28",
     "game": "pubg_mobile",
     "matches": [
       {
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "tournamentDate": "2025-08-31",
+    "tournamentDate": "2025-11-19",
     "game": "pubg_pc",
     "matches": [
       {
@@ -231,7 +231,7 @@
     ]
   },
   {
-    "tournamentDate": "2025-09-05",
+    "tournamentDate": "2025-11-05",
     "game": "bgmi",
     "matches": [
       {
@@ -369,11 +369,11 @@
         },
         "team2": {
           "id": 9,
-          "name": "Tanmay",
-          "email": "tanmay001@gmail.com",
+          "name": "Kabir",
+          "email": "Kabir001@gmail.com",
           "phone": "2200013626",
           "game": "BGMI",
-          "team": "Scout",
+          "team": "Medal Esports",
           "registeredAt": "8/9/2025, 4:22:12 pm",
           "stats": {
             "matches": 160,
@@ -383,7 +383,7 @@
             "rank": "Conqueror"
           },
           "status": "Approved",
-          "logo": "/team-logo/soul.png"
+          "logo": "/team-logo/medal.png"
         }
       },
       {
@@ -408,7 +408,7 @@
         "team2": {
           "id": 10,
           "name": "Mayur",
-          "email": "mayur56@gmail.com",
+          "email": "mayur67@gmail.com",
           "phone": "8986523742",
           "game": "BGMI",
           "team": "MayurGaming",
@@ -686,7 +686,7 @@
         "team2": {
           "id": 10,
           "name": "Mayur",
-          "email": "mayur56@gmail.com",
+          "email": "mayur67@gmail.com",
           "phone": "8986523742",
           "game": "BGMI",
           "team": "MayurGaming",
@@ -782,7 +782,7 @@
         "team1": {
           "id": 8,
           "name": "Jonathan",
-          "email": "jonathan25@gmail.com",
+          "email": "jonathan@gmail.com",
           "phone": "4657931852",
           "game": "BGMI",
           "team": "GoldLike",
