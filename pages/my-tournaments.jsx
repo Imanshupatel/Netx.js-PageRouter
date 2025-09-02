@@ -21,23 +21,30 @@ export default function MyTournaments() {
         setLoading(false);
     }, []);
 
-    // Filter matches for logged-in user
+    // Filter matches for logged-in user & remove expired tournaments
     const myMatches = useMemo(() => {
         if (!user) return [];
 
         let userMatches = [];
+        const today = new Date(); // current date
+
         matchesData.forEach((tournament) => {
-            tournament.matches.forEach((match) => {
-                if (
-                    match.team1.email.toLowerCase() === user.email.toLowerCase() ||
-                    match.team2.email.toLowerCase() === user.email.toLowerCase()
-                ) {
-                    userMatches.push({
-                        ...tournament,
-                        match,
-                    });
-                }
-            });
+            const tournamentDate = new Date(tournament.tournamentDate);
+
+            // Only include future or ongoing tournaments
+            if (tournamentDate >= today) {
+                tournament.matches.forEach((match) => {
+                    if (
+                        match.team1.email.toLowerCase() === user.email.toLowerCase() ||
+                        match.team2.email.toLowerCase() === user.email.toLowerCase()
+                    ) {
+                        userMatches.push({
+                            ...tournament,
+                            match,
+                        });
+                    }
+                });
+            }
         });
 
         return userMatches;
@@ -70,7 +77,7 @@ export default function MyTournaments() {
             {myMatches.length === 0 ? (
                 <>
                     <p className="text-gray-400">
-                        You have not registered for any matches yet.
+                        You have not registered for any upcoming matches yet.
                     </p>
                     <p className="text-gray-400 mb-5">
                         If you are interested you can Register now.
@@ -128,17 +135,6 @@ export default function MyTournaments() {
                                             {myTeam.team}
                                         </p>
                                         <p className="text-gray-400 text-sm">{myTeam.name}</p>
-                                        {/* <p className="text-gray-500 text-sm">📞 {myTeam.phone}</p> */}
-                                        {/* <span
-                                            className={`mt-3 inline-block px-3 py-1 rounded-full text-xs font-bold ${myTeam.status === "Approved"
-                                                ? "bg-green-600"
-                                                : myTeam.status === "Rejected"
-                                                    ? "bg-red-600"
-                                                    : "bg-yellow-500 text-black"
-                                                }`}
-                                        >
-                                            {myTeam.status || "Pending"}
-                                        </span> */}
                                     </div>
 
                                     {/* VS */}

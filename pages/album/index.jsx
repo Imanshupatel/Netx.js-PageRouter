@@ -44,7 +44,7 @@ const Album = () => {
                 </div>
                 <div className="text-center mt-12">
                     <a
-                        href="/"
+                        href="/about"
                         className="inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold px-8 py-3 rounded-full shadow transition-all duration-200"
                     >
                         Back to Home

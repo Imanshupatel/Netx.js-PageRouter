@@ -14,7 +14,8 @@
       "kd": 4.6,
       "rank": "Ace"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/MADX.png"
   },
   {
     "id": 2,
@@ -31,7 +32,8 @@
       "kd": 3.75,
       "rank": "Crown"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/kong.png"
   },
   {
     "id": 3,
@@ -48,7 +50,8 @@
       "kd": 5.2,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/tejas.png"
   },
   {
     "id": 4,
@@ -65,7 +68,8 @@
       "kd": 4.4,
       "rank": "Ace"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/MADX.png"
   },
   {
     "id": 5,
@@ -82,7 +86,8 @@
       "kd": 4.2,
       "rank": "Crown"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/kong.png"
   },
   {
     "id": 6,
@@ -99,7 +104,8 @@
       "kd": 5,
       "rank": "Diamond"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/anime.png"
   },
   {
     "id": 7,
@@ -116,7 +122,8 @@
       "kd": 3.5,
       "rank": "Platinum"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/anime.png"
   },
   {
     "id": 8,
@@ -133,7 +140,8 @@
       "kd": 8.3,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/GodLike.png"
   },
   {
     "id": 9,
@@ -150,7 +158,8 @@
       "kd": 6.3,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/soul.png"
   },
   {
     "id": 10,
@@ -167,7 +176,8 @@
       "kd": 5.2,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/mayurgaming.png"
   },
   {
     "id": 11,
@@ -184,7 +194,8 @@
       "kd": 4.6,
       "rank": "Ace"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/empire.png"
   },
   {
     "id": 12,
@@ -201,7 +212,8 @@
       "kd": 6.5,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/aj.png"
   },
   {
     "id": 13,
@@ -218,7 +230,8 @@
       "kd": 4,
       "rank": "Diamond"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/noob.png"
   },
   {
     "id": 14,
@@ -235,7 +248,8 @@
       "kd": 4.3,
       "rank": "Crown"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/pro.png"
   },
   {
     "id": 15,
@@ -252,7 +266,8 @@
       "kd": 5.1,
       "rank": "Ace"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/empire.png"
   },
   {
     "id": 16,
@@ -269,7 +284,8 @@
       "kd": 3.1,
       "rank": "Gold"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/danger.png"
   },
   {
     "id": 17,
@@ -286,7 +302,8 @@
       "kd": 5.8,
       "rank": "Conqueror"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/soul.png"
   },
   {
     "id": 18,
@@ -303,7 +320,8 @@
       "kd": 5.9,
       "rank": "Diamond"
     },
-    "status": "Approved"
+    "status": "Approved",
+    "logo": "/team-logo/danger.png"
   },
   {
     "id": 19,
@@ -320,7 +338,8 @@
       "kills": 890,
       "kd": 5.2,
       "rank": "Diamond"
-    }
+    },
+    "logo": "/team-logo/tejas.png"
   },
   {
     "id": 20,
@@ -329,7 +348,7 @@
     "phone": "3598746212",
     "game": "bgmi",
     "team": "MADxGHAAV",
-    "status": "Pending",
+    "status": "Approved",
     "registeredAt": "26/8/2025, 1:25:27 pm",
     "stats": {
       "matches": 105,
@@ -337,7 +356,8 @@
       "kills": 786,
       "kd": 8.3,
       "rank": "Ace Dominator"
-    }
+    },
+    "logo": "/team-logo/MADxGHAAV.png"
   },
   {
     "id": 21,
@@ -354,7 +374,8 @@
       "kills": 786,
       "kd": 8.3,
       "rank": "Ace Master"
-    }
+    },
+    "logo": "/team-logo/MADxGHAAV.png"
   },
   {
     "id": 22,
@@ -371,7 +392,8 @@
       "kills": 260,
       "kd": 3.5,
       "rank": "Diamond"
-    }
+    },
+    "logo": "/team-logo/niral.png"
   },
   {
     "id": 23,
@@ -388,6 +410,25 @@
       "kills": 260,
       "kd": 3.5,
       "rank": "Platinum"
-    }
+    },
+    "logo": "/team-logo/niral.png"
+  },
+  {
+    "id": 24,
+    "name": "Anjali",
+    "email": "anjalijoshi@gmail.com",
+    "phone": "2468597315",
+    "game": "bgmi",
+    "team": "BTS",
+    "status": "Approved",
+    "registeredAt": "1/9/2025, 12:39:43 pm",
+    "stats": {
+      "matches": 155,
+      "wins": 62,
+      "kills": 970,
+      "kd": 5.9,
+      "rank": "Diamond"
+    },
+    "logo": "/team-logo/bts.png"
   }
 ]

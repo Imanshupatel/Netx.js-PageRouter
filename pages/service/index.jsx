@@ -10,7 +10,7 @@ const team = [
     color: "from-blue-400 to-indigo-500",
   },
   {
-    name: "Mike Johnson",
+    name: "Janish patel",
     role: "Backend Developer",
     skills: "Node.js & Python",
     initials: "MJ",
