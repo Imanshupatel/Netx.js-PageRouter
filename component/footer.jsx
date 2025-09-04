@@ -1,22 +1,24 @@
-import Image from 'next/image';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { PiPaperPlaneRightFill } from 'react-icons/pi';
+import Image from "next/image";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { PiPaperPlaneRightFill } from "react-icons/pi";
 
 const Footer = () => {
     return (
-        <footer className="bg-[#0f0f0f] text-white py-16 px-20">
-            <div className="max-w-screen justify-between mx-auto flex flex-row">
-
+        <footer className="bg-[#0f0f0f] text-white py-16 px-6 md:px-20">
+            <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row md:justify-between gap-12">
                 {/* Column 1: Brand */}
-                <div>
-                    <div className="text-3xl font-bold text-green-500 mb-2">
+                <div className="flex-1">
+                    <div className="mb-4">
                         <Image src="/logo.png" alt="logo" width={180} height={100} />
                     </div>
-                    <p className="text-gray-400 text-sm mb-4 w-[250px]">
-                        Beyond esports tournaments, include a broader calendar of gaming events, conferences, and conventions.
+                    <p className="text-gray-400 text-sm mb-4 max-w-xs">
+                        Beyond esports tournaments, include a broader calendar of gaming
+                        events, conferences, and conventions.
                     </p>
-                    <p className="text-sm mb-2 text-white">Follow <span className="text-green-400">With Us:</span></p>
-                    <div className="flex items-center space-x-3 mt-2">
+                    <p className="text-sm mb-2 text-white">
+                        Follow <span className="text-green-400">With Us:</span>
+                    </p>
+                    <div className="flex items-center space-x-4 mt-2">
                         <FaFacebookF className="text-white hover:text-green-400 cursor-pointer" />
                         <FaTwitter className="text-white hover:text-green-400 cursor-pointer" />
                         <FaInstagram className="text-white hover:text-green-400 cursor-pointer" />
@@ -25,7 +27,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 2: Useful Link */}
-                <div>
+                <div className="flex-1">
                     <h4 className="text-lg font-semibold mb-2 relative">
                         Useful Link
                         <span className="block w-10 h-[2px] bg-gradient-to-r from-green-500 to-yellow-400 mt-1"></span>
@@ -41,7 +43,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 3: Supports */}
-                <div>
+                <div className="flex-1">
                     <h4 className="text-lg font-semibold mb-2 relative">
                         Supports
                         <span className="block w-10 h-[2px] bg-gradient-to-r from-green-500 to-yellow-400 mt-1"></span>
@@ -57,13 +59,14 @@ const Footer = () => {
                 </div>
 
                 {/* Column 4: Newsletter */}
-                <div>
+                <div className="flex-1">
                     <h4 className="text-lg font-semibold mb-2 relative">
                         Newsletter
                         <span className="block w-10 h-[2px] bg-gradient-to-r from-green-500 to-yellow-400 mt-1"></span>
                     </h4>
                     <p className="text-gray-400 text-sm mb-4">
-                        Subscribe to our newsletter to get our latest update & news consenter
+                        Subscribe to our newsletter to get our latest update & news
+                        consenter
                     </p>
                     <div className="flex items-center bg-[#1a1a1a] rounded-full px-4 py-2 w-full max-w-xs mb-4">
                         <input
@@ -73,7 +76,7 @@ const Footer = () => {
                         />
                         <PiPaperPlaneRightFill className="text-green-400 text-xl cursor-pointer" />
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
                         <Image
                             src="/appstore.png"
                             alt="App Store"
@@ -90,6 +93,11 @@ const Footer = () => {
                         />
                     </div>
                 </div>
+            </div>
+
+            {/* Bottom text for small screens */}
+            <div className="mt-12 text-center text-gray-500 text-xs">
+                © {new Date().getFullYear()} Your Company. All Rights Reserved.
             </div>
         </footer>
     );

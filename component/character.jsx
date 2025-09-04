@@ -24,38 +24,42 @@ const swiperConfig = {
     autoplay: { delay: 5000, disableOnInteraction: false },
     modules: [Pagination, Autoplay],
     breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 4 },
+        480: { slidesPerView: 2 }, // Small mobiles
+        768: { slidesPerView: 3 }, // Tablets
+        1024: { slidesPerView: 4 }, // Desktops
+        1280: { slidesPerView: 5 }, // Large screens
     },
 };
 
 export default function Character() {
     return (
-        <section className="bg-[#0d0d0d] py-16 px-4 text-white text-center">
-            <p className="text-green-500 text-sm font-medium mb-2">
+        <section className="bg-[#0d0d0d] py-12 px-4 text-white text-center">
+            <p className="text-green-500 text-xs sm:text-sm font-medium mb-2">
                 # Pubg Game Character
             </p>
-            <h2 className="text-3xl font-bold mb-10">Game On, Power Up, Win Big!</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
+                Game On, Power Up, Win Big!
+            </h2>
 
-            <Swiper {...swiperConfig} className="w-full max-w-6xl mx-auto">
+            <Swiper {...swiperConfig} className="w-full max-w-7xl mx-auto">
                 {games.map(({ title, image, fee }) => (
-                    <SwiperSlide key={title} className="min-h-[350px]">
-                        <div className="bg-[#151515] rounded-xl p-3 border border-[#333] hover:shadow-lg transition-all duration-300 w-full max-w-[240px] mx-auto">
+                    <SwiperSlide key={title} className="flex justify-center pb-10">
+                        <div className="bg-[#151515] rounded-xl p-4 border border-[#333] hover:shadow-lg transition-all duration-300 w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px]">
 
                             {/* Character Image */}
-                            <div className="relative w-full h-52 mb-4 rounded-lg overflow-hidden">
+                            <div className="relative w-full h-48 sm:h-56 md:h-64 mb-4 rounded-lg overflow-hidden">
                                 <Image
                                     src={image}
                                     alt={title}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 240px"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 300px"
                                     priority={false}
                                 />
                             </div>
 
                             {/* Character Title */}
-                            <h3 className="text-lg font-semibold mb-1">{title}</h3>
+                            <h3 className="text-base sm:text-lg font-semibold mb-1">{title}</h3>
 
                             {/* Character Fee */}
                             <p className="text-sm text-gray-400 flex items-center justify-center gap-1">
@@ -65,7 +69,7 @@ export default function Character() {
                                 ) : (
                                     <>
                                         <span className="text-green-500">{fee.replace(" UC", "")}</span>
-                                        <Image src="/uc.png" alt="UC" width={18} height={18} />
+                                        <Image src="/uc.png" alt="UC" width={16} height={16} />
                                     </>
                                 )}
                             </p>

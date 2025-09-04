@@ -15,23 +15,18 @@ export default function MyTournaments() {
     const [matchesData, setMatchesData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Load matches.json
     useEffect(() => {
         setMatchesData(matchesDataFile);
         setLoading(false);
     }, []);
 
-    // Filter matches for logged-in user & remove expired tournaments
     const myMatches = useMemo(() => {
         if (!user) return [];
-
         let userMatches = [];
-        const today = new Date(); // current date
+        const today = new Date();
 
         matchesData.forEach((tournament) => {
             const tournamentDate = new Date(tournament.tournamentDate);
-
-            // Only include future or ongoing tournaments
             if (tournamentDate >= today) {
                 tournament.matches.forEach((match) => {
                     if (
@@ -52,45 +47,47 @@ export default function MyTournaments() {
 
     if (!user) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-                <p className="text-lg">Please log in to see your tournaments.</p>
+            <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white text-center p-4">
+                <p className="text-base sm:text-lg">
+                    Please log in to see your tournaments.
+                </p>
             </div>
         );
     }
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-                <p>Loading tournaments...</p>
+            <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white text-center p-4">
+                <p className="text-base sm:text-lg">Loading tournaments...</p>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gray-900 p-8">
+        <div className="min-h-screen bg-gray-900 px-4 sm:px-6 md:px-8 py-10">
             <h1
-                className={`text-4xl font-bold text-white text-center m-10 ${orbitron.className}`}
+                className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mt-13 mb-10 ${orbitron.className}`}
             >
                 🎮 My Tournaments
             </h1>
 
             {myMatches.length === 0 ? (
-                <>
-                    <p className="text-gray-400">
+                <div className="text-center">
+                    <p className="text-gray-400 text-sm sm:text-base">
                         You have not registered for any upcoming matches yet.
                     </p>
-                    <p className="text-gray-400 mb-5">
+                    <p className="text-gray-400 mb-5 text-sm sm:text-base">
                         If you are interested you can Register now.
                     </p>
                     <Link
                         href={"/tournament/register"}
-                        className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-6 py-3 rounded-xl hover:opacity-90 transition shadow-lg"
+                        className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-5 py-3 rounded-xl text-sm sm:text-base hover:opacity-90 transition shadow-lg"
                     >
                         Register Now
                     </Link>
-                </>
+                </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {myMatches.map((item, index) => {
                         const { tournamentDate, game, match } = item;
                         const myTeam =
@@ -106,18 +103,18 @@ export default function MyTournaments() {
                             <div
                                 key={index}
                                 className={`relative bg-gradient-to-br from-gray-900 via-gray-800 to-black 
-                  rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 
-                  border border-gray-700 ${orbitron.className}`}
+                                rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 
+                                border border-gray-700 ${orbitron.className}`}
                             >
-                                {/* Glowing Border */}
+                                {/* Glow Border */}
                                 <div className="absolute inset-0 rounded-2xl border-2 border-orange-500/20 pointer-events-none"></div>
 
                                 {/* Header */}
-                                <div className="flex justify-between items-center mb-6">
-                                    <h2 className="text-xl font-extrabold text-orange-400 tracking-wider uppercase">
+                                <div className="flex justify-between items-center mb-4 sm:mb-6">
+                                    <h2 className="text-lg sm:text-xl font-extrabold text-orange-400 tracking-wider uppercase">
                                         {game}
                                     </h2>
-                                    <span className="text-sm text-gray-400">
+                                    <span className="text-xs sm:text-sm text-gray-400">
                                         📅 {tournamentDate}
                                     </span>
                                 </div>
@@ -129,17 +126,17 @@ export default function MyTournaments() {
                                         <img
                                             src={myTeam.logo}
                                             alt={myTeam.team}
-                                            className="w-22 h-22 mx-auto mt-4 rounded-full border-2 border-orange-500 shadow-lg"
+                                            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mt-2 sm:mt-4 rounded-full border-2 border-orange-500 shadow-lg object-cover"
                                         />
-                                        <p className="text-white mt-1 font-bold text-lg drop-shadow">
+                                        <p className="text-white mt-2 font-bold text-sm sm:text-base md:text-lg drop-shadow">
                                             {myTeam.team}
                                         </p>
-                                        <p className="text-gray-400 text-sm">{myTeam.name}</p>
+                                        <p className="text-gray-400 text-xs sm:text-sm">{myTeam.name}</p>
                                     </div>
 
                                     {/* VS */}
-                                    <div className="mx-6">
-                                        <p className="text-3xl font-extrabold text-orange-500 animate-pulse">
+                                    <div className="mx-4 sm:mx-6">
+                                        <p className="text-2xl sm:text-3xl font-extrabold text-orange-500 animate-pulse">
                                             VS
                                         </p>
                                     </div>
@@ -149,12 +146,12 @@ export default function MyTournaments() {
                                         <img
                                             src={opponent.logo}
                                             alt={opponent.team}
-                                            className="w-22 h-22 mx-auto mt-4 rounded-full border-2 border-purple-500 shadow-lg"
+                                            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mt-2 sm:mt-4 rounded-full border-2 border-purple-500 shadow-lg object-cover"
                                         />
-                                        <p className="text-gray-200 mt-2 font-bold text-lg drop-shadow">
+                                        <p className="text-gray-200 mt-2 font-bold text-sm sm:text-base md:text-lg drop-shadow">
                                             {opponent.team}
                                         </p>
-                                        <p className="text-gray-400 text-sm">{opponent.name}</p>
+                                        <p className="text-gray-400 text-xs sm:text-sm">{opponent.name}</p>
                                     </div>
                                 </div>
                             </div>
@@ -162,12 +159,16 @@ export default function MyTournaments() {
                     })}
                 </div>
             )}
-            <Link
-                href={"/tournament/register"}
-                className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-6 py-3 ml-5 mt-10 rounded-xl hover:!text-white hover:opacity-90 transition shadow-lg"
-            >
-                Register Now
-            </Link>
+
+            {/* Register Button */}
+            <div className="text-center mt-10">
+                <Link
+                    href={"/tournament/register"}
+                    className="inline-block bg-gradient-to-r from-orange-500 to-pink-600 text-white px-5 py-3 rounded-xl text-sm sm:text-base hover:opacity-90 transition shadow-lg"
+                >
+                    Register Now
+                </Link>
+            </div>
         </div>
     );
 }

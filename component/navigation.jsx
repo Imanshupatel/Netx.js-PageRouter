@@ -5,15 +5,18 @@ import { AuthContext } from "../context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Menu, X } from "lucide-react"; // hamburger + close icons
 
 export default function Navigation() {
     const { isLoggedIn, user, logout } = useContext(AuthContext);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false); // profile dropdown
+    const [mobileMenu, setMobileMenu] = useState(false); // mobile nav
     const dropdownRef = useRef(null);
     const router = useRouter();
 
     useEffect(() => {
         setOpen(false);
+        setMobileMenu(false);
     }, [isLoggedIn]);
 
     useEffect(() => {
@@ -32,42 +35,23 @@ export default function Navigation() {
     };
 
     return (
-        <header className="flex justify-between h-14 items-center py-8 fixed top-0 z-50 w-full backdrop-blur-lg">
-            <div className="mx-10">
-                <Image src="/logo.png" alt="logo" width={180} height={100} />
+        <header className="flex justify-between h-16 items-center px-6 fixed top-0 z-50 w-full backdrop-blur-lg bg-black/70 text-white">
+            {/* Logo */}
+            <div className="flex items-center">
+                <Image src="/logo.png" alt="logo" width={150} height={80} />
             </div>
 
-            <nav>
-                <ul className="flex gap-6 mx-10 text-lg items-center">
-                    {/* Common links for everyone */}
+            {/* Desktop Menu */}
+            <nav className="hidden md:flex">
+                <ul className="flex gap-6 text-lg items-center">
                     <li><Link href="/Home">Home</Link></li>
 
                     {isLoggedIn ? (
                         <>
-                            {/* Extra links only for admin */}
-                            {/* {user?.role === "admin" && (
-                                <>
-                                    <li><Link href="../../admin/dashBord">Dashboard</Link></li>
-                                    <li><Link href="../../admin/tournaments">Tournaments</Link></li>
-                                    <li><Link href="../../admin/contactdata">Contact Data</Link></li>
-                                </>
-                            )}
-
-                            {user?.role !== "admin" && ( */}
-                            <>
-                                <li><Link href="/about">About</Link></li>
-                                <li><Link href="/service">Service</Link></li>
-                                <li><Link href="/contact">Contact</Link></li>
-                                <li><Link href="/my-tournaments">Tournaments</Link></li>
-                            </>
-                            {/* )} */}
-
-                            {/* Extra links only for normal users */}
-                            {/* {user?.role === "user" && (
-                                <>
-                                    <li><Link href="/my-tournaments">Tournaments</Link></li>
-                                </>
-                            )} */}
+                            <li><Link href="/about">About</Link></li>
+                            <li><Link href="/service">Service</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
+                            <li><Link href="/my-tournaments">Tournaments</Link></li>
 
                             {/* Profile dropdown */}
                             <li className="relative" ref={dropdownRef}>
@@ -86,10 +70,10 @@ export default function Navigation() {
                                 </button>
 
                                 {open && (
-                                    <div className="absolute right-0 mt-2 w-28 bg-white text-black rounded shadow-md z-50">
+                                    <div className="absolute right-0 mt-2 w-32 bg-white text-black rounded shadow-md z-50">
                                         <Link
                                             href="/profile"
-                                            className="block w-full text-left px-4 py-2 hover:bg-gray-200"
+                                            className="block px-4 py-2 hover:bg-gray-200"
                                             onClick={() => setOpen(false)}
                                         >
                                             Profile
@@ -110,7 +94,6 @@ export default function Navigation() {
                             <li><Link href="/service">Service</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
                             <li>
-
                                 <Link
                                     href="/login"
                                     className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
@@ -122,6 +105,56 @@ export default function Navigation() {
                     )}
                 </ul>
             </nav>
+
+            {/* Mobile Hamburger Button */}
+            <button
+                className="md:hidden p-2 rounded hover:bg-gray-700 transition"
+                onClick={() => setMobileMenu(!mobileMenu)}
+            >
+                {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+            </button>
+
+            {/* Mobile Menu */}
+            {mobileMenu && (
+                <div className="absolute top-16 left-0 w-full bg-black/90 text-white md:hidden z-40 shadow-lg">
+                    <ul className="flex flex-col items-center gap-6 py-6 text-lg">
+                        <li><Link href="/Home" onClick={() => setMobileMenu(false)}>Home</Link></li>
+
+                        {isLoggedIn ? (
+                            <>
+                                <li><Link href="/about" onClick={() => setMobileMenu(false)}>About</Link></li>
+                                <li><Link href="/service" onClick={() => setMobileMenu(false)}>Service</Link></li>
+                                <li><Link href="/contact" onClick={() => setMobileMenu(false)}>Contact</Link></li>
+                                <li><Link href="/my-tournaments" onClick={() => setMobileMenu(false)}>Tournaments</Link></li>
+                                <li><Link href="/profile" onClick={() => setMobileMenu(false)}>Profile</Link></li>
+                                <li>
+                                    <button
+                                        onClick={handleLogout}
+                                        className="px-4 py-2 bg-red-500 rounded hover:bg-red-600 transition"
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li><Link href="/about" onClick={() => setMobileMenu(false)}>About</Link></li>
+                                <li><Link href="/service" onClick={() => setMobileMenu(false)}>Service</Link></li>
+                                <li><Link href="/contact" onClick={() => setMobileMenu(false)}>Contact</Link></li>
+                                <li>
+                                    <Link
+                                        href="/login"
+                                        onClick={() => setMobileMenu(false)}
+                                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                                    >
+                                        Login
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+                    </ul>
+                </div>
+            )}
         </header>
     );
 }
