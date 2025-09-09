@@ -27,28 +27,37 @@ const games = [
 
 export default function GameSection() {
     return (
-        <section className="bg-[#0e0e10] py-10 px-6 ">
-            <div >
-                <h1 className="text-3xl font-bold text-center text-indigo-400">🎮 Games</h1>
+        <section className="bg-[#0e0e10] py-10 px-4 sm:px-6 lg:px-12">
+            {/* Section Title */}
+            <div className="mb-10 text-center">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-indigo-400">
+                    🎮 Games
+                </h1>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto py-15">
+            {/* Game Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {games.map((game) => (
-                    <div
-                        key={game.id}
-                        className="bg-[#1a1a1a] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300"
-                    >
-                        <Image
-                            src={game.image}
-                            alt={game.title}
-                            width={500}
-                            height={300}
-                            className="w-full h-56 object-cover"
-                        />
-                        <div className="p-5 text-white">
-                            <h3 className="text-lg font-semibold mb-3">{game.title}</h3>
+                    <Link key={game.id} href={game.link}>
+                        <div className="bg-[#1a1a1a] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+                            {/* Image */}
+                            <div className="relative w-full h-48 sm:h-56 lg:h-64">
+                                <Image
+                                    src={game.image}
+                                    alt={game.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-4 sm:p-5 text-white">
+                                <h3 className="text-lg sm:text-xl font-semibold mb-1">
+                                    {game.title}
+                                </h3>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

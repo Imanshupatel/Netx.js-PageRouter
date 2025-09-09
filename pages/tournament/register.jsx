@@ -17,7 +17,6 @@ export default function TournamentRegister() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validation: team name also required now
         if (!formData.name || !formData.email || !formData.phone || !formData.game || !formData.team) {
             setMessage("Please fill in all required fields.");
             return;
@@ -32,7 +31,7 @@ export default function TournamentRegister() {
 
             const result = await res.json();
             if (res.ok) {
-                setMessage("Registration successful!");
+                setMessage("✅ Registration successful!");
                 setFormData({ name: "", email: "", phone: "", game: "", team: "" });
             } else {
                 setMessage(result.error || "Something went wrong.");
@@ -43,11 +42,17 @@ export default function TournamentRegister() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-            <div className="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-lg">
-                <h1 className="text-3xl font-bold mb-6 text-center">Tournament Registration</h1>
+        <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div className="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md sm:max-w-lg">
+                <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+                    Tournament Registration
+                </h1>
 
-                {message && <p className="mb-4 text-center text-yellow-400">{message}</p>}
+                {message && (
+                    <p className="mb-4 text-center text-yellow-400 text-sm sm:text-base">
+                        {message}
+                    </p>
+                )}
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
@@ -56,7 +61,7 @@ export default function TournamentRegister() {
                         placeholder="Full Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
+                        className="w-full p-3 rounded bg-gray-700 focus:outline-none text-sm sm:text-base"
                         required
                     />
                     <input
@@ -65,7 +70,7 @@ export default function TournamentRegister() {
                         placeholder="Email Address"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
+                        className="w-full p-3 rounded bg-gray-700 focus:outline-none text-sm sm:text-base"
                         required
                     />
                     <input
@@ -74,14 +79,14 @@ export default function TournamentRegister() {
                         placeholder="Phone Number"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
+                        className="w-full p-3 rounded bg-gray-700 focus:outline-none text-sm sm:text-base"
                         required
                     />
                     <select
                         name="game"
                         value={formData.game}
                         onChange={handleChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
+                        className="w-full p-3 rounded bg-gray-700 focus:outline-none text-sm sm:text-base"
                         required
                     >
                         <option value="">Select Game</option>
@@ -95,13 +100,13 @@ export default function TournamentRegister() {
                         placeholder="Team Name"
                         value={formData.team}
                         onChange={handleChange}
-                        className="w-full p-3 rounded bg-gray-700 focus:outline-none"
+                        className="w-full p-3 rounded bg-gray-700 focus:outline-none text-sm sm:text-base"
                         required
                     />
 
                     <button
                         type="submit"
-                        className="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold"
+                        className="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold text-sm sm:text-base"
                     >
                         Register
                     </button>
@@ -109,4 +114,4 @@ export default function TournamentRegister() {
             </div>
         </div>
     );
-} 
+}

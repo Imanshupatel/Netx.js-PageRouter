@@ -1,9 +1,11 @@
+"use client";
+
 import Head from "next/head";
 import Image from "next/image";
 import { FaGamepad, FaTrophy, FaHeadset } from "react-icons/fa";
 import Character from "@/component/character";
 import TournamentSection from "@/component/tournament";
-import CharacterCarousel from "@/component/update";
+import CharacterCarousel from "@/component/update"; // ✅ has md:border fix
 import ProPlayersSection from "@/component/pro-player";
 import EsportsJoinSection from "@/component/Esports";
 import Footer from "@/component/footer";
@@ -27,7 +29,8 @@ export default function Home() {
                         BattleGround Mobile
                     </h1>
                     <p className="text-base md:text-xl text-white/90 mb-4 text-center max-w-2xl">
-                        Your one-stop destination for BGMI APK downloads, player stats, and a stunning gaming experience.
+                        Your one-stop destination for BGMI APK downloads, player stats, and a
+                        stunning gaming experience.
                     </p>
                     <div className="w-full justify-center mx-auto mt-6 mb-10 px-4 flex flex-col sm:flex-row gap-4">
                         <a
@@ -57,19 +60,6 @@ export default function Home() {
                                 className="absolute inset-0 w-full h-full"
                                 preserveAspectRatio="none"
                             >
-                                <defs>
-                                    <linearGradient
-                                        id="bgGradient"
-                                        x1="0%"
-                                        y1="0%"
-                                        x2="100%"
-                                        y2="0%"
-                                    >
-                                        <stop offset="15%" stopColor="#0f2027" />
-                                        <stop offset="50%" stopColor="#203a43" />
-                                        <stop offset="85%" stopColor="#2c5364" />
-                                    </linearGradient>
-                                </defs>
 
                                 <path
                                     d="
@@ -96,9 +86,11 @@ export default function Home() {
                                         Z
                                     "
                                     fill="url(#bgGradient)"
-                                    stroke="#00FF80"
-                                    strokeWidth="2"
+                                    className="
+                                        fill-[url(#bgGradient)] md:fill-transparent 
+                                        stroke-0 md:stroke-[#00FF80] md:stroke-[2]"
                                 />
+
                             </svg>
                         </div>
                     </div>
@@ -122,7 +114,7 @@ export default function Home() {
                             </p>
                             <Link
                                 href={"/tournament/register"}
-                                className="border hover:border-2 hover:bg-green-50 hover:border-green-500 hover:!text-green-500 text-white py-2 px-6 rounded-full"
+                                className="border-1 md:border md:hover:border-2 md:hover:bg-green-50 md:hover:border-green-500 md:hover:!text-green-500 text-white py-2 px-6 rounded-full"
                             >
                                 JOIN NOW ➜
                             </Link>
@@ -219,7 +211,7 @@ export default function Home() {
             <TournamentSection />
             <CharacterCarousel />
             <ProPlayersSection />
-            <EsportsJoinSection />
+            {/* <EsportsJoinSection /> */}
             <BlogSection />
             <TeamLogos />
             <Footer />

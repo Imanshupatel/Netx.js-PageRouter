@@ -20,14 +20,16 @@ const games = [
 const swiperConfig = {
     slidesPerView: 1,
     spaceBetween: 20,
+    centeredSlides: true,         // ✅ keep center mode always
+    centeredSlidesBounds: true,   // ✅ prevents overflow at edges
     pagination: { clickable: true },
     autoplay: { delay: 5000, disableOnInteraction: false },
     modules: [Pagination, Autoplay],
     breakpoints: {
-        480: { slidesPerView: 2 }, // Small mobiles
-        768: { slidesPerView: 3 }, // Tablets
-        1024: { slidesPerView: 4 }, // Desktops
-        1280: { slidesPerView: 5 }, // Large screens
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 5 },
     },
 };
 

@@ -127,7 +127,6 @@ const matches = [
     }
 ];
 
-
 const filters = ["All Match", "Upcoming Match", "Finished Match"];
 
 export default function TournamentSection() {
@@ -135,7 +134,10 @@ export default function TournamentSection() {
 
     const filteredMatches = matches.filter((match) => {
         if (selectedFilter === "All Match") return true;
-        return match.status.toLowerCase() === selectedFilter.toLowerCase().replace(" match", "");
+        return (
+            match.status.toLowerCase() ===
+            selectedFilter.toLowerCase().replace(" match", "")
+        );
     });
 
     return (
@@ -143,14 +145,16 @@ export default function TournamentSection() {
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <p className="text-green-500 text-sm font-semibold"># Game Streaming Battle</p>
+                    <p className="text-green-500 text-sm font-semibold">
+                        # Game Streaming Battle
+                    </p>
                     <h2 className="text-3xl sm:text-4xl font-bold mt-2">
                         Our Gaming Tournaments <span className="text-green-500">!</span>
                     </h2>
                 </div>
 
                 {/* Tabs */}
-                <div className="flex justify-center mb-10 gap-4">
+                <div className="flex justify-center mb-10 gap-4 flex-wrap">
                     {filters.map((filter) => (
                         <button
                             key={filter}
@@ -165,50 +169,62 @@ export default function TournamentSection() {
                     ))}
                 </div>
 
-                {/* Match Cards */}
-                <div className="space-y-6 max-w-screen grid-cols-2 grid gap-x-20">
+                {/* Match Cards Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {filteredMatches.map((match) => (
                         <div
                             key={match.id}
-                            className=" w-[650px] h-[170px] flex mr-5 flex-shrink-0  items-center justify-between border border-green-500/20 rounded-[20px] p-6 bg-[#121212] flex-wrap gap-4"
+                            className="w-full border border-green-500/20 rounded-[20px] p-4 sm:p-6 bg-[#121212] flex items-center justify-between gap-4 custom-400:flex-col"
                         >
-                            {/* Left team logo */}
-                            <div className="flex flex-col items-center">
+                            {/* Team 1 */}
+                            <div className="flex flex-col items-center flex-shrink-0">
                                 <Image
                                     src={match.team1Logo}
                                     alt="Team 1 Logo"
-                                    width={80}
-                                    height={80}
-                                    className={`object-contain ${match.status === "Finished" && match.winner === "team1" ? "ring-4 ring-green-500 rounded-full" : ""}`}
+                                    width={70}
+                                    height={70}
+                                    className={`object-contain ${match.status === "Finished" && match.winner === "team1"
+                                        ? "ring-4 ring-green-500 rounded-full"
+                                        : ""
+                                        }`}
                                 />
                                 {match.status === "Finished" && match.winner === "team1" && (
-                                    <span className="text-green-500 text-xs font-semibold mt-1">Winner</span>
+                                    <span className="text-green-500 text-xs font-semibold mt-1">
+                                        Winner
+                                    </span>
                                 )}
                             </div>
 
                             {/* VS */}
-                            <span className="text-3xl font-bold text-white mx-4">VS</span>
+                            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                                VS
+                            </span>
 
-                            {/* Right team logo */}
-                            <div className="flex flex-col items-center">
+                            {/* Team 2 */}
+                            <div className="flex flex-col items-center flex-shrink-0">
                                 <Image
                                     src={match.team2Logo}
                                     alt="Team 2 Logo"
-                                    width={80}
-                                    height={80}
-                                    className={`object-contain ${match.status === "Finished" && match.winner === "team2" ? "ring-4 ring-green-500 rounded-full" : ""}`}
+                                    width={70}
+                                    height={70}
+                                    className={`object-contain ${match.status === "Finished" && match.winner === "team2"
+                                        ? "ring-4 ring-green-500 rounded-full"
+                                        : ""
+                                        }`}
                                 />
                                 {match.status === "Finished" && match.winner === "team2" && (
-                                    <span className="text-green-500 text-xs font-semibold mt-1">Winner</span>
+                                    <span className="text-green-500 text-xs font-semibold mt-1">
+                                        Winner
+                                    </span>
                                 )}
                             </div>
 
                             {/* Divider */}
-                            <div className="w-[2px] bg-green-400 h-full ml-[10px]"></div>
+                            <div className="hidden md:block w-[2px] bg-green-400 h-20"></div>
 
                             {/* Match Info */}
-                            <div className="flex-1 min-w-[250px] sm:ml-10">
-                                <div className="flex items-center gap-2 mb-1">
+                            <div className="flex-1 text-center md:text-left">
+                                <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-1">
                                     <span
                                         className={`text-xs px-2 py-1 rounded-full font-medium ${match.status === "Upcoming"
                                             ? "bg-green-700 text-white"
@@ -219,12 +235,18 @@ export default function TournamentSection() {
                                     </span>
                                     <span className="text-xs text-gray-400">{match.score}</span>
                                 </div>
-                                <h3 className="font-semibold text-lg mb-1">{match.title}</h3>
-                                <p className="text-sm text-green-400">{match.date}</p>
-                                <div className="flex gap-3 mt-2 text-red-500 text-lg">
-                                    <Link href={match.youtube}>
-                                        {match.youtube && <FaYoutube />}
-                                    </Link>
+                                <h3 className="font-semibold text-base sm:text-lg mb-1">
+                                    {match.title}
+                                </h3>
+                                <p className="text-xs sm:text-sm text-green-400">
+                                    {match.date}
+                                </p>
+                                <div className="flex justify-center md:justify-start gap-3 mt-2 text-red-500 text-lg">
+                                    {match.youtube !== "true" && (
+                                        <Link href={match.youtube}>
+                                            <FaYoutube />
+                                        </Link>
+                                    )}
                                     {match.twitch && <FaTwitch className="text-purple-500" />}
                                 </div>
                             </div>
@@ -232,6 +254,16 @@ export default function TournamentSection() {
                     ))}
                 </div>
             </div>
+
+            {/* Custom CSS for 400px */}
+            <style jsx>{`
+        @media (max-width: 400px) {
+          .custom-400\\:flex-col {
+            flex-direction: column !important;
+            text-align: center !important;
+          }
+        }
+      `}</style>
         </section>
     );
 }
