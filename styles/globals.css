@@ -584,15 +584,15 @@ a:hover {
   color: #22c55e !important;
   /* arrow color */
   position: absolute;
-  top: 46.5%;
+  top: 25%;
 }
 
 .swiper-button-prev::after {
-  right: -2px;
+  right: -15px;
 }
 
 .swiper-button-next::after {
-  left: -2px;
+  left: -15px;
 }
 
 .swiper-button-prev::before,
@@ -611,15 +611,38 @@ a:hover {
 
 .swiper-button-prev::before {
   border-right: 2px solid #daae2c;
-  right: -35px;
+  right: -40px;
   /* Half sticks out */
 }
 
 .swiper-button-next::before {
   border-left: 2px solid #daae2c;
-  left: -35px;
+  left: -40px;
   /* Half sticks out */
 }
+
+/* Default bullets */
+
+.swiper-pagination-bullet {
+
+  background-color: #999 !important;
+  /* inactive color */
+
+  opacity: 1 !important;
+  /* remove default opacity */
+
+}
+
+/* Active bullet */
+
+.swiper-pagination-bullet-active {
+
+  background-color: #22c55e !important;
+  /* Tailwind green-500 */
+
+}
+
+
 
 @keyframes marquee {
   0% {
@@ -635,4 +658,84 @@ a:hover {
 .animate-marquee {
   display: flex;
   animation: marquee 20s linear infinite;
+}
+
+@media (max-width: 320px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 25% !important;
+  }
+}
+
+@media (max-width: 375px) and (min-width: 321px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 30% !important;
+  }
+}
+
+@media (max-width: 425px) and (min-width: 376px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 35% !important;
+  }
+}
+
+@media (max-width: 510px) and (min-width: 426px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 40% !important;
+  }
+}
+
+@media (max-width: 639px) and (min-width: 511px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 45% !important;
+  }
+}
+
+@media (max-width: 748px) and (min-width: 640px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 28% !important;
+  }
+}
+
+@media (max-width: 844px) and (min-width: 749px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 32% !important;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 845px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 38% !important;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 28% !important;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1201px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50% !important;
+  }
 }

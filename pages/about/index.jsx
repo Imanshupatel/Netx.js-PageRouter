@@ -50,86 +50,131 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* SVG Wave + Tournament Join */}
+                {/* ✅ SVG Wave Border + Tournament Section */}
                 <section className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
-                    <div className="w-full h-[100px] sm:h-[100px] md:h-[400px] absolute z-0 left-[20px] top-[40px]">
-                        <div className="relative w-[1080px] h-full max-w-6xl mx-auto">
-                            <svg
-                                viewBox="0 0 1200 400"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="absolute inset-0 w-full h-full"
-                                preserveAspectRatio="none"
-                            >
+                    {/* ✅ SVG Frame */}
+                    <div className="relative w-full max-w-6xl mx-auto">
+                        {/* ✅ Desktop / Tablet Frame */}
+                        <svg
+                            viewBox="0 0 1200 460"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="hidden md:block absolute inset-0 w-full top-[60px] h-[410px] md:h-[410px] md:w-[710px] md:left-[23px] lg:w-[1140px] lg:h-[500px] lg:top-[80px]"
+                            preserveAspectRatio="none"
+                        >
+                            <path
+                                d="
+                                    M 0 80
+                                    Q 0 50 30 50
+                                    H 380
+                                    Q 395 50 405 60
+                                    Q 420 80 440 80
+                                    H 720
+                                    Q 730 80 740 65
+                                    Q 750 50 760 50
+                                    H 1120
+                                    Q 1150 50 1150 80
+                                    V 370
+                                    Q 1150 400 1120 400
+                                    H 780
+                                    Q 760 400 740 380
+                                    Q 730 370 710 370
+                                    H 440
+                                    Q 420 370 405 390
+                                    Q 395 400 370 400
+                                    H 30
+                                    Q 0 400 0 370
+                                    Z
+                                "
+                                className="fill-transparent stroke-[#00FF80] stroke-[2]"
+                            />
+                        </svg>
 
-                                <path
-                                    d="
-                                        M 0 80
-                                        Q 0 50 30 50
-                                        H 380
-                                        Q 395 50 405 60
-                                        Q 420 80 440 80
-                                        H 720
-                                        Q 730 80 740 65
-                                        Q 750 50 760 50
-                                        H 1120
-                                        Q 1150 50 1150 80
-                                        V 370
-                                        Q 1150 400 1120 400
-                                        H 780
-                                        Q 760 400 740 380
-                                        Q 730 370 710 370
-                                        H 440
-                                        Q 420 370 405 390
-                                        Q 395 400 370 400
-                                        H 30
-                                        Q 0 400 0 370
-                                        Z
-                                    "
-                                    fill="url(#bgGradient)"
-                                    className="
-                                        fill-[url(#bgGradient)] md:fill-transparent 
-                                        stroke-0 md:stroke-[#00FF80] md:stroke-[2]"
+                        {/* ✅ Mobile Frame */}
+                        <svg
+                            viewBox="0 0 400 500"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="block md:hidden absolute inset-0 w-[330px] h-full left-[25px] top-[12px]"
+                            preserveAspectRatio="none"
+                        >
+                            <path
+                                d="
+                                    M 0 80
+                                    Q 0 50 30 50
+                                    H 370
+                                    Q 400 50 400 80
+                                    V 420
+                                    Q 400 450 370 450
+                                    H 30
+                                    Q 0 450 0 420
+                                    Z
+                                "
+                                className="fill-transparent stroke-[#00FF80] stroke-[2]"
+                            />
+                        </svg>
+
+                        {/* ✅ Inside Frame Content */}
+                        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10 px-6 py-12 md:py-20">
+                            {/* ✅ Mobile Characters (stack at top) */}
+                            <div className="flex md:hidden justify-between w-full px-4">
+                                <Image
+                                    src="/x-suit/left.png"
+                                    alt="Left Character"
+                                    width={120}
+                                    height={200}
+                                    className="w-[100px] sm:w-[120px]"
                                 />
+                                <Image
+                                    src="/x-suit/right.png"
+                                    alt="Right Character"
+                                    width={120}
+                                    height={200}
+                                    className="w-[100px] sm:w-[120px]"
+                                />
+                            </div>
 
-                            </svg>
+                            {/* ✅ Desktop Left Character */}
+                            <Image
+                                src="/x-suit/left.png"
+                                alt="Left Character"
+                                width={220}
+                                height={400}
+                                className="hidden md:block w-[160px] lg:w-[240px]"
+                            />
+
+                            {/* ✅ Text Content */}
+                            <div className="max-w-sm sm:max-w-md md:max-w-lg text-center md:mt-[20px] mt-6 md:mt-0 md:ml-[20px] lg:ml-0 lg:mt-[50px]">
+                                <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">
+                                    Join The Big Tournaments
+                                </h2>
+                                <p className="text-gray-400 mb-6 text-sm md:text-base leading-relaxed">
+                                    Beyond esports tournaments, include a broader calendar of gaming
+                                    events, conferences, and conventions.
+                                </p>
+
+                                {/* ✅ Button fixed for mobile */}
+                                <div className="flex justify-center md:mt-[15px]">
+                                    <Link
+                                        href={"/tournament/register"}
+                                        className="inline-block border border-white hover:border-green-500 hover:bg-green-50 hover:text-green-500 text-white py-2 px-6 rounded-full text-sm sm:text-base transition-all"
+                                    >
+                                        JOIN NOW ➜
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* ✅ Desktop Right Character */}
+                            <Image
+                                src="/x-suit/right.png"
+                                alt="Right Character"
+                                width={220}
+                                height={400}
+                                className="hidden md:block w-[260px] lg:w-[240px]"
+                            />
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10 relative z-10 mt-[-17px]">
-                        <Image
-                            src="/x-suit/left.png"
-                            alt="Left Character"
-                            width={200}
-                            height={400}
-                            className="w-[150px] md:w-[255px] ml-[4px]"
-                        />
-
-                        <div className="max-w-md text-center mt-8 md:mt-0">
-                            <h2 className="text-xl md:text-2xl font-bold mb-4">
-                                Join The Big Tournaments
-                            </h2>
-                            <p className="text-gray-400 mb-6 text-sm md:text-base">
-                                Beyond esports tournaments, include a broader calendar of gaming
-                                events, conferences, and conventions.
-                            </p>
-                            <Link
-                                href={"/tournament/register"}
-                                className="border-1 md:border md:hover:border-2 md:hover:bg-green-50 md:hover:border-green-500 md:hover:!text-green-500 text-white py-2 px-6 rounded-full"
-                            >
-                                JOIN NOW ➜
-                            </Link>
-                        </div>
-
-                        <Image
-                            src="/x-suit/right.png"
-                            alt="Right Character"
-                            width={200}
-                            height={400}
-                            className="w-[150px] md:w-[255px] ml-[4px]"
-                        />
-                    </div>
-
-                    <div className="mt-12 flex flex-wrap justify-center gap-3 text-sm md:text-lg text-[#7FFFDE]">
+                    {/* ✅ Bottom Tags */}
+                    <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-lg text-[#7FFFDE]">
                         <span className="text-purple-400">★</span>
                         <span>GAMING SPANNING</span>
                         <span className="text-purple-400">★</span>
@@ -211,7 +256,7 @@ export default function Home() {
             <TournamentSection />
             <CharacterCarousel />
             <ProPlayersSection />
-            {/* <EsportsJoinSection /> */}
+            <EsportsJoinSection />
             <BlogSection />
             <TeamLogos />
             <Footer />

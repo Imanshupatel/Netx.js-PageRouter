@@ -24,7 +24,7 @@ const blogPosts = [
 
 export default function BlogSection() {
     return (
-        <section className="bg-[#0f0f0f] py-16 px-4 sm:px-6 lg:px-8 text-white">
+        <section className="bg-[#0f0f0f] py-10 px-4 sm:px-6 lg:px-8 text-white">
             <div className="max-w-7xl mx-auto text-center">
                 {/* Heading */}
                 <p className="text-green-500 font-semibold text-xs sm:text-sm mb-2">

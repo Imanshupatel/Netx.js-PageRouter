@@ -45,7 +45,9 @@ export default function Character() {
 
             <Swiper {...swiperConfig} className="w-full max-w-7xl mx-auto">
                 {games.map(({ title, image, fee }) => (
-                    <SwiperSlide key={title} className="flex justify-center pb-10">
+                    <SwiperSlide key={title} className="flex justify-center pb-10 ">
+                        <div className="flex item-center justify-center w-full h-full">
+
                         <div className="bg-[#151515] rounded-xl p-4 border border-[#333] hover:shadow-lg transition-all duration-300 w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px]">
 
                             {/* Character Image */}
@@ -76,6 +78,7 @@ export default function Character() {
                                 )}
                             </p>
                         </div>
+                </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
