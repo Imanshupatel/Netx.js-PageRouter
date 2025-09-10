@@ -3,7 +3,7 @@
 const images = [
     { src: "/images/victory.jpg", alt: "Squad Victory", caption: "Squad Victory - Season 24" },
     { src: "/images/chicken-dinner.jpg", alt: "Epic Chicken Dinner", caption: "Epic Chicken Dinner" },
-    { src: "/images/tournament.jpg", alt: "BGMI Tournament", caption: "BGMI Tournament Moments" },
+    { src: "/images/tournament.png", alt: "BGMI Tournament", caption: "BGMI Tournament Moments" },
     { src: "/images/sniper-short.jpg", alt: "Sniper Shot", caption: "Sniper Shot - Winner Winner!" },
     { src: "/images/team-work.jpg", alt: "Teamwork", caption: "Teamwork Makes the Dream Work" },
     { src: "/images/final-circle.avif", alt: "Final Circle", caption: "Final Circle Intensity" },
